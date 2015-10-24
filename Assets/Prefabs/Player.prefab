@@ -59,9 +59,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: .320000231}
+  m_Offset: {x: .179965213, y: .320000231}
   serializedVersion: 2
-  m_Size: {x: .369999975, y: .639999986}
+  m_Size: {x: .356669277, y: .639999986}
 --- !u!95 &9539784
 Animator:
   serializedVersion: 3
@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c361947d81bdd49894cda756c588cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackColliderPrefab: {fileID: 197996, guid: 4037536ceb7b2cd4d9bdfe870479962d, type: 2}
 --- !u!114 &11499522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad0599b04d93b8498e64fe4d3c41ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseDamage: 0
 --- !u!212 &21263144
 SpriteRenderer:
   m_ObjectHideFlags: 1
