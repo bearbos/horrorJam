@@ -10,6 +10,7 @@ public class Mask : MonoBehaviour
     public int wantedLevel;
     float spookMulti = 1f;
     bool isHockey = false;
+    public Sprite sprite;
     // Use this for initialization
     void Start()
     {

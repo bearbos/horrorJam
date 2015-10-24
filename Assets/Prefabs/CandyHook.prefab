@@ -42,8 +42,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   price: 0
-  description: Candy Pirate Hook
   durability: 0
+  description: Candy Pirate Hook
+  weaponType: 0
+  anchor: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 352cd6a207e0d8f419946e44f93291bc, type: 3}
 --- !u!212 &21284446
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -76,7 +79,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 352cd6a207e0d8f419946e44f93291bc,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119382}

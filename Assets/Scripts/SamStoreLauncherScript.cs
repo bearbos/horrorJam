@@ -45,4 +45,8 @@ public class SamStoreLauncherScript : MonoBehaviour {
         transform.GetChild(2).GetComponent<Canvas>().enabled = true;
     }
 
+    void Destroy()
+    {
+        Destroy(gameObject);
+    }
 }

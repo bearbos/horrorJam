@@ -19,7 +19,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300082, guid: bb95176866ca08042a3611eebcd01aae, type: 3}
-    - time: .0416666679
+    - time: .0333333351
       value: {fileID: 21300084, guid: bb95176866ca08042a3611eebcd01aae, type: 3}
     - time: .0833333358
       value: {fileID: 21300086, guid: bb95176866ca08042a3611eebcd01aae, type: 3}
@@ -127,7 +127,21 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: .875
+  - time: 0
+    functionName: AnimationStart
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: .0833333358
+    functionName: CreateAttackCollider
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 1
+    intParameter: 0
+    messageOptions: 0
+  - time: .866666675
     functionName: AnimationEnd
     data: 
     objectReferenceParameter: {fileID: 0}

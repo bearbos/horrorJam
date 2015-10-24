@@ -58,6 +58,9 @@ MonoBehaviour:
   price: 0
   durability: 0
   description: Shits Big
+  weaponType: 0
+  anchor: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 5f41b5351c8e58242892839ea09ad48e, type: 3}
 --- !u!212 &21296540
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -95,6 +98,11 @@ Prefab:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6425d6c565f3d3b4fa68451951bf33d0,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5f41b5351c8e58242892839ea09ad48e,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
