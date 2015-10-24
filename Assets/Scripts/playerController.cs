@@ -26,6 +26,8 @@ public class playerController : MonoBehaviour {
 			else
 				attackComboLength = 0;
 		}
+
+		transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
 	}
 
 	void FixedUpdate() {
@@ -43,10 +45,14 @@ public class playerController : MonoBehaviour {
 				testInputY = Input.GetAxis ("Vertical");
 		}
 
-		if (testInputX < 0.0f)
+		if (testInputX < 0.0f) {
 			facingRight = false;
-		else if (testInputX > 0.0f)
+			GetComponentInChildren<Transform> ().localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
+		} 
+		else if (testInputX > 0.0f) {
 			facingRight = true;
+			GetComponentInChildren<Transform>().localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
+		}
 
 		this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (3.0f * testInputX, 2.0f * testInputY);
 
@@ -119,7 +125,7 @@ public class playerController : MonoBehaviour {
 			}
 		}
 
-		comboInputTimer = 0.5f;
+		comboInputTimer = 0.7f;
 		++attackComboLength;
 		inAttackAnimation = true;
 	}

@@ -86,7 +86,7 @@ public class Dynamic_Camera : MonoBehaviour {
 
         for (int i = chunkSize; i > 0; i--)
         {
-            if (oldChunks[i - 1].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 40.0f))
+            if (oldChunks[i - 1].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 55.0f))
                 Destroy(oldChunks[i - 1]);
         }
 
@@ -97,8 +97,19 @@ public class Dynamic_Camera : MonoBehaviour {
 
         for (int i = houseSize; i > 0; i--)
         {
-            if (oldHouse[i - 1].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 40.0f))
+            if (oldHouse[i - 1].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 55.0f))
                 Destroy(oldHouse[i - 1]);
+        }
+
+        // Destroy old Decoration
+        GameObject[] oldDecorations = GameObject.FindGameObjectsWithTag("Decoration");
+
+        int decorationSize = oldDecorations.Length;
+
+        for (int i = decorationSize; i > 0; i--)
+        {
+            if (oldDecorations[i - 1].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 55.0f))
+                Destroy(oldDecorations[i - 1]);
         }
     }
 }
