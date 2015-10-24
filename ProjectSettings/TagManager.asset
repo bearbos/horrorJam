@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Chunk
   - HouseSpawner
+  - Enemy
   layers:
   - Default
   - TransparentFX
