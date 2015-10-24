@@ -19,8 +19,11 @@ public class Aggro_range : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Enemy")
         {
-            coll.gameObject.SendMessage("SetAggro");
-            coll.gameObject.GetComponent<e_StateMachine>().eGuard = false;
+            if (coll.gameObject.GetComponent<e_StateMachine>())
+            {
+                coll.gameObject.SendMessage("SetAggro");
+                coll.gameObject.GetComponent<e_StateMachine>().eGuard = false;
+            }
         }
     }
 }
