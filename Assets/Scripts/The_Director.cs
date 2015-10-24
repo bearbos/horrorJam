@@ -53,8 +53,10 @@ public class The_Director : MonoBehaviour {
 
         for(int i = 0; i < numHouses; i++)
         {
+            Vector3 newPos = houseNodes[i].gameObject.transform.position;
+            newPos.z = 10;
             int houseIndex = Random.Range(0, theHouses.Length);
-            GameObject tempHouse = Instantiate(theHouses[houseIndex], houseNodes[i].gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+            GameObject tempHouse = Instantiate(theHouses[houseIndex], newPos, gameObject.transform.rotation) as GameObject;
            
             Debug.Log("Instantiating House " + houseIndex.ToString());
         }
