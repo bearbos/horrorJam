@@ -42,8 +42,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   price: 0
-  description: Mike Tyson
   durability: 0
+  description: Mike Tyson
+  weaponType: 0
+  anchor: {fileID: 0}
+  sprite: {fileID: 21300054, guid: 834d99811663d264eb21ea50f4fc983a, type: 3}
 --- !u!212 &21277170
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -86,6 +89,11 @@ Prefab:
       propertyPath: description
       value: Mike Tyson
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300054, guid: 834d99811663d264eb21ea50f4fc983a,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 184316}

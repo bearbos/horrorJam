@@ -10,6 +10,7 @@ public class weapon : MonoBehaviour {
     public string description;
 	public weaponType weaponType;
 	public GameObject anchor;
+    public Sprite sprite;
 
 	// Use this for initialization
 	void Start () {
