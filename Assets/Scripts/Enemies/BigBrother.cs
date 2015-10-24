@@ -40,5 +40,7 @@ public class BigBrother : MonoBehaviour {
                 candyRB.gravityScale = 1.5f;
             }
         }
+        GetComponent<Animator>().enabled = false;
+        GetComponent<e_StateMachine>().eIdle = false;   
     }
 }
