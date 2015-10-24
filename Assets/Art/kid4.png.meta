@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: a328c0e676de1f942b9b14804e40b947
+timeCreated: 1445672307
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: kid4_0
+    21300002: kid4_1
+    21300004: kid4_2
+    21300006: kid4_3
+    21300008: kid4_4
+    21300010: kid4_5
+    21300012: kid4_6
+    21300014: kid4_7
+    21300016: kid4_8
+    21300018: kid4_9
+    21300020: kid4_10
+    21300022: kid4_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: kid4_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 383
+        width: 58
+        height: 83
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: kid4_1
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 287
+        width: 58
+        height: 83
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: kid4_2
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 287
+        width: 58
+        height: 83
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: kid4_3
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 287
+        width: 58
+        height: 83
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: kid4_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 287
+        width: 58
+        height: 83
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: kid4_5
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 191
+        width: 58
+        height: 83
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: kid4_6
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 191
+        width: 58
+        height: 83
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: kid4_7
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 191
+        width: 58
+        height: 83
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: kid4_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 95
+        width: 58
+        height: 83
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: kid4_9
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 95
+        width: 58
+        height: 83
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: kid4_10
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 95
+        width: 58
+        height: 83
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: kid4_11
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 94
+        width: 58
+        height: 83
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
