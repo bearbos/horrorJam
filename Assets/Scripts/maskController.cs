@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class maskController : MonoBehaviour {
 
-	List<GameObject> maskCollection;
+	List<GameObject> maskCollection = null;
 	GameObject activeMask;
 	int currentIndex;
 
