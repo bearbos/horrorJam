@@ -38,7 +38,7 @@ public class SnowScript : MonoBehaviour
         }
         else
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
 
     }

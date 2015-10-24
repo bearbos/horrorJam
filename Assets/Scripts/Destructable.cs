@@ -4,6 +4,7 @@ using System.Collections;
 public class Destructable : MonoBehaviour
 {
     public float HP;
+    public int score;
     //varibles for the visual feedback when the skeleton takes damage
     Color baseColor;
     bool changeColor;
@@ -16,6 +17,7 @@ public class Destructable : MonoBehaviour
         newPos = gameObject.transform.position;
         newPos.z = newPos.y;
         gameObject.transform.position = newPos;
+        baseColor = GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class Destructable : MonoBehaviour
     {
         if(HP <= 0)
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().score += score;
             Destroy(gameObject);
         }
         if (changeColor == true)

@@ -55,6 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 60
+  score: 75
 --- !u!212 &21271902
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -95,6 +96,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: HP
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: score
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
