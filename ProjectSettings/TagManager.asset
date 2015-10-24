@@ -6,7 +6,15 @@ TagManager:
   tags:
   - Chunk
   - HouseSpawner
+  - RoofSpawner
+  - miscSpawner
+  - EnemySpawner
   - Enemy
+  - NewNodeSpawn
+  - NodeSpawner
+  - Director
+  - Decoration
+  - House
   layers:
   - Default
   - TransparentFX
