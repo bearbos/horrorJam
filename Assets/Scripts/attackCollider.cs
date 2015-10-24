@@ -31,6 +31,6 @@ public class attackCollider : MonoBehaviour {
 		if (other.CompareTag ("Enemy"))
 			other.GetComponent<E_Stat> ().TakeDamage (dmg);
 		else if (other.CompareTag ("Decoration"))
-			other.gameObject.SendMessage ("TakeDamage", 20.0f);
+			other.SendMessage ("TakeDamage", 20.0f);
 	}
 }
