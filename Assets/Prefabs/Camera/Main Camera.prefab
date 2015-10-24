@@ -9,9 +9,25 @@ GameObject:
   m_Component:
   - 4: {fileID: 454184}
   - 61: {fileID: 6119028}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left Bounds
   m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &105486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 406102}
+  - 114: {fileID: 11438310}
+  m_Layer: 0
+  m_Name: Director
+  m_TagString: Director
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +117,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &171968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 480110}
+  - 61: {fileID: 6110936}
+  - 50: {fileID: 5099432}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: NodeSpawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400470
 Transform:
   m_ObjectHideFlags: 1
@@ -126,8 +159,22 @@ Transform:
   - {fileID: 454184}
   - {fileID: 482192}
   - {fileID: 468302}
+  - {fileID: 480110}
+  - {fileID: 406102}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &406102
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105486}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 200, y: 1.89999998, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 403354}
+  m_RootOrder: 4
 --- !u!4 &427786
 Transform:
   m_ObjectHideFlags: 1
@@ -165,6 +212,18 @@ Transform:
   - {fileID: 427786}
   m_Father: {fileID: 403354}
   m_RootOrder: 2
+--- !u!4 &480110
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.3900003, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 403354}
+  m_RootOrder: 3
 --- !u!4 &482192
 Transform:
   m_ObjectHideFlags: 1
@@ -198,7 +257,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 50
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -212,6 +271,35 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
   m_StereoMirrorMode: 0
+--- !u!50 &5099432
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171968}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &6110936
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171968}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!61 &6119028
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -289,6 +377,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e91bb8c4e234d47a8a62edf0b55809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11438310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d760ee1fd37d87049b168d67ae65f9b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelChunk: {fileID: 152722, guid: 692545eefd80e4642b1927f54b5cffae, type: 2}
+  theHouses:
+  - {fileID: 113986, guid: 69c491b12b9aa414a80af665999217c5, type: 2}
+  - {fileID: 184580, guid: ae428622f4f1d5640af0e94f113303c5, type: 2}
+  theNatural:
+  - {fileID: 122542, guid: cb605202208467444be47f44e6bfcaa7, type: 2}
+  theDecorations:
+  - {fileID: 142496, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
+  - {fileID: 141258, guid: 42db3491481dc2f44b8e7dfd7a4b8191, type: 2}
+  - {fileID: 105310, guid: e4b361352aa71ad45ba62888232f5494, type: 2}
+  - {fileID: 109180, guid: 0bc353d85a6a23d4a970df00b804904c, type: 2}
+  - {fileID: 126366, guid: 12f3a1512cbbbca44adc664d53412a59, type: 2}
+  theKids:
+  - {fileID: 188270, guid: 4cefa127916d6d74bb55eb88fb1dfd8b, type: 2}
+  - {fileID: 127534, guid: ab30b4d8e7083574c96a5fbe1a5e799e, type: 2}
+  - {fileID: 155658, guid: c644f460cfeb47543906b75abc98c0ba, type: 2}
+  - {fileID: 196268, guid: d9151faf4c1d1124284b5117621bc882, type: 2}
+  - {fileID: 190104, guid: e7bb5214b765e4c459fe2aa78b2c24da, type: 2}
+  theParents:
+  - {fileID: 129596, guid: 2838f0f0206fc344693b5dfcd8cc9921, type: 2}
+  - {fileID: 102866, guid: dd0526a0fdb732f44830a2717bf1e75a, type: 2}
+  thePolice:
+  - {fileID: 186812, guid: 3bc118b9849ee164fa3810688c6f8420, type: 2}
+  theRoofs:
+  - {fileID: 117820, guid: 73e1b5e50d72964419ef056b1ec61083, type: 2}
+  - {fileID: 179414, guid: 7a83bcf2dd2910540a3b50bf6e75bd29, type: 2}
 --- !u!124 &12403238
 Behaviour:
   m_ObjectHideFlags: 1

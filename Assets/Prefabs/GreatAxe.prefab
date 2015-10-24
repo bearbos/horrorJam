@@ -10,9 +10,10 @@ GameObject:
   - 4: {fileID: 487502}
   - 212: {fileID: 21296540}
   - 114: {fileID: 11498502}
+  - 61: {fileID: 6144528}
   m_Layer: 0
   m_Name: GreatAxe
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,11 +25,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1500001, y: -.360000014, z: 0}
+  m_LocalPosition: {x: -6.81086493, y: -3.37087464, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6144528
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184932}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: .476866722, y: 1.94405842}
+  serializedVersion: 2
+  m_Size: {x: 1.47543645, y: 3.25847673}
 --- !u!114 &11498502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -42,8 +56,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   price: 0
-  description: Shits Big
   durability: 0
+  description: Shits Big
 --- !u!212 &21296540
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -68,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d063d056f7ff24549a5065e74e18fc6e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f41b5351c8e58242892839ea09ad48e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -76,7 +90,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6425d6c565f3d3b4fa68451951bf33d0,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 184932}

@@ -5,15 +5,14 @@ public class The_Director : MonoBehaviour {
 
     // Data Members
     int wantedLevel = 1;
-    int streetLvl = 1;
+    int streetLvl = 2;
     int candy = 0;
     float healthRatio = 1.0f;
 
-    public GameObject LevelChunk;
+    public int prevEnemies = 0;
+    public int numEnemies;
 
-    GameObject oldChunk;
-    GameObject currChunk;
-    GameObject newChunk;
+    public GameObject LevelChunk;
 
     // Things to spawn
     [SerializeField]
@@ -26,10 +25,19 @@ public class The_Director : MonoBehaviour {
     GameObject[] theDecorations;
 
     [SerializeField]
-    GameObject[] theEnemies;
+    GameObject[] theKids;
+
+    [SerializeField]
+    GameObject[] theParents;
+
+    [SerializeField]
+    GameObject[] thePolice;
 
     [SerializeField]
     GameObject[] theRoofs;
+
+    public float privateTimer = 0.0f;
+
 
     // Use this for initialization
     void Start ()
@@ -37,12 +45,19 @@ public class The_Director : MonoBehaviour {
         SpawnHouses();
         SpawnDecorations();
         SpawnRoofs();
+        SpawnEnemies();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-	
+        privateTimer += Time.deltaTime;
+
+	    if(privateTimer >= 0.5f)
+        {
+            ManageEnemies();
+            privateTimer = 0.0f;
+        }
 	}
 
     void SpawnHouses()
@@ -145,6 +160,93 @@ public class The_Director : MonoBehaviour {
 
     }
 
+    void SpawnEnemies()
+    {
+        GameObject[] enemyNodes = GameObject.FindGameObjectsWithTag("EnemySpawner");
+
+        int enemySize = enemyNodes.Length;
+
+        // Street Number
+        // Amt Candy
+        // Wanted Level
+
+        int numChildren = 10;
+        int candyLevel = 15;
+
+        for(int i = candy; i > 0; i -= 50)
+        {
+            candyLevel -= 1;
+        }
+
+        // Calculate Kids
+        numChildren = (int)((numChildren - wantedLevel) * ((float)streetLvl / 10.0f) + (int)(candyLevel / 2));
+
+        // Spawn Children
+        for (int i = 0; i < numChildren; i++)
+        {
+            int randIndex = Random.Range(0, enemyNodes.Length);
+            Vector3 newPos = enemyNodes[randIndex].gameObject.transform.position;
+            int kidIndex = Random.Range(0, theKids.Length);
+            GameObject tempKids = Instantiate(theKids[kidIndex], newPos, gameObject.transform.rotation) as GameObject;
+        }
+
+        int numParents = (streetLvl - wantedLevel);
+        if (numParents < 0)
+            numParents = 0;
+
+        // Spawn Parents
+        for (int i = 0; i < numParents; i++)
+        {
+            int randIndex = Random.Range(0, enemyNodes.Length);
+            Vector3 newPos = enemyNodes[randIndex].gameObject.transform.position;
+            int parentIndex = Random.Range(0, theParents.Length);
+            GameObject tempParents = Instantiate(theParents[parentIndex], newPos, gameObject.transform.rotation) as GameObject;
+        }
+
+        int numPolice = 0;
+        // Spawn police
+        switch(wantedLevel)
+        {
+            case 0:
+                numPolice = 0;
+                break;
+            case 1:
+                numPolice = 1;
+                break;
+            case 2:
+                numPolice = 2;
+                break;
+            case 3:
+                numPolice = 4;
+                break;
+            case 4:
+                numPolice = 8;
+                break;
+            case 5:
+                numPolice = 16;
+                break;
+                // Fuck
+        }
+
+        // Spawn Parents
+        for (int i = 0; i < numPolice; i++)
+        {
+            int randIndex = Random.Range(0, enemyNodes.Length);
+            Vector3 newPos = enemyNodes[randIndex].gameObject.transform.position;
+            int policeIndex = Random.Range(0, thePolice.Length);
+            Instantiate(thePolice[policeIndex], newPos, gameObject.transform.rotation);
+        }
+
+        int deleteEnemies = enemySize;
+        // Destroy all the house tags
+        for (int i = enemySize; i > 0; i--)
+        {
+            Destroy(enemyNodes[deleteEnemies - 1]);
+            deleteEnemies -= 1;
+            
+        }
+    }
+
     public void SpawnNewChunk()
     {
         GameObject newNode = GameObject.FindWithTag("NewNodeSpawn");
@@ -155,13 +257,30 @@ public class The_Director : MonoBehaviour {
         SpawnHouses();
         SpawnDecorations();
         SpawnRoofs();
+        SpawnEnemies();
+    }
 
-        if(currChunk)
-            Destroy(currChunk);
+    void ManageEnemies()
+    {
+        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if(newChunk)
-            currChunk = newChunk;
+        numEnemies = allEnemies.Length;
 
-        newChunk = justSpawned;
+        if(numEnemies < prevEnemies)
+        {
+            for (int i = 0; i < numEnemies; i++)
+            {
+                if (allEnemies[i].gameObject.GetComponent<e_StateMachine>() != null)
+                {
+                    if (allEnemies[i].gameObject.GetComponent<e_StateMachine>().eGuard == true)
+                    {
+                        allEnemies[i].gameObject.GetComponent<e_StateMachine>().eAggro = true;
+                        allEnemies[i].gameObject.GetComponent<e_StateMachine>().eGuard = false;
+                    }
+                }
+            }
+        }
+
+        prevEnemies = numEnemies;
     }
 }

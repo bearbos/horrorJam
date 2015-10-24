@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11410718}
   m_Layer: 0
   m_Name: Kid1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.59000003, y: -2.31999993, z: 0}
+  m_LocalPosition: {x: 8.71000862, y: 1.84382558, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,7 +47,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6170808
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -58,9 +58,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: .335000008}
+  m_Offset: {x: -.00814533234, y: .383865833}
   serializedVersion: 2
-  m_Size: {x: .670000017, y: .670000017}
+  m_Size: {x: 2.11971378, y: .767731667}
 --- !u!114 &11402922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 1
-  runDistance: 2
+  runDistance: 6
   candy:
   - {fileID: 120310, guid: d8f2b31e7b956a048880ee46afd0767d, type: 2}
   - {fileID: 159468, guid: ba52f9071c7edf146a0adcadd2ab72ab, type: 2}
@@ -81,6 +81,8 @@ MonoBehaviour:
   - {fileID: 152860, guid: 610acc4992e7aec48b30e0b3df8e0054, type: 2}
   - {fileID: 177744, guid: 6ad354e406410614ca54437d2e40a5b0, type: 2}
   - {fileID: 123750, guid: 0ee2b12c24551244ea0e7107d7388aa9, type: 2}
+  minCandy: 3
+  maxCandy: 5
 --- !u!114 &11410718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +128,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: runDistance
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127534}
