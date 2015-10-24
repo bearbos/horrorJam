@@ -18,6 +18,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &183266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 418142}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: SwordAnchor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &193848
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,6 +54,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &418142
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .219999999, y: 1.01999998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 480388}
+  m_RootOrder: 0
 --- !u!4 &480388
 Transform:
   m_ObjectHideFlags: 1
@@ -49,6 +76,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 418142}
   - {fileID: 486140}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,7 +91,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 480388}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!50 &5049586
 Rigidbody2D:
   serializedVersion: 2
@@ -90,9 +118,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .575874686, y: .963815987}
+  m_Offset: {x: .575874746, y: .997581959}
   serializedVersion: 2
-  m_Size: {x: 1.14848828, y: 1.9276315}
+  m_Size: {x: .994128585, y: 1.86009932}
 --- !u!95 &9539784
 Animator:
   serializedVersion: 3

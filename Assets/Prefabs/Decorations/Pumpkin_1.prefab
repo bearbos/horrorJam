@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 6187312}
   - 114: {fileID: 11430844}
   m_Layer: 0
-  m_Name: Desctuctable
+  m_Name: Pumpkin_1
   m_TagString: Decoration
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

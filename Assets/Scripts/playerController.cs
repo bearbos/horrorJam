@@ -55,6 +55,20 @@ public class playerController : MonoBehaviour {
 			GetComponentInChildren<Transform>().localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
 		}
 
+		if ((testInputX > .1f && testInputX < .4f) || (testInputX < -.1f && testInputX > -.4f)) {
+			this.GetComponent<Animator> ().SetBool ("Walking", true);
+			this.GetComponent<Animator> ().SetBool ("Running", false);
+			this.GetComponent<Animator> ().SetBool ("StandingStill", false);
+		} else if ((testInputX > .4f && testInputX < 1.1f) || (testInputX < -.4f && testInputX > -1.1f)) {
+			this.GetComponent<Animator> ().SetBool ("Running", true);
+			this.GetComponent<Animator> ().SetBool ("Walking", false);
+			this.GetComponent<Animator> ().SetBool ("StandingStill", false);
+		} else {
+			this.GetComponent<Animator> ().SetBool ("StandingStill", true);
+			this.GetComponent<Animator> ().SetBool ("Running", false);
+			this.GetComponent<Animator> ().SetBool ("Walking", false);
+		}
+
 		if (inAttackAnimation && facingRight)
 			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (1.0f, 0.0f);
 		else if (inAttackAnimation && !facingRight)
@@ -176,7 +190,8 @@ public class playerController : MonoBehaviour {
 	/// </summary>
 	void PickupItem()
 	{
-
+		if (usableObject != null)
+		usableObject.SendMessage ("PlayerUsed");
 	}
 
 	/// <summary>
@@ -184,7 +199,8 @@ public class playerController : MonoBehaviour {
 	/// </summary>
 	void DropItem()
 	{
-
+		if (usableObject != null)
+		usableObject.SendMessage ("PlayerDropped");
 	}
 
 	/// <summary>
