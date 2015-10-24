@@ -56,9 +56,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: .334535122}
+  m_Offset: {x: .139860988, y: .861703634}
   serializedVersion: 2
-  m_Size: {x: .337972313, y: .264022231}
+  m_Size: {x: .617694259, y: 1.31835938}
 --- !u!114 &11488196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 20
   attackRange: 0
-  moveDirection: 1
+  moveDirection: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
