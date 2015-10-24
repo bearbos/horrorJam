@@ -79,37 +79,23 @@ public class Dynamic_Camera : MonoBehaviour {
 
     void CleanUp()
     {
-        // Destroy old chunks
-        GameObject[] oldChunks = GameObject.FindGameObjectsWithTag("Chunk");
-
-        int chunkSize = oldChunks.Length;
-
-        for (int i = chunkSize; i > 0; i--)
-        {
-            if (oldChunks[i - 1].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 55.0f))
-                Destroy(oldChunks[i - 1]);
-        }
-
         // Destroy old houses
-        GameObject[] oldHouse = GameObject.FindGameObjectsWithTag("House");
+        GameObject[] oldObjects = FindObjectsOfType<GameObject>();
 
-        int houseSize = oldHouse.Length;
+        int oldObjectsLength = oldObjects.Length;
 
-        for (int i = houseSize; i > 0; i--)
+        for (int i = oldObjectsLength; i > 0; i--)
         {
-            if (oldHouse[i - 1].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 55.0f))
-                Destroy(oldHouse[i - 1]);
-        }
-
-        // Destroy old Decoration
-        GameObject[] oldDecorations = GameObject.FindGameObjectsWithTag("Decoration");
-
-        int decorationSize = oldDecorations.Length;
-
-        for (int i = decorationSize; i > 0; i--)
-        {
-            if (oldDecorations[i - 1].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 55.0f))
-                Destroy(oldDecorations[i - 1]);
+            if (oldObjects[i - 1].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 70.0f))
+            {
+                GameObject deleteThis = oldObjects[i - 1];
+                if (deleteThis.gameObject.tag == "Director")
+                {
+                       
+                }
+                else
+                    Destroy(deleteThis);
+            }
         }
     }
 }
