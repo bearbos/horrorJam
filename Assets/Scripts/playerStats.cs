@@ -4,9 +4,9 @@ using System.Collections;
 public class playerStats : MonoBehaviour {
 
     public float baseDamage, damageModifier, maxHealth, currHealth, adrenaline, timer, notoriety, timeMulti, damageMulti;
-	float adrenalineFalloffRate, adrenalineFalloffTime, superSayainDuration;
+	float adrenalineFalloffRate, adrenalineFalloffTime, superSaiyanDuration;
 	public int score, candy;
-	public bool superSayain;
+	public bool superSaiyan;
 
 	// Use this for initialization
 	void Start () {
@@ -33,11 +33,11 @@ public class playerStats : MonoBehaviour {
 			adrenaline = 0.0f;
 
 
-		if (superSayainDuration > 0.0f) {
-			superSayainDuration -= Time.deltaTime;
-		} else if (superSayainDuration < 0.0f) {
-			superSayainDuration = 0.0f;
-			superSayain = false;
+		if (superSaiyanDuration > 0.0f) {
+			superSaiyanDuration -= Time.deltaTime;
+		} else if (superSaiyanDuration < 0.0f) {
+			superSaiyanDuration = 0.0f;
+			superSaiyan = false;
 		}
 	}
 
@@ -50,15 +50,15 @@ public class playerStats : MonoBehaviour {
 
 	public void IncreaseAdrenaline()
 	{
-		if (!superSayain) {
+		if (!superSaiyan) {
 			adrenaline += 2;
 
 			if (adrenaline > 100.0f)
 				adrenaline = 100.0f;
 
 			if (adrenaline == 100.0f) {
-				superSayain = true;
-				superSayainDuration = 10.0f;
+				superSaiyan = true;
+				superSaiyanDuration = 10.0f;
 			} else
 				adrenalineFalloffTime = 2.5f;
 		}

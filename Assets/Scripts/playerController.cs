@@ -1,18 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class playerController : MonoBehaviour {
 
 	int attackComboLength;
 	float comboInputTimer;
-	public bool inAttackAnimation;
+	public bool inAttackAnimation, takeBuffer;
 	bool facingRight, objectInHand;
 	public GameObject attackColliderPrefab;
 	GameObject usableObject, objectBeingUsed;
+	List<string> buffer;
 
 	// Use this for initialization
 	void Start () {
-	
+		takeBuffer = true;
+
+		buffer = new List<string> ();
 	}
 	
 	// Update is called once per frame
@@ -26,7 +30,7 @@ public class playerController : MonoBehaviour {
 			if (comboInputTimer > 0.0f)
 				comboInputTimer -= Time.deltaTime;
 			else
-				attackComboLength = 0;
+				ResetBuffer();
 		}
 
 		transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
@@ -71,9 +75,9 @@ public class playerController : MonoBehaviour {
 		}
 
 		if (inAttackAnimation && facingRight)
-			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (1.0f, 0.0f);
+			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0.5f, 0.0f);
 		else if (inAttackAnimation && !facingRight)
-			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-1.0f, 0.0f);
+			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-0.5f, 0.0f);
 		else
 			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (5.0f * testInputX, 4.0f * testInputY);
 
@@ -115,33 +119,51 @@ public class playerController : MonoBehaviour {
 	/// <param name="aT">If set to <c>true</c> the attack type is a punch, else it is a kick.</param>
 	void ComboManager(bool aT)
 	{
-		if (aT && (!objectInHand || objectBeingUsed.GetComponent<weapon>().weaponType == weaponType.FIST)) {
-			if (attackComboLength == 0)
+		int maxCombo;
+
+		if (GetComponent<playerStats> ().superSaiyan)
+			maxCombo = 5;
+		else
+			maxCombo = 3;
+
+		if (aT 
+		    && (!objectInHand || objectBeingUsed.GetComponent<weapon>().weaponType == weaponType.FIST) 
+		    && takeBuffer) {
+			if (attackComboLength < maxCombo) {
+			switch (attackComboLength)
 			{
-				this.GetComponent<Animator> ().SetTrigger ("ComboPunchOne");
-				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
+			case 0:
+				{
+				buffer.Add("ComboPunchOne");
+				break;
+				}
+			case 1:
+				{
+				buffer.Add("ComboPunchTwo");
+				break;
+				}
+			case 2:
+				{
+				buffer.Add("ComboPunchThree");
+				break;
+				}
+			case 3:
+				{
+				buffer.Add("ComboPunchFour");
+				break;
+				}
+			case 4:
+				{
+				buffer.Add("ComboPunchFive");
+				break;
+				}
+			default:
+				break;
 			}
-			else if (attackComboLength == 1)
-			{
-				this.GetComponent<Animator>().SetTrigger("ComboPunchTwo");
-				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
+				++attackComboLength;
 			}
-			else if (attackComboLength == 2)
-			{
-				this.GetComponent<Animator>().SetTrigger("ComboPunchThree");
-				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
-			}
-			else if (attackComboLength == 3 && GetComponent<playerStats>().superSayain)
-			{
-				this.GetComponent<Animator>().SetTrigger("ComboPunchFour");
-				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt() * 1.5f, facingRight);
-			}
-			else if (attackComboLength == 4 && GetComponent<playerStats>().superSayain)
-			{
-				this.GetComponent<Animator>().SetTrigger("ComboPunchFive");
-				//(GetComponent<playerStats>().TotalDamageDealt() * 2.0f, facingRight);
-			}
-		} else if (!aT && (!objectInHand || usableObject.GetComponent<weapon>().weaponType == weaponType.FIST)) {
+		}
+		else if (!aT && (!objectInHand || usableObject.GetComponent<weapon>().weaponType == weaponType.FIST)) {
 			if (attackComboLength == 0)
 			{
 				this.GetComponent<Animator>().SetTrigger("ComboKickOne");
@@ -163,7 +185,7 @@ public class playerController : MonoBehaviour {
 		if (aT && (objectInHand && objectBeingUsed.GetComponent<weapon>().weaponType == weaponType.SWORD)) {
 			if (attackComboLength == 0)
 			{
-				this.GetComponent<Animator>().SetTrigger ("SwordWeaponOne");
+			this.GetComponent<Animator>().SetTrigger ("SwordWeaponOne");
 				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
 			}
 			else if (attackComboLength >= 1)
@@ -173,12 +195,11 @@ public class playerController : MonoBehaviour {
 			}
 		}
 
-		comboInputTimer = 0.7f;
-		++attackComboLength;
-
-		if (attackComboLength > 5)
-			attackComboLength = 0;
-		inAttackAnimation = true;
+		if (buffer.Count != 0)
+			if (buffer [0].ToString() == "ComboPunchOne") {
+				GetComponent<Animator>().SetTrigger(buffer[0]);
+				inAttackAnimation = true;
+			}
 	}
 
 	/// <summary>
@@ -187,6 +208,20 @@ public class playerController : MonoBehaviour {
 	public void AnimationEnd()
 	{
 		inAttackAnimation = false;
+
+		if (buffer.Count != 0)
+			buffer.RemoveAt (0);
+
+		if (buffer.Count != 0)
+			GetComponent<Animator> ().SetTrigger (buffer [0]);
+	}
+
+	public void ResetBuffer()
+	{
+		buffer.Clear ();
+
+		attackComboLength = 0;
+		takeBuffer = true;
 	}
 
 	/// <summary>
