@@ -29,6 +29,8 @@ public class attackCollider : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.CompareTag ("Enemy"))
-			other.GetComponent<E_Stat> ().TakeDamage (dmg);;
+			other.GetComponent<E_Stat> ().TakeDamage (dmg);
+		//else if (other.CompareTag ("Decoration"))
+		//	other.gameObject.SendMessage ("TakeDamage", 20.0f);
 	}
 }

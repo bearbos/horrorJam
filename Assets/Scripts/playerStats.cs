@@ -3,7 +3,7 @@ using System.Collections;
 
 public class playerStats : MonoBehaviour {
 
-	public float baseDamage, maxHealth, currHealth, adrenaline, timer, notoriety;
+	public float baseDamage, damageModifier, maxHealth, currHealth, adrenaline, timer, notoriety;
 	public int score, candy;
 
 	// Use this for initialization
