@@ -39,4 +39,10 @@ public class SamStoreLauncherScript : MonoBehaviour {
         }
     }
 
+    void LaunchStore()
+    {
+        Time.timeScale = 0.0f;
+
+    }
+
 }
