@@ -6,17 +6,14 @@ public class playerController : MonoBehaviour {
 
 	int attackComboLength;
 	float comboInputTimer;
-	public bool inAttackAnimation, takeBuffer;
+	public bool inAttackAnimation;
 	bool facingRight, objectInHand;
 	public GameObject attackColliderPrefab;
 	GameObject usableObject, objectBeingUsed;
-	List<string> buffer;
 
 	// Use this for initialization
 	void Start () {
-		takeBuffer = true;
 
-		buffer = new List<string> ();
 	}
 	
 	// Update is called once per frame
@@ -30,7 +27,7 @@ public class playerController : MonoBehaviour {
 			if (comboInputTimer > 0.0f)
 				comboInputTimer -= Time.deltaTime;
 			else
-				ResetBuffer();
+				attackComboLength = 0;
 		}
 
 		transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
@@ -52,10 +49,12 @@ public class playerController : MonoBehaviour {
 		}
 
 		if (testInputX < 0.0f) {
+			comboInputTimer = 0.6f;
 			facingRight = false;
 			GetComponentInChildren<Transform> ().localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
 		} 
 		else if (testInputX > 0.0f) {
+			comboInputTimer = 0.6f;
 			facingRight = true;
 			GetComponentInChildren<Transform>().localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
 		}
@@ -126,59 +125,51 @@ public class playerController : MonoBehaviour {
 		else
 			maxCombo = 3;
 
-		if (aT 
-		    && (!objectInHand || objectBeingUsed.GetComponent<weapon>().weaponType == weaponType.FIST) 
-		    && takeBuffer) {
-			if (attackComboLength < maxCombo) {
-			switch (attackComboLength)
-			{
-			case 0:
-				{
-				buffer.Add("ComboPunchOne");
-				break;
+		
+		if (attackComboLength < maxCombo) {
+			if (aT 
+				&& (!objectInHand || objectBeingUsed.GetComponent<weapon> ().weaponType == weaponType.FIST)) {
+				switch (attackComboLength) {
+				case 0:
+					{
+						GetComponent<Animator>().SetTrigger("ComboPunchOne");
+						break;
+					}
+				case 1:
+					{
+						GetComponent<Animator>().SetTrigger("ComboPunchTwo");
+						break;
+					}
+				case 2:
+					{
+					GetComponent<Animator>().SetTrigger("ComboPunchThree");
+						break;
+					}
+				case 3:
+					{
+					GetComponent<Animator>().SetTrigger("ComboPunchFour");
+						break;
+					}
+				case 4:
+					{
+					GetComponent<Animator>().SetTrigger("ComboPunchFive");
+						break;
+					}
+				default:
+					break;
 				}
-			case 1:
-				{
-				buffer.Add("ComboPunchTwo");
-				break;
+			} else if (!aT && (!objectInHand || usableObject.GetComponent<weapon> ().weaponType == weaponType.FIST)) {
+				if (attackComboLength == 0) {
+					this.GetComponent<Animator> ().SetTrigger ("ComboKickOne");
+					//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
+				} else if (attackComboLength == 1) {
+					this.GetComponent<Animator> ().SetTrigger ("ComboKickTwo");
+					//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt() * 1.5f, facingRight);
+				} else if (attackComboLength == 2) {
+					this.GetComponent<Animator> ().SetTrigger ("ComboKickThree");
+					//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
+					//(GetComponent<playerStats>().TotalDamageDealt(), !facingRight);
 				}
-			case 2:
-				{
-				buffer.Add("ComboPunchThree");
-				break;
-				}
-			case 3:
-				{
-				buffer.Add("ComboPunchFour");
-				break;
-				}
-			case 4:
-				{
-				buffer.Add("ComboPunchFive");
-				break;
-				}
-			default:
-				break;
-			}
-				++attackComboLength;
-			}
-		}
-		else if (!aT && (!objectInHand || usableObject.GetComponent<weapon>().weaponType == weaponType.FIST)) {
-			if (attackComboLength == 0)
-			{
-				this.GetComponent<Animator>().SetTrigger("ComboKickOne");
-				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
-			}
-			else if (attackComboLength == 1)
-			{
-				this.GetComponent<Animator>().SetTrigger("ComboKickTwo");
-				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt() * 1.5f, facingRight);
-			}
-			else if (attackComboLength == 2)
-			{
-				this.GetComponent<Animator>().SetTrigger("ComboKickThree");
-				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
-				//(GetComponent<playerStats>().TotalDamageDealt(), !facingRight);
 			}
 		}
 
@@ -195,11 +186,13 @@ public class playerController : MonoBehaviour {
 			}
 		}
 
-		if (buffer.Count != 0)
-			if (buffer [0].ToString() == "ComboPunchOne") {
-				GetComponent<Animator>().SetTrigger(buffer[0]);
-				inAttackAnimation = true;
-			}
+		++attackComboLength;
+		comboInputTimer = 0.5f;
+	}
+
+	public void AnimationStart()
+	{
+		inAttackAnimation = true;
 	}
 
 	/// <summary>
@@ -208,20 +201,6 @@ public class playerController : MonoBehaviour {
 	public void AnimationEnd()
 	{
 		inAttackAnimation = false;
-
-		if (buffer.Count != 0)
-			buffer.RemoveAt (0);
-
-		if (buffer.Count != 0)
-			GetComponent<Animator> ().SetTrigger (buffer [0]);
-	}
-
-	public void ResetBuffer()
-	{
-		buffer.Clear ();
-
-		attackComboLength = 0;
-		takeBuffer = true;
 	}
 
 	/// <summary>
