@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Chunk
   - HouseSpawner
+  - RoofSpawner
+  - miscSpawner
   layers:
   - Default
   - TransparentFX
