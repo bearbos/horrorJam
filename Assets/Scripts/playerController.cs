@@ -14,6 +14,9 @@ public class playerController : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+
+		///////////////////////////// Movement /////////////////////////////
+		/// 
 		float testInputX, testInputY;
 		testInputX = testInputY = 0.0f;
 
@@ -27,14 +30,30 @@ public class playerController : MonoBehaviour {
 
 		this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (3.0f * testInputX, 2.0f * testInputY);
 
-		//if (testInputX > 0.0f)
-		//	this.GetComponent<Rigidbody2D> ().AddForce(new Vector2 (100.0f, 0.0f));
-		//else if (testInputX < 0.0f)
-		//	this.GetComponent<Rigidbody2D> ().AddForce(new Vector2 (-100.0f, 0.0f));
-		//
-		//if (testInputY > 0.0f)
-		//	this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0.0f, 1.0f);
-		//else if (testInputY < 0.0f)
-		//	this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0.0f, -1.0f);
+		///////////////////////////// Attacking /////////////////////////////
+		/// 
+		if (Input.GetButtonDown ("X"))
+			;
+		   
+		if (Input.GetButtonDown ("Y"))
+			;
+
+
+		///////////////////////////// Mask Switching ////////////////////////////
+		/// 
+		if (Input.GetButtonDown ("Left Bumper"))
+			;
+
+		if (Input.GetButtonDown ("Right Bumper"))
+			;
+
+		///////////////////////////// Interaction and Menus /////////////////////////////////
+		/// 
+		if (Input.GetButtonDown ("A"))
+			;
+
+		if (Input.GetButtonDown ("B"))
+			;
+
 	}
 }
