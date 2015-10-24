@@ -87,7 +87,15 @@ public class Dynamic_Camera : MonoBehaviour {
         for (int i = oldObjectsLength; i > 0; i--)
         {
             if (oldObjects[i - 1].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 70.0f))
-                Destroy(oldObjects[i - 1]);
+            {
+                GameObject deleteThis = oldObjects[i - 1];
+                if (deleteThis.gameObject.tag == "Director")
+                {
+                       
+                }
+                else
+                    Destroy(deleteThis);
+            }
         }
     }
 }
