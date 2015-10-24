@@ -5,7 +5,8 @@ public class playerController : MonoBehaviour {
 
 	int attackComboLength;
 	float comboInputTimer;
-	bool inAttackAnimation, facingRight, objectInHand;
+	public bool inAttackAnimation;
+	bool facingRight, objectInHand;
 	public GameObject attackColliderPrefab;
 	GameObject usableObject, objectBeingUsed;
 

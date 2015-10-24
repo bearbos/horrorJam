@@ -14,7 +14,7 @@ public class playerStats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        baseDamage = 20.0f * damageMulti;
+        damageModifier = 20.0f * damageMulti;
         timer -= (Time.deltaTime * timeMulti);
 	}
 

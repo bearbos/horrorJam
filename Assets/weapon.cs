@@ -45,4 +45,11 @@ public class weapon : MonoBehaviour {
 	{
 		anchor = null;
 	}
+
+	public void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.CompareTag ("Enemy") && anchor != null && GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().inAttackAnimation) {
+			other.GetComponent<E_Stat>().TakeDamage( FindObjectOfType<playerStats>().TotalDamageDealt());
+		}
+	}
 }
