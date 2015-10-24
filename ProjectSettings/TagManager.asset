@@ -16,6 +16,7 @@ TagManager:
   - Decoration
   - House
   - Pickup
+  - SwordAnchor
   layers:
   - Default
   - TransparentFX

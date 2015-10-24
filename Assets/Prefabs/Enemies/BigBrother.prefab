@@ -29,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.52508712, y: -.819314957, z: .837890625}
+  m_LocalPosition: {x: 4.30158043, y: .662788332, z: .837890625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,9 +60,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .0049200058, y: -.0459235311}
+  m_Offset: {x: -.0731897354, y: .746247828}
   serializedVersion: 2
-  m_Size: {x: .412836432, y: .717899203}
+  m_Size: {x: .853094339, y: 1.48833847}
 --- !u!95 &9514802
 Animator:
   serializedVersion: 3
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbe0387b2365b1488e421323c4d9981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHealth: 0
+  currHealth: 10000
   maxHealth: 0
 --- !u!114 &11476242
 MonoBehaviour:
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49671907f165d0543941a9fe731efa13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eIdle: 0
+  eIdle: 1
   eAggro: 0
   eGuard: 0
 --- !u!114 &11484530
