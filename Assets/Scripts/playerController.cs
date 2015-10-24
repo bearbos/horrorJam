@@ -5,8 +5,9 @@ public class playerController : MonoBehaviour {
 
 	int attackComboLength;
 	float comboInputTimer;
-	bool inAttackAnimation, facingRight;
+	bool inAttackAnimation, facingRight, objectInHand;
 	public GameObject attackColliderPrefab;
+	GameObject usableObject;
 
 	// Use this for initialization
 	void Start () {
@@ -54,7 +55,12 @@ public class playerController : MonoBehaviour {
 			GetComponentInChildren<Transform>().localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
 		}
 
-		this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (3.0f * testInputX, 2.0f * testInputY);
+		if (inAttackAnimation && facingRight)
+			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (1.0f, 0.0f);
+		else if (inAttackAnimation && !facingRight)
+			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-1.0f, 0.0f);
+		else
+			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (5.0f * testInputX, 4.0f * testInputY);
 
 		///////////////////////////// Attacking /////////////////////////////
 		/// 
@@ -68,18 +74,22 @@ public class playerController : MonoBehaviour {
 		///////////////////////////// Mask Switching ////////////////////////////
 		/// 
 		if (Input.GetButtonDown ("Left Bumper"))
-			;
+			GetComponentInChildren<maskController>().ChangeMask(false);
 
 		if (Input.GetButtonDown ("Right Bumper"))
-			;
+			GetComponentInChildren<maskController>().ChangeMask(true);
 
 		///////////////////////////// Interaction and Menus /////////////////////////////////
 		/// 
-		if (Input.GetButtonDown ("A"))
-			;
+		if (Input.GetButtonDown ("A") && usableObject != null) {
+			objectInHand = true;
+			PickupItem();
+		}
 
-		if (Input.GetButtonDown ("B"))
-			;
+		if (Input.GetButtonDown ("B") && objectInHand == true) {
+			objectInHand = false;
+			DropItem();
+		}
 
 	}
 
@@ -90,7 +100,7 @@ public class playerController : MonoBehaviour {
 	/// <param name="aT">If set to <c>true</c> the attack type is a punch, else it is a kick.</param>
 	void ComboManager(bool aT)
 	{
-		if (aT) {
+		if (aT && !objectInHand) {
 			if (attackComboLength == 0)
 			{
 				this.GetComponent<Animator> ().SetTrigger ("ComboPunchOne");
@@ -106,7 +116,7 @@ public class playerController : MonoBehaviour {
 				this.GetComponent<Animator>().SetTrigger("ComboPunchThree");
 				CreateAttackCollider(GetComponent<playerStats>().baseDamage, facingRight);
 			}
-		} else {
+		} else if (!aT && !objectInHand) {
 			if (attackComboLength == 0)
 			{
 				this.GetComponent<Animator>().SetTrigger("ComboKickOne");
@@ -122,6 +132,19 @@ public class playerController : MonoBehaviour {
 				this.GetComponent<Animator>().SetTrigger("ComboKickThree");
 				CreateAttackCollider(GetComponent<playerStats>().baseDamage, facingRight);
 				CreateAttackCollider(GetComponent<playerStats>().baseDamage, !facingRight);
+			}
+		}
+
+		if (aT && objectInHand) {
+			if (attackComboLength == 0)
+			{
+				this.GetComponent<Animator>().SetTrigger ("SwordWeaponOne");
+				CreateAttackCollider(GetComponent<playerStats>().baseDamage, facingRight);
+			}
+			else if (attackComboLength >= 1)
+			{
+				this.GetComponent<Animator>().SetTrigger("SwordWeaponTwo");
+				CreateAttackCollider(GetComponent<playerStats>().baseDamage, facingRight);
 			}
 		}
 
@@ -146,5 +169,43 @@ public class playerController : MonoBehaviour {
 		attackColliderPrefab.GetComponent<attackCollider> ().dmg = GetComponent<playerStats> ().baseDamage;
 		attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = direction;
 		Instantiate (attackColliderPrefab, this.transform.position, Quaternion.identity);
+	}
+
+	/// <summary>
+	/// Pickups the item.
+	/// </summary>
+	void PickupItem()
+	{
+
+	}
+
+	/// <summary>
+	/// Drops the item.
+	/// </summary>
+	void DropItem()
+	{
+
+	}
+
+	/// <summary>
+	/// Raises the trigger enter2 d event.
+	/// </summary>
+	/// <param name="coll">Coll.</param>
+	void OnTriggerEnter2D(Collider2D coll)
+	{
+		if (coll.CompareTag ("Pickup")) {
+			usableObject = coll.gameObject;
+		}
+	}
+
+	/// <summary>
+	/// Raises the trigger exit2 d event.
+	/// </summary>
+	/// <param name="coll">Coll.</param>
+	void OnTriggerExit2D(Collider2D coll)
+	{
+		if (coll.CompareTag ("Pickup") && usableObject == coll.gameObject) {
+			usableObject = null;
+		}
 	}
 }

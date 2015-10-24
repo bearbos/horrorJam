@@ -15,6 +15,7 @@ TagManager:
   - Director
   - Decoration
   - House
+  - Pickup
   layers:
   - Default
   - TransparentFX
