@@ -71,8 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9251a74af20908419cd35d8f2d9bbf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreGiven: 0
-  candyGiven: 0
+  scoreGiven: 25
+  candyGiven: 3
 --- !u!212 &21292736
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -111,6 +111,14 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 595cb87bfce1b834297036df9925c3a4,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: scoreGiven
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: candyGiven
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 123750}

@@ -22,7 +22,8 @@ public class Candy : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-
+            other.gameObject.GetComponent<playerStats>().candy += candyGiven;
+            other.gameObject.GetComponent<playerStats>().score += scoreGiven;
             Destroy(gameObject);
         }
     }

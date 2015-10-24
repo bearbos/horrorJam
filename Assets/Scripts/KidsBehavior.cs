@@ -3,7 +3,7 @@ using System.Collections;
 
 public class KidsBehavior : MonoBehaviour
 {
-    int playerWantedLevel = 5;
+    int playerWantedLevel;
     bool run;
     float runChance;
     GameObject player;
@@ -15,6 +15,8 @@ public class KidsBehavior : MonoBehaviour
     [SerializeField]
     GameObject[] candy;
     bool facingRight = true;
+    int currHP;
+    int maHP;
     // Use this for initialization
     void Start()
     {
@@ -22,6 +24,7 @@ public class KidsBehavior : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
+        playerWantedLevel = Random.Range(0, 5);
         switch (playerWantedLevel)
         {
             case 0:
@@ -45,7 +48,7 @@ public class KidsBehavior : MonoBehaviour
             default:
                 break;
         }
-        Invoke("Death", 3.0f);
+        //Invoke("Death", 3.0f);
     }
 
     // Update is called once per frame
