@@ -10,6 +10,9 @@ GameObject:
   - 4: {fileID: 419946}
   - 212: {fileID: 21278328}
   - 114: {fileID: 11478730}
+  - 50: {fileID: 5008270}
+  - 58: {fileID: 5839918}
+  - 114: {fileID: 11460810}
   m_Layer: 0
   m_Name: ShitEgg
   m_TagString: Untagged
@@ -24,11 +27,52 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1699791, y: -.714415133, z: 0}
+  m_LocalPosition: {x: -2.66000009, y: -.100000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5008270
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128914}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!58 &5839918
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128914}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .25
+--- !u!114 &11460810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2c8a0d51a39c444a64d50e1bf08f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Distance: {x: 600, y: 450}
 --- !u!114 &11478730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -42,8 +86,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   price: 0
-  description: Yoshi
   durability: 0
+  description: Yoshi
+  weaponType: 2
+  anchor: {fileID: 0}
+  sprite: {fileID: 0}
 --- !u!212 &21278328
 SpriteRenderer:
   m_ObjectHideFlags: 1

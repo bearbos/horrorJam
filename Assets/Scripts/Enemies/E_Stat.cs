@@ -40,10 +40,6 @@ public class E_Stat : MonoBehaviour {
                 changeColor = false;
             }
         }
-        if (currHealth <= 0)
-        {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
-        }
     }
 
    
@@ -55,10 +51,11 @@ public class E_Stat : MonoBehaviour {
         if (currHealth <= 0)
         {
             gameObject.SendMessage("Death");
-            Vector3 scale = transform.localScale;
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - 90);
-            transform.localScale = scale;
-            GetComponent<BoxCollider2D>().enabled = false;
+            Destroy(gameObject);
+            //Vector3 scale = transform.localScale;
+            //transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - 90);
+            //transform.localScale = scale;
+            //GetComponent<BoxCollider2D>().enabled = false;
         }
         
     }
