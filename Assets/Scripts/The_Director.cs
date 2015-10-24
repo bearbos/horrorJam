@@ -67,5 +67,7 @@ public class The_Director : MonoBehaviour {
         GameObject newNode = GameObject.FindWithTag("NewNodeSpawn");
         Instantiate(LevelChunk, newNode.gameObject.transform.position, gameObject.transform.rotation);
         Destroy(newNode);
+
+        SpawnHouses();
     }
 }
