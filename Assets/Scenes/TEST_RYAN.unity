@@ -240,7 +240,7 @@ MonoBehaviour:
   - {fileID: 142496, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
   theDecorations:
   - {fileID: 142496, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
-  theEnemies: []
+  theKids: []
   theRoofs:
   - {fileID: 117820, guid: 73e1b5e50d72964419ef056b1ec61083, type: 2}
   - {fileID: 179414, guid: 7a83bcf2dd2910540a3b50bf6e75bd29, type: 2}
