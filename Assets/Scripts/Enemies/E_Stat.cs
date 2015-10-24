@@ -51,7 +51,7 @@ public class E_Stat : MonoBehaviour {
         if (currHealth <= 0)
         {
             gameObject.SendMessage("Death");
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         
     }

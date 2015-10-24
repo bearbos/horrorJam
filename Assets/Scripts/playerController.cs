@@ -131,6 +131,16 @@ public class playerController : MonoBehaviour {
 				this.GetComponent<Animator>().SetTrigger("ComboPunchThree");
 				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
 			}
+			else if (attackComboLength == 3 && GetComponent<playerStats>().superSayain)
+			{
+				this.GetComponent<Animator>().SetTrigger("ComboPunchFour");
+				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt() * 1.5f, facingRight);
+			}
+			else if (attackComboLength == 4 && GetComponent<playerStats>().superSayain)
+			{
+				this.GetComponent<Animator>().SetTrigger("ComboPunchFive");
+				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt() * 2.0f, facingRight);
+			}
 		} else if (!aT && (!objectInHand || usableObject.GetComponent<weapon>().weaponType == weaponType.FIST)) {
 			if (attackComboLength == 0)
 			{
@@ -165,6 +175,9 @@ public class playerController : MonoBehaviour {
 
 		comboInputTimer = 0.7f;
 		++attackComboLength;
+
+		if (attackComboLength > 5)
+			attackComboLength = 0;
 		inAttackAnimation = true;
 	}
 
