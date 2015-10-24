@@ -44,6 +44,7 @@ MonoBehaviour:
   price: 0
   description: Increase your damage
   wantedLevel: 0
+  sprite: {fileID: 21300000, guid: c6aed4ffdb4cc2a48b68eaba8530b7df, type: 3}
 --- !u!212 &21270976
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -90,6 +91,11 @@ Prefab:
       propertyPath: name
       value: DevilMask
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c6aed4ffdb4cc2a48b68eaba8530b7df,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 147620}
