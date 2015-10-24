@@ -30,6 +30,10 @@ public class The_Director : MonoBehaviour {
 
     [SerializeField]
     GameObject[] theRoofs;
+    [SerializeField]
+    GameObject[] theKids;
+    
+
 
     // Use this for initialization
     void Start ()
