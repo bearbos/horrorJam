@@ -6,6 +6,7 @@ public class e_StateMachine : MonoBehaviour {
          eAggro,
          eGuard;
     bool isRight;
+    bool attacking;
 
     float timer = 0;
 
@@ -19,6 +20,7 @@ public class e_StateMachine : MonoBehaviour {
         eIdle = true;
         eAggro = false;
         eGuard = false;
+        attacking = false;
         theAnimator = gameObject.GetComponent<Animator>();
         thePlayer = GameObject.FindWithTag("Player");
 	}
@@ -39,6 +41,8 @@ public class e_StateMachine : MonoBehaviour {
 
         if (eIdle)
         {
+            theAnimator.SetBool("run", false);
+
             timer += Time.deltaTime;
             if (timer >= 2f)
             {
@@ -54,10 +58,12 @@ public class e_StateMachine : MonoBehaviour {
                 }
                 timer = 0;
             }
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
 
         }
-        if(eAggro)
+        if (eAggro)
         {
+            theAnimator.SetBool("run", true);
             float _X = 0;
             float _Y = 0;
             if (playerX >= enemyX)         // enemy move left
@@ -69,16 +75,27 @@ public class e_StateMachine : MonoBehaviour {
             if (playerY <= enemyY)         // enemy move up
                 _Y = -2;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(_X , _Y );
+            Animationflip();
+
+            if (attacking == true)
+            {
+                
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            }
+           
+
 
         }
 
         if (eGuard)
         {
-            gameObject.SendMessage("Guard");
+           
+            //gameObject.SendMessage("Guard");
             float _X = 0;
             float _Y = 0;
-            if (DisToPlayer >= 6)
+            if (DisToPlayer >= 3)
             {
+                theAnimator.SetBool("run", true);
                 if (playerX >= enemyX)         // enemy move left
                     _X = 2;
                 if (playerX <= enemyX)         // enemy move right
@@ -88,8 +105,12 @@ public class e_StateMachine : MonoBehaviour {
                 if (playerY <= enemyY)         // enemy move up
                     _Y = -2;
             }
-            if (DisToPlayer <= 5)
+            if(DisToPlayer > 2 && DisToPlayer < 3)
+                theAnimator.SetBool("run", false);
+
+            if (DisToPlayer <= 2)
             {
+                theAnimator.SetBool("run", true);
                 if (playerX >= enemyX)         
                     _X = -2;
                 if (playerX <= enemyX)         
@@ -99,16 +120,11 @@ public class e_StateMachine : MonoBehaviour {
                 if (playerY <= enemyY)            
                     _Y = 2;
             }
-                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(_X, _Y);
+            
 
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(_X, _Y);
+            Animationflip();
         }
-
-    
-  
-
-
-
-
 	
 	}
 
@@ -130,4 +146,45 @@ public class e_StateMachine : MonoBehaviour {
         eAggro = false;
         eGuard = true;
     }
+
+    void Animationflip()
+    {
+        if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0)
+        {
+            if (!isRight)
+            {
+                theAnimator.transform.localScale = new Vector3(1, 1, 1);
+                isRight = true;
+            }
+            else 
+                isRight = true;
+
+        }
+        if (gameObject.GetComponent<Rigidbody2D>().velocity.x < 0)
+        {
+            if (isRight)
+            {
+                theAnimator.transform.localScale = new Vector3(-1, 1, 1);
+                isRight = false;
+            }
+            else
+                isRight = false;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        theAnimator.SetBool("run", false);
+        theAnimator.SetBool("attack1", true);
+        attacking = true;
+    }
+    
+    void OnCollisionExit2D(Collision2D other)
+    {
+        theAnimator.SetBool("run", true);
+        theAnimator.SetBool("attack1", false);
+        attacking = false;
+    }
+
+
 }
