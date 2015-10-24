@@ -19,6 +19,7 @@ public class Weather : MonoBehaviour
     float offsetY;
     Vector3 position;
     float timer = 0.0f;
+    int wtf;
     float idk;
     // Use this for initialization
     void Start()
@@ -30,7 +31,7 @@ public class Weather : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        effect = 2;
+        effect = 1;
         if (effect == 0)
         {
             rainSFX.Stop();
@@ -38,8 +39,10 @@ public class Weather : MonoBehaviour
         else if (effect == 1)
         {
             timer += Time.deltaTime;
-            for (int i = 0; i < 3; i++)
+           wtf =(int) GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().notoriety;
+            for (int i = 0; i < wtf; i++)
             {
+                
                 if (!rainSFX.isPlaying)
                     rainSFX.Play();
                 position = Camera.main.transform.position;

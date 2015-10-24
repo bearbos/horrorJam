@@ -7,6 +7,8 @@ public class E_Stat : MonoBehaviour {
     float currHealth;
     [SerializeField]
     float maxHealth;
+    public int score;
+    public float notriaty;
 
     //varibles for the visual feedback when the enemy takes damage
     Color baseColor;
@@ -20,6 +22,7 @@ public class E_Stat : MonoBehaviour {
         baseColor = gameObject.GetComponent<SpriteRenderer>().color;
         changeColor = false;
         delayColorChanger = 0.0f;
+        currHealth = maxHealth;
     }
 	
 	// Update is called once per frame
@@ -50,7 +53,9 @@ public class E_Stat : MonoBehaviour {
 
         if (currHealth <= 0)
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().score += score;
             gameObject.SendMessage("Death");
+
             Destroy(gameObject);
         }
         
