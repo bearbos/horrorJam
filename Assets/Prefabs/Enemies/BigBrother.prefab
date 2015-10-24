@@ -29,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.30158043, y: .662788332, z: .837890625}
+  m_LocalPosition: {x: 5.04500341, y: .035756588, z: .837890625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,8 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbe0387b2365b1488e421323c4d9981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHealth: 10000
-  maxHealth: 0
+  currHealth: 20
+  maxHealth: 20
 --- !u!114 &11476242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,6 +118,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a794864a5470fcc4894342b437e13bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  candy:
+  - {fileID: 177744, guid: 6ad354e406410614ca54437d2e40a5b0, type: 2}
+  - {fileID: 152860, guid: 610acc4992e7aec48b30e0b3df8e0054, type: 2}
+  - {fileID: 109278, guid: 22214b63e8e3d3f4aba8787b5a5f9e4d, type: 2}
+  - {fileID: 159468, guid: ba52f9071c7edf146a0adcadd2ab72ab, type: 2}
+  - {fileID: 120310, guid: d8f2b31e7b956a048880ee46afd0767d, type: 2}
+  - {fileID: 123750, guid: 0ee2b12c24551244ea0e7107d7388aa9, type: 2}
+  weapons:
+  - {fileID: 184632, guid: df6e919de7270214bbbe313e315ca731, type: 2}
+  - {fileID: 145528, guid: b898c10ea5bef82429c9dc0d85285096, type: 2}
+  - {fileID: 170576, guid: 424131ed427873345be1ff189d851766, type: 2}
+  - {fileID: 123374, guid: 293ed04ce3e8da0418149da64b76c432, type: 2}
 --- !u!212 &21228670
 SpriteRenderer:
   m_ObjectHideFlags: 1
