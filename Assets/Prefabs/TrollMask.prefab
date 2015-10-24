@@ -44,6 +44,7 @@ MonoBehaviour:
   price: 0
   description: ???? ???? ???? ???????
   wantedLevel: 0
+  sprite: {fileID: 21300000, guid: a9329d626a07c0b44881b4c29e1da730, type: 3}
 --- !u!212 &21291890
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -85,6 +86,11 @@ Prefab:
       propertyPath: name
       value: TrollMask
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a9329d626a07c0b44881b4c29e1da730,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 113996}

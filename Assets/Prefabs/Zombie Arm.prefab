@@ -58,6 +58,9 @@ MonoBehaviour:
   price: 0
   durability: 0
   description: Urghhhhh
+  weaponType: 0
+  anchor: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 41f35037f67dcb14087f005a6dd2ccdd, type: 3}
 --- !u!212 &21230966
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -90,7 +93,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 41f35037f67dcb14087f005a6dd2ccdd,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170576}
