@@ -47,7 +47,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6170808
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -81,6 +81,8 @@ MonoBehaviour:
   - {fileID: 152860, guid: 610acc4992e7aec48b30e0b3df8e0054, type: 2}
   - {fileID: 177744, guid: 6ad354e406410614ca54437d2e40a5b0, type: 2}
   - {fileID: 123750, guid: 0ee2b12c24551244ea0e7107d7388aa9, type: 2}
+  minCandy: 3
+  maxCandy: 5
 --- !u!114 &11410718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +128,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127534}

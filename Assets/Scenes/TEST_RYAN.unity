@@ -198,11 +198,15 @@ MonoBehaviour:
   - {fileID: 105310, guid: e4b361352aa71ad45ba62888232f5494, type: 2}
   - {fileID: 109180, guid: 0bc353d85a6a23d4a970df00b804904c, type: 2}
   - {fileID: 126366, guid: 12f3a1512cbbbca44adc664d53412a59, type: 2}
-  theEnemies: []
+  theKids:
+  - {fileID: 188270, guid: 4cefa127916d6d74bb55eb88fb1dfd8b, type: 2}
+  - {fileID: 127534, guid: ab30b4d8e7083574c96a5fbe1a5e799e, type: 2}
+  - {fileID: 155658, guid: c644f460cfeb47543906b75abc98c0ba, type: 2}
+  - {fileID: 196268, guid: d9151faf4c1d1124284b5117621bc882, type: 2}
+  - {fileID: 190104, guid: e7bb5214b765e4c459fe2aa78b2c24da, type: 2}
   theRoofs:
   - {fileID: 117820, guid: 73e1b5e50d72964419ef056b1ec61083, type: 2}
   - {fileID: 179414, guid: 7a83bcf2dd2910540a3b50bf6e75bd29, type: 2}
-  theKids: []
 --- !u!1001 &1626278060
 Prefab:
   m_ObjectHideFlags: 0

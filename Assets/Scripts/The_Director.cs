@@ -30,8 +30,7 @@ public class The_Director : MonoBehaviour {
 
     [SerializeField]
     GameObject[] theRoofs;
-    [SerializeField]
-    GameObject[] theKids;
+ 
     
 
 
@@ -41,6 +40,7 @@ public class The_Director : MonoBehaviour {
         SpawnHouses();
         SpawnDecorations();
         SpawnRoofs();
+        SpawnEnemies();
 	}
 	
 	// Update is called once per frame
@@ -168,14 +168,14 @@ public class The_Director : MonoBehaviour {
         }
 
         // Calculate Kids
-        numChildren = (int)((numChildren - wantedLevel) * ((float)streetLvl / 10.0f) + (int)(candyLevel / streetLvl));
+        numChildren = (int)((numChildren - wantedLevel) * ((float)streetLvl / 10.0f) + (int)(candyLevel / 2));
 
         // Spawn Children
         for (int i = 0; i < numChildren; i++)
         {
             Vector3 newPos = enemyNodes[i].gameObject.transform.position;
             int kidIndex = Random.Range(0, theKids.Length);
-            GameObject tempKids = Instantiate(theRoofs[kidIndex], newPos, gameObject.transform.rotation) as GameObject;
+            GameObject tempKids = Instantiate(theKids[kidIndex], newPos, gameObject.transform.rotation) as GameObject;
         }
 
         int deleteEnemies = enemySize;
@@ -198,6 +198,7 @@ public class The_Director : MonoBehaviour {
         SpawnHouses();
         SpawnDecorations();
         SpawnRoofs();
+        SpawnEnemies();
 
         if(currChunk)
             Destroy(currChunk);
