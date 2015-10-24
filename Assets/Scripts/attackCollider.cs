@@ -21,9 +21,9 @@ public class attackCollider : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (moveDirection)
-			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (2.0f, 0.0f);
+			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (3.0f, 0.0f);
 		else
-			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-2.0f, 0.0f);
+			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-3.0f, 0.0f);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
