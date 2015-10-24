@@ -10,7 +10,7 @@ public class attackCollider : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		startPosition = this.transform.position;
-		attackRange = 1.0f;
+		attackRange = 2.0f;
 	}
 	
 	// Update is called once per frame
