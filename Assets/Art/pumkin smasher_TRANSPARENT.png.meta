@@ -1,10 +1,50 @@
 fileFormatVersion: 2
 guid: bb95176866ca08042a3611eebcd01aae
-timeCreated: 1445647761
+timeCreated: 1445652983
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: pumkin smasher_TRANSPARENT_0
+    21300002: pumkin smasher_TRANSPARENT_1
+    21300004: pumkin smasher_TRANSPARENT_2
+    21300006: pumkin smasher_TRANSPARENT_3
+    21300008: pumkin smasher_TRANSPARENT_4
+    21300010: pumkin smasher_TRANSPARENT_5
+    21300012: pumkin smasher_TRANSPARENT_6
+    21300014: pumkin smasher_TRANSPARENT_7
+    21300016: pumkin smasher_TRANSPARENT_8
+    21300018: pumkin smasher_TRANSPARENT_9
+    21300020: pumkin smasher_TRANSPARENT_10
+    21300022: pumkin smasher_TRANSPARENT_11
+    21300024: pumkin smasher_TRANSPARENT_12
+    21300026: pumkin smasher_TRANSPARENT_13
+    21300028: pumkin smasher_TRANSPARENT_14
+    21300030: pumkin smasher_TRANSPARENT_15
+    21300032: pumkin smasher_TRANSPARENT_16
+    21300034: pumkin smasher_TRANSPARENT_17
+    21300036: pumkin smasher_TRANSPARENT_18
+    21300038: pumkin smasher_TRANSPARENT_19
+    21300040: pumkin smasher_TRANSPARENT_20
+    21300042: pumkin smasher_TRANSPARENT_21
+    21300044: pumkin smasher_TRANSPARENT_22
+    21300046: pumkin smasher_TRANSPARENT_23
+    21300048: pumkin smasher_TRANSPARENT_24
+    21300050: pumkin smasher_TRANSPARENT_25
+    21300052: pumkin smasher_TRANSPARENT_26
+    21300054: pumkin smasher_TRANSPARENT_27
+    21300056: pumkin smasher_TRANSPARENT_28
+    21300058: pumkin smasher_TRANSPARENT_29
+    21300060: pumkin smasher_TRANSPARENT_30
+    21300062: pumkin smasher_TRANSPARENT_31
+    21300064: pumkin smasher_TRANSPARENT_32
+    21300066: pumkin smasher_TRANSPARENT_33
+    21300068: pumkin smasher_TRANSPARENT_34
+    21300070: pumkin smasher_TRANSPARENT_35
+    21300072: pumkin smasher_TRANSPARENT_36
+    21300074: pumkin smasher_TRANSPARENT_37
+    21300076: pumkin smasher_TRANSPARENT_38
+    21300078: pumkin smasher_TRANSPARENT_39
+    21300080: pumkin smasher_TRANSPARENT_40
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -58,8 +98,408 @@ TextureImporter:
         y: 4204
         width: 37
         height: 64
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 4205
+        width: 38
+        height: 59
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 4205
+        width: 37
+        height: 64
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_3
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 4205
+        width: 37
+        height: 64
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_4
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 4205
+        width: 38
+        height: 64
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_5
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 4205
+        width: 38
+        height: 64
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_6
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 4205
+        width: 38
+        height: 64
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_7
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 4205
+        width: 38
+        height: 64
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_8
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 303
+        width: 53
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_9
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 302
+        width: 71
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_10
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 303
+        width: 65
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_11
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 303
+        width: 50
+        height: 54
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_12
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 303
+        width: 67
+        height: 54
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_13
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 303
+        width: 59
+        height: 54
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_14
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 303
+        width: 43
+        height: 54
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_15
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 303
+        width: 44
+        height: 54
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_16
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 303
+        width: 42
+        height: 54
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_17
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 303
+        width: 60
+        height: 98
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_18
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 303
+        width: 61
+        height: 106
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_19
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 303
+        width: 56
+        height: 106
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_20
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 303
+        width: 58
+        height: 108
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_21
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 303
+        width: 57
+        height: 108
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_22
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 303
+        width: 36
+        height: 92
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_23
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 303
+        width: 40
+        height: 92
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_24
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 302
+        width: 49
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_25
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 303
+        width: 40
+        height: 59
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_26
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 303
+        width: 41
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_27
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1756
+        width: 34
+        height: 60
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_28
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1756
+        width: 35
+        height: 60
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_29
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1756
+        width: 61
+        height: 60
+      alignment: 9
+      pivot: {x: .0837816298, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_30
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1756
+        width: 53
+        height: 60
+      alignment: 9
+      pivot: {x: .137029678, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_31
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1756
+        width: 55
+        height: 59
+      alignment: 9
+      pivot: {x: .117374487, y: -.00455798116}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_32
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 1756
+        width: 52
+        height: 59
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_33
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 1756
+        width: 36
+        height: 54
+      alignment: 9
+      pivot: {x: .127019241, y: -.0049800165}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_34
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1357
+        width: 35
+        height: 59
+      alignment: 9
+      pivot: {x: .770292759, y: .00094759668}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_35
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1358
+        width: 43
+        height: 59
+      alignment: 9
+      pivot: {x: .579620898, y: .0164236296}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_36
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1355
+        width: 57
+        height: 61
+      alignment: 9
+      pivot: {x: .315800458, y: .000545107061}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_37
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1355
+        width: 51
+        height: 63
+      alignment: 9
+      pivot: {x: .383638561, y: .00727384072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_38
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1355
+        width: 43
+        height: 63
+      alignment: 9
+      pivot: {x: .261136442, y: 2.71267363e-05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_39
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1354
+        width: 36
+        height: 62
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_40
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1349
+        width: 42
+        height: 64
+      alignment: 9
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

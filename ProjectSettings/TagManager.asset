@@ -9,6 +9,7 @@ TagManager:
   - RoofSpawner
   - miscSpawner
   - EnemySpawner
+  - Enemy
   layers:
   - Default
   - TransparentFX

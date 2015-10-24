@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class E_Stat : MonoBehaviour {
+public class attackCollider : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -11,5 +11,11 @@ public class E_Stat : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.CompareTag ("Enemy"))
+			;
 	}
 }
