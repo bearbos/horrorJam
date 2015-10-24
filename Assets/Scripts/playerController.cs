@@ -119,44 +119,44 @@ public class playerController : MonoBehaviour {
 			if (attackComboLength == 0)
 			{
 				this.GetComponent<Animator> ().SetTrigger ("ComboPunchOne");
-				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
+				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
 			}
 			else if (attackComboLength == 1)
 			{
 				this.GetComponent<Animator>().SetTrigger("ComboPunchTwo");
-				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
+				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
 			}
 			else if (attackComboLength == 2)
 			{
 				this.GetComponent<Animator>().SetTrigger("ComboPunchThree");
-				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
+				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
 			}
 			else if (attackComboLength == 3 && GetComponent<playerStats>().superSayain)
 			{
 				this.GetComponent<Animator>().SetTrigger("ComboPunchFour");
-				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt() * 1.5f, facingRight);
+				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt() * 1.5f, facingRight);
 			}
 			else if (attackComboLength == 4 && GetComponent<playerStats>().superSayain)
 			{
 				this.GetComponent<Animator>().SetTrigger("ComboPunchFive");
-				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt() * 2.0f, facingRight);
+				//(GetComponent<playerStats>().TotalDamageDealt() * 2.0f, facingRight);
 			}
 		} else if (!aT && (!objectInHand || usableObject.GetComponent<weapon>().weaponType == weaponType.FIST)) {
 			if (attackComboLength == 0)
 			{
 				this.GetComponent<Animator>().SetTrigger("ComboKickOne");
-				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
+				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
 			}
 			else if (attackComboLength == 1)
 			{
 				this.GetComponent<Animator>().SetTrigger("ComboKickTwo");
-				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt() * 1.5f, facingRight);
+				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt() * 1.5f, facingRight);
 			}
 			else if (attackComboLength == 2)
 			{
 				this.GetComponent<Animator>().SetTrigger("ComboKickThree");
-				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
-				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), !facingRight);
+				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
+				//(GetComponent<playerStats>().TotalDamageDealt(), !facingRight);
 			}
 		}
 
@@ -164,12 +164,12 @@ public class playerController : MonoBehaviour {
 			if (attackComboLength == 0)
 			{
 				this.GetComponent<Animator>().SetTrigger ("SwordWeaponOne");
-				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
+				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
 			}
 			else if (attackComboLength >= 1)
 			{
 				this.GetComponent<Animator>().SetTrigger("SwordWeaponTwo");
-				CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
+				//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
 			}
 		}
 
@@ -192,11 +192,23 @@ public class playerController : MonoBehaviour {
 	/// <summary>
 	/// Creates the attack collider.
 	/// </summary>
-	void CreateAttackCollider(float damage, bool direction)
+	public void CreateAttackCollider(float numshots)
 	{
-		attackColliderPrefab.GetComponent<attackCollider> ().dmg = GetComponent<playerStats> ().baseDamage;
-		attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = direction;
+		attackColliderPrefab.GetComponent<attackCollider> ().dmg = GetComponent<playerStats> ().TotalDamageDealt();
+		if (GetComponent<Rigidbody2D> ().transform.localScale.x < 0)
+			attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = false;
+		else if (GetComponent<Rigidbody2D>().transform.localScale.x > 0)
+			attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = true;
 		Instantiate (attackColliderPrefab, this.transform.position, Quaternion.identity);
+
+		if (numshots != 0) {
+			attackColliderPrefab.GetComponent<attackCollider> ().dmg = GetComponent<playerStats> ().TotalDamageDealt();
+			if (GetComponent<Rigidbody2D> ().transform.localScale.x < 0)
+				attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = true;
+			else if (GetComponent<Rigidbody2D>().transform.localScale.x > 0)
+				attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = false;
+			Instantiate (attackColliderPrefab, this.transform.position, Quaternion.identity);
+		}
 	}
 
 	/// <summary>

@@ -63,4 +63,9 @@ public class playerStats : MonoBehaviour {
 				adrenalineFalloffTime = 2.5f;
 		}
 	}
+
+	public void TakeDamage(float damage)
+	{
+
+	}
 }
