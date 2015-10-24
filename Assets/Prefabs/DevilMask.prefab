@@ -40,6 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ce2f7566a2bd844bc421ea7a7b54d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: DevilMask
   price: 0
   description: Increase your damage
   wantedLevel: 0
@@ -84,6 +85,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: description
       value: Increase your damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: DevilMask
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -1,0 +1,1398 @@
+fileFormatVersion: 2
+guid: 876394e170affec4692a172a6344c1cc
+timeCreated: 1445687194
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PS-OfficerNiao_0
+    21300002: PS-OfficerNiao_1
+    21300004: PS-OfficerNiao_2
+    21300006: PS-OfficerNiao_3
+    21300008: PS-OfficerNiao_4
+    21300010: PS-OfficerNiao_5
+    21300012: PS-OfficerNiao_6
+    21300014: PS-OfficerNiao_7
+    21300016: PS-OfficerNiao_8
+    21300018: PS-OfficerNiao_9
+    21300020: PS-OfficerNiao_10
+    21300022: PS-OfficerNiao_11
+    21300024: PS-OfficerNiao_12
+    21300026: PS-OfficerNiao_13
+    21300028: PS-OfficerNiao_14
+    21300030: PS-OfficerNiao_15
+    21300032: PS-OfficerNiao_16
+    21300034: PS-OfficerNiao_17
+    21300036: PS-OfficerNiao_18
+    21300038: PS-OfficerNiao_19
+    21300040: PS-OfficerNiao_20
+    21300042: PS-OfficerNiao_21
+    21300044: PS-OfficerNiao_22
+    21300046: PS-OfficerNiao_23
+    21300048: PS-OfficerNiao_24
+    21300050: PS-OfficerNiao_25
+    21300052: PS-OfficerNiao_26
+    21300054: PS-OfficerNiao_27
+    21300056: PS-OfficerNiao_28
+    21300058: PS-OfficerNiao_29
+    21300060: PS-OfficerNiao_30
+    21300062: PS-OfficerNiao_31
+    21300064: PS-OfficerNiao_32
+    21300066: PS-OfficerNiao_33
+    21300068: PS-OfficerNiao_34
+    21300070: PS-OfficerNiao_35
+    21300072: PS-OfficerNiao_36
+    21300074: PS-OfficerNiao_37
+    21300076: PS-OfficerNiao_38
+    21300078: PS-OfficerNiao_39
+    21300080: PS-OfficerNiao_40
+    21300082: PS-OfficerNiao_41
+    21300084: PS-OfficerNiao_42
+    21300086: PS-OfficerNiao_43
+    21300088: PS-OfficerNiao_44
+    21300090: PS-OfficerNiao_45
+    21300092: PS-OfficerNiao_46
+    21300094: PS-OfficerNiao_47
+    21300096: PS-OfficerNiao_48
+    21300098: PS-OfficerNiao_49
+    21300100: PS-OfficerNiao_50
+    21300102: PS-OfficerNiao_51
+    21300104: PS-OfficerNiao_52
+    21300106: PS-OfficerNiao_53
+    21300108: PS-OfficerNiao_54
+    21300110: PS-OfficerNiao_55
+    21300112: PS-OfficerNiao_56
+    21300114: PS-OfficerNiao_57
+    21300116: PS-OfficerNiao_58
+    21300118: PS-OfficerNiao_59
+    21300120: PS-OfficerNiao_60
+    21300122: PS-OfficerNiao_61
+    21300124: PS-OfficerNiao_62
+    21300126: PS-OfficerNiao_63
+    21300128: PS-OfficerNiao_64
+    21300130: PS-OfficerNiao_65
+    21300132: PS-OfficerNiao_66
+    21300134: PS-OfficerNiao_67
+    21300136: PS-OfficerNiao_68
+    21300138: PS-OfficerNiao_69
+    21300140: PS-OfficerNiao_70
+    21300142: PS-OfficerNiao_71
+    21300144: PS-OfficerNiao_72
+    21300146: PS-OfficerNiao_73
+    21300148: PS-OfficerNiao_74
+    21300150: PS-OfficerNiao_75
+    21300152: PS-OfficerNiao_76
+    21300154: PS-OfficerNiao_77
+    21300156: PS-OfficerNiao_78
+    21300158: PS-OfficerNiao_79
+    21300160: PS-OfficerNiao_80
+    21300162: PS-OfficerNiao_81
+    21300164: PS-OfficerNiao_82
+    21300166: PS-OfficerNiao_83
+    21300168: PS-OfficerNiao_84
+    21300170: PS-OfficerNiao_85
+    21300172: PS-OfficerNiao_86
+    21300174: PS-OfficerNiao_87
+    21300176: PS-OfficerNiao_88
+    21300178: PS-OfficerNiao_89
+    21300180: PS-OfficerNiao_90
+    21300182: PS-OfficerNiao_91
+    21300184: PS-OfficerNiao_92
+    21300186: PS-OfficerNiao_93
+    21300188: PS-OfficerNiao_94
+    21300190: PS-OfficerNiao_95
+    21300192: PS-OfficerNiao_96
+    21300194: PS-OfficerNiao_97
+    21300196: PS-OfficerNiao_98
+    21300198: PS-OfficerNiao_99
+    21300200: PS-OfficerNiao_100
+    21300202: PS-OfficerNiao_101
+    21300204: PS-OfficerNiao_102
+    21300206: PS-OfficerNiao_103
+    21300208: PS-OfficerNiao_104
+    21300210: PS-OfficerNiao_105
+    21300212: PS-OfficerNiao_106
+    21300214: PS-OfficerNiao_107
+    21300216: PS-OfficerNiao_108
+    21300218: PS-OfficerNiao_109
+    21300220: PS-OfficerNiao_110
+    21300222: PS-OfficerNiao_111
+    21300224: PS-OfficerNiao_112
+    21300226: PS-OfficerNiao_113
+    21300228: PS-OfficerNiao_114
+    21300230: PS-OfficerNiao_115
+    21300232: PS-OfficerNiao_116
+    21300234: PS-OfficerNiao_117
+    21300236: PS-OfficerNiao_118
+    21300238: PS-OfficerNiao_119
+    21300240: PS-OfficerNiao_120
+    21300242: PS-OfficerNiao_121
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PS-OfficerNiao_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 199
+        width: 48
+        height: 28
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_2
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_4
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 198
+        width: 7
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_5
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_6
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_8
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_9
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_10
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_11
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_12
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_13
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_14
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_15
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 198
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 167
+        width: 48
+        height: 28
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_17
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_18
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_19
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_20
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 186
+        width: 7
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_21
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_22
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_23
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_24
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_25
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_26
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_27
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_28
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_29
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_30
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_31
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 186
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_32
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_33
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_34
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_35
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_36
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_37
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 174
+        width: 7
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_39
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_40
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_41
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_42
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_43
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_44
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_45
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_46
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_47
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_48
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 174
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_49
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_50
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_51
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_52
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_53
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_54
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_55
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_56
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 162
+        width: 7
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_57
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_58
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_59
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_60
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_61
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_62
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_63
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_64
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 162
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_65
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 135
+        width: 48
+        height: 27
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_66
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_67
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_68
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_69
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_70
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_71
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_72
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_73
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_74
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_75
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_76
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_77
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_78
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_79
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_80
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_81
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_82
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 150
+        width: 5
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_83
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 150
+        width: 7
+        height: 5
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_84
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 103
+        width: 48
+        height: 27
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_85
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 70
+        width: 29
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_86
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 70
+        width: 29
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_87
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 70
+        width: 26
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_88
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 70
+        width: 28
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_89
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 70
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_90
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 70
+        width: 32
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_91
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 70
+        width: 40
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_92
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 70
+        width: 37
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_93
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 92
+        width: 7
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_94
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 67
+        width: 48
+        height: 35
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_95
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 70
+        width: 35
+        height: 20
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_96
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 70
+        width: 33
+        height: 19
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_97
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 37
+        width: 35
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_98
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 37
+        width: 35
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_99
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 37
+        width: 26
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_100
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 37
+        width: 28
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_101
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 37
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_102
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 37
+        width: 34
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_103
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 37
+        width: 37
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_104
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 34
+        width: 29
+        height: 35
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_105
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 57
+        width: 9
+        height: 8
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_106
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 37
+        width: 51
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_107
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 37
+        width: 26
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_108
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 37
+        width: 26
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_109
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 4
+        width: 26
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_110
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 4
+        width: 26
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_111
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 4
+        width: 26
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_112
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 4
+        width: 28
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_113
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 4
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_114
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 4
+        width: 35
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_115
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 4
+        width: 32
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_116
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 18
+        width: 12
+        height: 12
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_117
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 4
+        width: 29
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_118
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 24
+        width: 9
+        height: 8
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_119
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 4
+        width: 49
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_120
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 4
+        width: 36
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PS-OfficerNiao_121
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 4
+        width: 28
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
