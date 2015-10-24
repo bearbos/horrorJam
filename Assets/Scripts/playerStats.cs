@@ -17,4 +17,11 @@ public class playerStats : MonoBehaviour {
         baseDamage = 20.0f * damageMulti;
         timer -= (Time.deltaTime * timeMulti);
 	}
+
+	public float TotalDamageDealt()
+	{
+		float damageTotal = baseDamage + damageModifier;
+
+		return damageTotal;
+	}
 }

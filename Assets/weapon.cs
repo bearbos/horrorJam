@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum weaponType {SWORD, FIST, THROWN};
+
 public class weapon : MonoBehaviour {
 
     public float damage;
 	public int price, durability;
     public string description;
-	GameObject anchor;
+	public weaponType weaponType;
+	public GameObject anchor;
 
 	// Use this for initialization
 	void Start () {
@@ -22,10 +25,14 @@ public class weapon : MonoBehaviour {
 		if (anchor != null) {
 			this.transform.position = anchor.transform.position;
 			
-			if (GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().transform.localScale.x < 0)
+			if (GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().transform.localScale.x < 0) {
 				this.transform.rotation = new Quaternion (anchor.transform.rotation.x, anchor.transform.rotation.y, -anchor.transform.rotation.z, 1.0f);
-			else
+				this.transform.localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
+			}
+			else {
 				this.transform.rotation = anchor.transform.rotation;
+				this.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			}
 		}
 	}
 
