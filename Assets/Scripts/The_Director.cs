@@ -26,10 +26,13 @@ public class The_Director : MonoBehaviour {
     GameObject[] theDecorations;
 
     [SerializeField]
-    GameObject[] theEnemies;
+    GameObject[] theKids;
 
     [SerializeField]
     GameObject[] theRoofs;
+ 
+    
+
 
     // Use this for initialization
     void Start ()
@@ -37,6 +40,7 @@ public class The_Director : MonoBehaviour {
         SpawnHouses();
         SpawnDecorations();
         SpawnRoofs();
+        SpawnEnemies();
 	}
 	
 	// Update is called once per frame
@@ -145,6 +149,45 @@ public class The_Director : MonoBehaviour {
 
     }
 
+    void SpawnEnemies()
+    {
+        GameObject[] enemyNodes = GameObject.FindGameObjectsWithTag("EnemySpawner");
+
+        int enemySize = enemyNodes.Length;
+
+        // Street Number
+        // Amt Candy
+        // Wanted Level
+
+        int numChildren = 10;
+        int candyLevel = 15;
+
+        for(int i = candy; i > 0; i -= 50)
+        {
+            candyLevel -= 1;
+        }
+
+        // Calculate Kids
+        numChildren = (int)((numChildren - wantedLevel) * ((float)streetLvl / 10.0f) + (int)(candyLevel / 2));
+
+        // Spawn Children
+        for (int i = 0; i < numChildren; i++)
+        {
+            Vector3 newPos = enemyNodes[i].gameObject.transform.position;
+            int kidIndex = Random.Range(0, theKids.Length);
+            GameObject tempKids = Instantiate(theKids[kidIndex], newPos, gameObject.transform.rotation) as GameObject;
+        }
+
+        int deleteEnemies = enemySize;
+        // Destroy all the house tags
+        for (int i = enemySize; i > 0; i--)
+        {
+            Destroy(enemyNodes[deleteEnemies - 1]);
+            deleteEnemies -= 1;
+            
+        }
+    }
+
     public void SpawnNewChunk()
     {
         GameObject newNode = GameObject.FindWithTag("NewNodeSpawn");
@@ -155,6 +198,7 @@ public class The_Director : MonoBehaviour {
         SpawnHouses();
         SpawnDecorations();
         SpawnRoofs();
+        SpawnEnemies();
 
         if(currChunk)
             Destroy(currChunk);
