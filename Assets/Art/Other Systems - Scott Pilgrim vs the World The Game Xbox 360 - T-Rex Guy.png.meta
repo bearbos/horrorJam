@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: fa300d17911805849b7e239b77e0e92c
-timeCreated: 1445648030
+timeCreated: 1445650919
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -86,8 +86,8 @@ TextureImporter:
         y: 247
         width: 64
         height: 77
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Other Systems - Scott Pilgrim vs the World The Game Xbox 360 - T-Rex Guy_1
       rect:
@@ -96,8 +96,8 @@ TextureImporter:
         y: 246
         width: 59
         height: 79
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Other Systems - Scott Pilgrim vs the World The Game Xbox 360 - T-Rex Guy_2
       rect:
@@ -106,8 +106,8 @@ TextureImporter:
         y: 246
         width: 56
         height: 80
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Other Systems - Scott Pilgrim vs the World The Game Xbox 360 - T-Rex Guy_3
       rect:
@@ -116,8 +116,8 @@ TextureImporter:
         y: 246
         width: 56
         height: 80
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Other Systems - Scott Pilgrim vs the World The Game Xbox 360 - T-Rex Guy_4
       rect:
@@ -126,8 +126,8 @@ TextureImporter:
         y: 248
         width: 56
         height: 80
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Other Systems - Scott Pilgrim vs the World The Game Xbox 360 - T-Rex Guy_5
       rect:
@@ -136,8 +136,8 @@ TextureImporter:
         y: 246
         width: 58
         height: 80
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Other Systems - Scott Pilgrim vs the World The Game Xbox 360 - T-Rex Guy_6
       rect:
@@ -146,8 +146,8 @@ TextureImporter:
         y: 162
         width: 57
         height: 75
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Other Systems - Scott Pilgrim vs the World The Game Xbox 360 - T-Rex Guy_7
       rect:
@@ -156,8 +156,8 @@ TextureImporter:
         y: 164
         width: 56
         height: 77
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Other Systems - Scott Pilgrim vs the World The Game Xbox 360 - T-Rex Guy_8
       rect:
@@ -166,8 +166,8 @@ TextureImporter:
         y: 163
         width: 56
         height: 76
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Other Systems - Scott Pilgrim vs the World The Game Xbox 360 - T-Rex Guy_9
       rect:
@@ -176,8 +176,8 @@ TextureImporter:
         y: 163
         width: 58
         height: 74
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Other Systems - Scott Pilgrim vs the World The Game Xbox 360 - T-Rex Guy_10
       rect:
@@ -186,8 +186,8 @@ TextureImporter:
         y: 161
         width: 66
         height: 81
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Other Systems - Scott Pilgrim vs the World The Game Xbox 360 - T-Rex Guy_11
       rect:
@@ -196,8 +196,8 @@ TextureImporter:
         y: 161
         width: 61
         height: 81
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

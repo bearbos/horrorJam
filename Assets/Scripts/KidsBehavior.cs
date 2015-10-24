@@ -3,7 +3,7 @@ using System.Collections;
 
 public class KidsBehavior : MonoBehaviour
 {
-    int playerWantedLevel = 0;
+    int playerWantedLevel = 5;
     bool run;
     float runChance;
     GameObject player;
@@ -14,6 +14,7 @@ public class KidsBehavior : MonoBehaviour
     float runDistance;
     [SerializeField]
     GameObject[] candy;
+    bool facingRight = true;
     // Use this for initialization
     void Start()
     {
@@ -44,6 +45,7 @@ public class KidsBehavior : MonoBehaviour
             default:
                 break;
         }
+        Invoke("Death", 3.0f);
     }
 
     // Update is called once per frame
@@ -60,10 +62,18 @@ public class KidsBehavior : MonoBehaviour
                 if (player.transform.position.x > transform.position.x)
                 {
                     runDirection.x = -1;
+                    if (facingRight)
+                    {
+                        Flip(); 
+                    }
                 }
                 else if (player.transform.position.x < transform.position.x)
                 {
                     runDirection.x = 1;
+                    if (!facingRight)
+                    {
+                        Flip();
+                    }
                 }
                 else
                 {
@@ -81,26 +91,45 @@ public class KidsBehavior : MonoBehaviour
                 {
                     runDirection.y = 0;
                 }
-                Vector2 rb = GetComponent<Rigidbody2D>().velocity;
-                rb = new Vector2(runDirection.x * runSpeed, runDirection.y * runSpeed);
             }
         }
         else
         {
             run = false;
+            runDirection = Vector2.zero;
         }
+        Vector2 rb = GetComponent<Rigidbody2D>().velocity;
+        rb = new Vector2(runDirection.x * runSpeed, runDirection.y * runSpeed);
+        GetComponent<Rigidbody2D>().velocity = rb;
     }
     void Death()
     {
-        int spawnedNum = Random.Range(0, 3);
-        for (int i = 0; i <= spawnedNum; i++)
+        int spawnedNum = Random.Range(3, 5);
+        Debug.Log(spawnedNum);
+        for (int i = 0; i < spawnedNum; i++)
         {
             GameObject summonedCandy = Instantiate(candy[Random.Range(0, candy.Length)]);
-            Vector2 pos = summonedCandy.transform.position;
-            pos.x += Random.Range(-1, 1);
-            pos.y += Random.Range(-1, 1);
-            summonedCandy.transform.position = pos;
+            summonedCandy.transform.position = transform.position;
+            Rigidbody2D candyRB = summonedCandy.GetComponent<Rigidbody2D>();
+            int xVel = 0;
+            if (facingRight)
+            {
+                xVel = Random.Range(2, 7);
+            }
+            else if (!facingRight)
+            {
+                xVel = Random.Range(-7, -2);
+            }
+            candyRB.velocity = new Vector2(xVel, Random.Range(5, 10));
+            candyRB.gravityScale = 1.5f;
         }
         Destroy(gameObject);
+    }
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 scale = transform.localScale;
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
+        transform.localScale = scale;
     }
 }
