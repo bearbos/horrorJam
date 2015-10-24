@@ -12,6 +12,8 @@ public class Dynamic_Camera : MonoBehaviour {
     Vector3 newCamPos;
     float posDiff;
 
+    float gameTime = 0.0f;
+
     // Data Members
     bool updateCamera = false;
 
@@ -26,6 +28,13 @@ public class Dynamic_Camera : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        gameTime += Time.deltaTime;
+
+        // Clean up old shit
+        if(gameTime >= 1.0f)
+        {
+            CleanUp();
+        }
         // Update current position
         currPos = thePlayer.transform.position;
 
@@ -66,5 +75,30 @@ public class Dynamic_Camera : MonoBehaviour {
         }
 
         updateCamera = false;
+    }
+
+    void CleanUp()
+    {
+        // Destroy old chunks
+        GameObject[] oldChunks = GameObject.FindGameObjectsWithTag("Chunk");
+
+        int chunkSize = oldChunks.Length;
+
+        for (int i = chunkSize; i > 0; i--)
+        {
+            if (oldChunks[i - 1].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 40.0f))
+                Destroy(oldChunks[i - 1]);
+        }
+
+        // Destroy old houses
+        GameObject[] oldHouse = GameObject.FindGameObjectsWithTag("House");
+
+        int houseSize = oldHouse.Length;
+
+        for (int i = houseSize; i > 0; i--)
+        {
+            if (oldHouse[i - 1].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 40.0f))
+                Destroy(oldHouse[i - 1]);
+        }
     }
 }
