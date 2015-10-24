@@ -79,7 +79,21 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: .483333319
+  - time: 0
+    functionName: AnimationStart
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: .0833333358
+    functionName: CreateAttackCollider
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: .466666669
     functionName: AnimationEnd
     data: 
     objectReferenceParameter: {fileID: 0}
