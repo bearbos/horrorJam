@@ -49,6 +49,7 @@ public class E_Stat : MonoBehaviour {
         changeColor = true;
 
         if (currHealth <= 0)
+            gameObject.SendMessage("Death");
             Destroy(gameObject);
         
     }

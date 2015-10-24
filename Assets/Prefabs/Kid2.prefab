@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11453178}
   m_Layer: 0
   m_Name: Kid2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.59000003, y: -2.31999993, z: 0}
+  m_LocalPosition: {x: 7.26029444, y: -1.49540019, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,9 +58,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: .360000014}
+  m_Offset: {x: 0, y: 1.11743486}
   serializedVersion: 2
-  m_Size: {x: .589999974, y: .720000029}
+  m_Size: {x: 1.82795596, y: 2.23486972}
 --- !u!114 &11453178
 MonoBehaviour:
   m_ObjectHideFlags: 1

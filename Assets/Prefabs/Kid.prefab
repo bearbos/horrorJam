@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.12564373, y: -2.36199999, z: 0}
+  m_LocalPosition: {x: 3.67673397, y: 1.55062568, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,9 +59,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: .395000011}
+  m_Offset: {x: -.0488672256, y: 1.23387921}
   serializedVersion: 2
-  m_Size: {x: .589999974, y: .790000021}
+  m_Size: {x: 1.86053443, y: 2.46775818}
 --- !u!95 &9590268
 Animator:
   serializedVersion: 3
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a98d5d4289eca4f9189c3e9293cdf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 1
+  runSpeed: 0
   runDistance: 6
   candy:
   - {fileID: 120310, guid: d8f2b31e7b956a048880ee46afd0767d, type: 2}
