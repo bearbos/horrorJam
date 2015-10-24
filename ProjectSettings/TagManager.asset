@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Chunk
+  - HouseSpawner
+  - RoofSpawner
+  - miscSpawner
+  - EnemySpawner
+  - Enemy
+  - NewNodeSpawn
+  - NodeSpawner
+  - Director
+  - Decoration
+  - House
   layers:
   - Default
   - TransparentFX

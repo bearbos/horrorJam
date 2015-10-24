@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class E_Stat : MonoBehaviour {
+public class StoreScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
