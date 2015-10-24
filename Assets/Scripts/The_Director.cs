@@ -9,6 +9,8 @@ public class The_Director : MonoBehaviour {
     int candy = 0;
     float healthRatio = 1.0f;
 
+    public GameObject LevelChunk;
+
     // Things to spawn
     [SerializeField]
     GameObject[] theHouses;
@@ -58,5 +60,12 @@ public class The_Director : MonoBehaviour {
 
         if (numHouses == 0)
             Debug.Log("All houses deleted");
+    }
+
+    public void SpawnNewChunk()
+    {
+        GameObject newNode = GameObject.FindWithTag("NewNodeSpawn");
+        Instantiate(LevelChunk, newNode.gameObject.transform.position, gameObject.transform.rotation);
+        Destroy(newNode);
     }
 }
