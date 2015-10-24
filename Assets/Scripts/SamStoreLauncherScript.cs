@@ -17,7 +17,7 @@ public class SamStoreLauncherScript : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            //LaunchStore();
+            LaunchStore();
         }
     }
 
@@ -37,6 +37,12 @@ public class SamStoreLauncherScript : MonoBehaviour {
             transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
             transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
         }
+    }
+
+    void LaunchStore()
+    {
+        Time.timeScale = 0.0f;
+        transform.GetChild(2).GetComponent<Canvas>().enabled = true;
     }
 
 }
