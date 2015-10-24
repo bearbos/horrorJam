@@ -294,6 +294,7 @@ MonoBehaviour:
   theHouses:
   - {fileID: 113986, guid: 69c491b12b9aa414a80af665999217c5, type: 2}
   - {fileID: 184580, guid: ae428622f4f1d5640af0e94f113303c5, type: 2}
+  theNatural: []
   theDecorations:
   - {fileID: 142496, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
   theEnemies: []

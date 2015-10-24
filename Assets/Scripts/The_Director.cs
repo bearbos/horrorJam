@@ -20,6 +20,9 @@ public class The_Director : MonoBehaviour {
     GameObject[] theHouses;
 
     [SerializeField]
+    GameObject[] theNatural;
+
+    [SerializeField]
     GameObject[] theDecorations;
 
     [SerializeField]
@@ -32,6 +35,7 @@ public class The_Director : MonoBehaviour {
     void Start ()
     {
         SpawnHouses();
+        SpawnDecorations();
 	}
 	
 	// Update is called once per frame
@@ -67,6 +71,50 @@ public class The_Director : MonoBehaviour {
             Debug.Log("All houses deleted");
     }
 
+    void SpawnDecorations()
+    {
+        GameObject[] decorationNodes = GameObject.FindGameObjectsWithTag("HouseSpawner");
+
+        int natureSize = Random.Range(7, 10);
+
+        int decorationSize = decorationNodes.Length;
+        int numDecorations = Random.Range((int)(6 + streetLvl), (int)(10 + streetLvl));
+
+        // Spawn trees and shit
+        for (int i = 0; i < natureSize; i++)
+        {
+            GameObject tempNats;
+            int natureIndex = Random.Range(0, theNatural.Length);
+            bool isAvailable = theHouses[natureIndex].activeInHierarchy;
+
+            if (isAvailable == true)
+            {
+                tempNats = Instantiate(theNatural[natureIndex], decorationNodes[i].gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+                theHouses[natureIndex].SetActive(false);
+            }
+            else
+                i--;
+        }
+
+        // Spawn decoration and shit
+        for (int i = 0; i < natureSize; i++)
+        {
+            GameObject tempDecor;
+            int decorIndex = Random.Range(0, theDecorations.Length);
+            bool isAvailable = theHouses[decorIndex].activeInHierarchy;
+
+            if (isAvailable == true)
+            {
+                tempDecor = Instantiate(theDecorations[decorIndex], decorationNodes[i].gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+                theHouses[decorIndex].SetActive(false);
+            }
+            else
+                i--;
+        }
+
+
+    }
+
     public void SpawnNewChunk()
     {
         GameObject newNode = GameObject.FindWithTag("NewNodeSpawn");
@@ -74,6 +122,7 @@ public class The_Director : MonoBehaviour {
        
         Destroy(newNode);
         SpawnHouses();
+        SpawnDecorations();
 
        
 
