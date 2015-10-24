@@ -44,6 +44,7 @@ MonoBehaviour:
   price: 0
   description: Stay longer in areas
   wantedLevel: 0
+  sprite: {fileID: 21300000, guid: 49c4c655f8cd90f498c57dd65ff04715, type: 3}
 --- !u!212 &21204252
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -81,6 +82,11 @@ Prefab:
       propertyPath: name
       value: Werewolf
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 49c4c655f8cd90f498c57dd65ff04715,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 193216}

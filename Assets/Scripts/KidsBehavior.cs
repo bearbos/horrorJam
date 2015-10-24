@@ -19,14 +19,16 @@ public class KidsBehavior : MonoBehaviour
     int maHP;
     public int minCandy = 3;
     public int maxCandy = 5;
+    bool dead = false;
     // Use this for initialization
     void Start()
     {
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
+            playerWantedLevel = (int)player.GetComponent<playerStats>().notoriety;
         }
-        playerWantedLevel = Random.Range(0, 5);
+        
         switch (playerWantedLevel)
         {
             case 0:
@@ -56,59 +58,66 @@ public class KidsBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.position;
-        pos.z = transform.position.y;
-        transform.position = pos;
-        if (Vector2.Distance(transform.position, player.transform.position) <= runDistance)
+        if (!dead)
         {
-            if (Random.value < runChance && !run)
+            Vector3 pos = transform.position;
+            pos.z = transform.position.y;
+            transform.position = pos;
+            if (Vector2.Distance(transform.position, player.transform.position) <= runDistance)
             {
-                run = true;
-            }
-            if (run)
-            {
-                if (player.transform.position.x > transform.position.x)
+                if (Random.value < runChance && !run)
                 {
-                    runDirection.x = -1;
-                    if (facingRight)
+                    run = true;
+                }
+                if (run)
+                {
+                    if (player.transform.position.x > transform.position.x)
                     {
-                        Flip(); 
+                        runDirection.x = -1;
+                        if (facingRight)
+                        {
+                            Flip();
+                        }
+                    }
+                    else if (player.transform.position.x < transform.position.x)
+                    {
+                        runDirection.x = 1;
+                        if (!facingRight)
+                        {
+                            Flip();
+                        }
+                    }
+                    else
+                    {
+                        runDirection.x = 0;
+                    }
+                    if (player.transform.position.y > transform.position.y)
+                    {
+                        runDirection.y = -1;
+                    }
+                    else if (player.transform.position.y < transform.position.y)
+                    {
+                        runDirection.y = 1;
+                    }
+                    else
+                    {
+                        runDirection.y = 0;
                     }
                 }
-                else if (player.transform.position.x < transform.position.x)
-                {
-                    runDirection.x = 1;
-                    if (!facingRight)
-                    {
-                        Flip();
-                    }
-                }
-                else
-                {
-                    runDirection.x = 0;
-                }
-                if (player.transform.position.y > transform.position.y)
-                {
-                    runDirection.y = -1;
-                }
-                else if (player.transform.position.y < transform.position.y)
-                {
-                    runDirection.y = 1;
-                }
-                else
-                {
-                    runDirection.y = 0;
-                }
             }
+            else
+            {
+                run = false;
+                runDirection = Vector2.zero;
+            }
+            Vector2 rb = GetComponent<Rigidbody2D>().velocity;
+            rb = new Vector2(runDirection.x * runSpeed, runDirection.y * runSpeed);
+            GetComponent<Rigidbody2D>().velocity = rb;
         }
         else
         {
-            run = false;
-            runDirection = Vector2.zero;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
         }
-        Vector2 rb = GetComponent<Rigidbody2D>().velocity;
-        rb = new Vector2(runDirection.x * runSpeed, runDirection.y * runSpeed);
-        GetComponent<Rigidbody2D>().velocity = rb;
     }
     void Death()
     {
@@ -131,7 +140,12 @@ public class KidsBehavior : MonoBehaviour
             candyRB.velocity = new Vector2(xVel, Random.Range(5, 10));
             candyRB.gravityScale = 1.5f;
         }
-        Destroy(gameObject);
+        dead = true;
+        GetComponent<SpriteRenderer>().color = Color.gray;
+        if (GetComponent<Animator>() != null)
+        {
+            GetComponent<Animator>().enabled = false;
+        }
     }
     void Flip()
     {
