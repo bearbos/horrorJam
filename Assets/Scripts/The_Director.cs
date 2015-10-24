@@ -11,6 +11,10 @@ public class The_Director : MonoBehaviour {
 
     public GameObject LevelChunk;
 
+    GameObject oldChunk;
+    GameObject currChunk;
+    GameObject newChunk;
+
     // Things to spawn
     [SerializeField]
     GameObject[] theHouses;
@@ -45,8 +49,9 @@ public class The_Director : MonoBehaviour {
 
         for(int i = 0; i < numHouses; i++)
         {
-            int houseIndex = Random.Range(0, houseSize);
-            Instantiate(theHouses[houseIndex]);
+            int houseIndex = Random.Range(0, theHouses.Length);
+            GameObject tempHouse = Instantiate(theHouses[houseIndex], houseNodes[i].gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+           
             Debug.Log("Instantiating House " + houseIndex.ToString());
         }
 
@@ -65,7 +70,19 @@ public class The_Director : MonoBehaviour {
     public void SpawnNewChunk()
     {
         GameObject newNode = GameObject.FindWithTag("NewNodeSpawn");
-        Instantiate(LevelChunk, newNode.gameObject.transform.position, gameObject.transform.rotation);
+        GameObject justSpawned = Instantiate(LevelChunk, newNode.gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+       
         Destroy(newNode);
+        SpawnHouses();
+
+       
+
+        if(currChunk)
+            Destroy(currChunk);
+
+        if(newChunk)
+            currChunk = newChunk;
+
+        newChunk = justSpawned;
     }
 }
