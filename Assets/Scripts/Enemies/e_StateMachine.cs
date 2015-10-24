@@ -39,6 +39,7 @@ public class e_StateMachine : MonoBehaviour {
         float enemyX = gameObject.transform.position.x;
         float enemyY = gameObject.transform.position.y;
 
+        //if idling
         if (eIdle)
         {
             theAnimator.SetBool("run", false);
@@ -61,6 +62,7 @@ public class e_StateMachine : MonoBehaviour {
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
 
         }
+        //if enemy is going after the player
         if (eAggro)
         {
             theAnimator.SetBool("run", true);
@@ -78,22 +80,19 @@ public class e_StateMachine : MonoBehaviour {
             Animationflip();
 
             if (attacking == true)
-            {
-                
+            {   
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             }
-           
-
-
         }
 
+        //if enemy is on standby ready to fight 
         if (eGuard)
         {
            
             //gameObject.SendMessage("Guard");
             float _X = 0;
             float _Y = 0;
-            if (DisToPlayer >= 3)
+            if (DisToPlayer >= 6)
             {
                 theAnimator.SetBool("run", true);
                 if (playerX >= enemyX)         // enemy move left
@@ -105,10 +104,10 @@ public class e_StateMachine : MonoBehaviour {
                 if (playerY <= enemyY)         // enemy move up
                     _Y = -2;
             }
-            if(DisToPlayer > 2 && DisToPlayer < 3)
+            if(DisToPlayer > 5 && DisToPlayer < 6)
                 theAnimator.SetBool("run", false);
 
-            if (DisToPlayer <= 2)
+            if (DisToPlayer <= 5)
             {
                 theAnimator.SetBool("run", true);
                 if (playerX >= enemyX)         
@@ -174,9 +173,12 @@ public class e_StateMachine : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        theAnimator.SetBool("run", false);
-        theAnimator.SetBool("attack1", true);
-        attacking = true;
+        if (other.gameObject.tag == "Player")
+        {
+            theAnimator.SetBool("run", false);
+            theAnimator.SetBool("attack1", true);
+            attacking = true;
+        }
     }
     
     void OnCollisionExit2D(Collision2D other)
