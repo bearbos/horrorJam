@@ -11,6 +11,10 @@ public class The_Director : MonoBehaviour {
 
     public GameObject LevelChunk;
 
+    GameObject oldChunk;
+    GameObject currChunk;
+    GameObject newChunk;
+
     // Things to spawn
     [SerializeField]
     GameObject[] theHouses;
@@ -65,9 +69,18 @@ public class The_Director : MonoBehaviour {
     public void SpawnNewChunk()
     {
         GameObject newNode = GameObject.FindWithTag("NewNodeSpawn");
-        Instantiate(LevelChunk, newNode.gameObject.transform.position, gameObject.transform.rotation);
+        GameObject justSpawned = Instantiate(LevelChunk, newNode.gameObject.transform.position, gameObject.transform.rotation) as GameObject;
         Destroy(newNode);
 
-        SpawnHouses();
+        if(oldChunk)
+            Destroy(oldChunk);
+
+        if(currChunk)
+            oldChunk = currChunk;
+
+        if(newChunk)
+            currChunk = newChunk;
+
+        newChunk = justSpawned;
     }
 }
