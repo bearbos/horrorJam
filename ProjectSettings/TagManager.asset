@@ -13,6 +13,8 @@ TagManager:
   - NewNodeSpawn
   - NodeSpawner
   - Director
+  - Decoration
+  - House
   layers:
   - Default
   - TransparentFX

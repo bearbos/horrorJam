@@ -131,6 +131,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &225407636
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 34.8813362
+      objectReference: {fileID: 0}
+    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.0199789703
+      objectReference: {fileID: 0}
+    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1096087672
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +274,8 @@ MonoBehaviour:
   theHouses:
   - {fileID: 113986, guid: 69c491b12b9aa414a80af665999217c5, type: 2}
   - {fileID: 184580, guid: ae428622f4f1d5640af0e94f113303c5, type: 2}
-  theDecorations: []
+  theDecorations:
+  - {fileID: 142496, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
   theEnemies: []
   theRoofs: []
 --- !u!1001 &1870538865
@@ -273,6 +316,10 @@ Prefab:
     - target: {fileID: 403354, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015334, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
+      propertyPath: orthographic size
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
