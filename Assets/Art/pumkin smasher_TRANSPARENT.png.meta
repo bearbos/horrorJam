@@ -78,13 +78,14 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -408,7 +409,7 @@ TextureImporter:
         width: 55
         height: 59
       alignment: 9
-      pivot: {x: .117374487, y: -.00455798116}
+      pivot: {x: .117374487, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: pumkin smasher_TRANSPARENT_32
       rect:
@@ -428,7 +429,7 @@ TextureImporter:
         width: 36
         height: 54
       alignment: 9
-      pivot: {x: .127019241, y: -.0049800165}
+      pivot: {x: .127019241, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: pumkin smasher_TRANSPARENT_34
       rect:
