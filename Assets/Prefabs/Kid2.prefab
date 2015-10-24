@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 1
-  runDistance: 2
+  runDistance: 6
   candy:
   - {fileID: 120310, guid: d8f2b31e7b956a048880ee46afd0767d, type: 2}
   - {fileID: 159468, guid: ba52f9071c7edf146a0adcadd2ab72ab, type: 2}
@@ -132,6 +132,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: runDistance
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
