@@ -89,48 +89,6 @@ NavMeshSettings:
 Transform:
   m_PrefabParentObject: {fileID: 403354, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
   m_PrefabInternal: {fileID: 1870538865}
---- !u!1001 &225407636
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 34.8813362
-      objectReference: {fileID: 0}
-    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -.0199789703
-      objectReference: {fileID: 0}
-    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 486460, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1096087672
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,22 +147,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &1399837419 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 142496, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
-  m_PrefabInternal: {fileID: 225407636}
---- !u!114 &1399837422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1399837419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dd62c56043024e4f92c78c10ec24b02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 600
 --- !u!1001 &1457056712
 Prefab:
   m_ObjectHideFlags: 0
@@ -299,7 +241,9 @@ MonoBehaviour:
   theDecorations:
   - {fileID: 142496, guid: 0bf5a09a4673c124683ee70da94bd230, type: 2}
   theEnemies: []
-  theRoofs: []
+  theRoofs:
+  - {fileID: 117820, guid: 73e1b5e50d72964419ef056b1ec61083, type: 2}
+  - {fileID: 179414, guid: 7a83bcf2dd2910540a3b50bf6e75bd29, type: 2}
 --- !u!1001 &1870538865
 Prefab:
   m_ObjectHideFlags: 0
