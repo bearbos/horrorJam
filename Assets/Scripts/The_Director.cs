@@ -9,6 +9,9 @@ public class The_Director : MonoBehaviour {
     int candy = 0;
     float healthRatio = 1.0f;
 
+    public int prevEnemies = 0;
+    public int numEnemies;
+
     public GameObject LevelChunk;
 
     // Things to spawn
@@ -32,8 +35,8 @@ public class The_Director : MonoBehaviour {
 
     [SerializeField]
     GameObject[] theRoofs;
- 
-    
+
+    public float privateTimer = 0.0f;
 
 
     // Use this for initialization
@@ -48,7 +51,13 @@ public class The_Director : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-	
+        privateTimer += Time.deltaTime;
+
+	    if(privateTimer >= 0.5f)
+        {
+            ManageEnemies();
+            privateTimer = 0.0f;
+        }
 	}
 
     void SpawnHouses()
@@ -249,5 +258,29 @@ public class The_Director : MonoBehaviour {
         SpawnDecorations();
         SpawnRoofs();
         SpawnEnemies();
+    }
+
+    void ManageEnemies()
+    {
+        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        numEnemies = allEnemies.Length;
+
+        if(numEnemies < prevEnemies)
+        {
+            for (int i = 0; i < numEnemies; i++)
+            {
+                if (allEnemies[i].gameObject.GetComponent<e_StateMachine>() != null)
+                {
+                    if (allEnemies[i].gameObject.GetComponent<e_StateMachine>().eGuard == true)
+                    {
+                        allEnemies[i].gameObject.GetComponent<e_StateMachine>().eAggro = true;
+                        allEnemies[i].gameObject.GetComponent<e_StateMachine>().eGuard = false;
+                    }
+                }
+            }
+        }
+
+        prevEnemies = numEnemies;
     }
 }
