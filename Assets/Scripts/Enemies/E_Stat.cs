@@ -57,6 +57,7 @@ public class E_Stat : MonoBehaviour {
 
         if (currHealth <= 0)
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().pressure += notriaty;
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().score += score;
             gameObject.SendMessage("Death");
             Vector3 scale = transform.localScale;
