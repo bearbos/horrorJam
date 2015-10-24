@@ -3,7 +3,7 @@ using System.Collections;
 
 public class KidsBehavior : MonoBehaviour
 {
-    int playerWantedLevel;
+    int playerWantedLevel = 0;
     bool run;
     float runChance;
     GameObject player;
@@ -13,7 +13,7 @@ public class KidsBehavior : MonoBehaviour
     [SerializeField]
     float runDistance;
     [SerializeField]
-    GameObject candy;
+    GameObject[] candy;
     // Use this for initialization
     void Start()
     {
@@ -92,7 +92,15 @@ public class KidsBehavior : MonoBehaviour
     }
     void Death()
     {
-        Instantiate(candy, transform.position, transform.rotation);
+        int spawnedNum = Random.Range(0, 3);
+        for (int i = 0; i <= spawnedNum; i++)
+        {
+            GameObject summonedCandy = Instantiate(candy[Random.Range(0, candy.Length)]);
+            Vector2 pos = summonedCandy.transform.position;
+            pos.x += Random.Range(-1, 1);
+            pos.y += Random.Range(-1, 1);
+            summonedCandy.transform.position = pos;
+        }
         Destroy(gameObject);
     }
 }
