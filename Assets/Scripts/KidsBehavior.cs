@@ -17,6 +17,8 @@ public class KidsBehavior : MonoBehaviour
     bool facingRight = true;
     int currHP;
     int maHP;
+    public int minCandy = 3;
+    public int maxCandy = 5;
     // Use this for initialization
     void Start()
     {
@@ -110,7 +112,7 @@ public class KidsBehavior : MonoBehaviour
     }
     void Death()
     {
-        int spawnedNum = Random.Range(3, 5);
+        int spawnedNum = Random.Range(minCandy, maxCandy);
         Debug.Log(spawnedNum);
         for (int i = 0; i < spawnedNum; i++)
         {
