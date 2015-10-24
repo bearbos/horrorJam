@@ -36,6 +36,7 @@ public class The_Director : MonoBehaviour {
     {
         SpawnHouses();
         SpawnDecorations();
+        SpawnRoofs();
 	}
 	
 	// Update is called once per frame
@@ -53,8 +54,10 @@ public class The_Director : MonoBehaviour {
 
         for(int i = 0; i < numHouses; i++)
         {
+            Vector3 newPos = houseNodes[i].gameObject.transform.position;
+            newPos.z = 10;
             int houseIndex = Random.Range(0, theHouses.Length);
-            GameObject tempHouse = Instantiate(theHouses[houseIndex], houseNodes[i].gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+            GameObject tempHouse = Instantiate(theHouses[houseIndex], newPos, gameObject.transform.rotation) as GameObject;
            
             Debug.Log("Instantiating House " + houseIndex.ToString());
         }
@@ -69,6 +72,29 @@ public class The_Director : MonoBehaviour {
 
         if (numHouses == 0)
             Debug.Log("All houses deleted");
+    }
+
+    void SpawnRoofs()
+    {
+        GameObject[] roofNodes = GameObject.FindGameObjectsWithTag("RoofSpawner");
+
+        int roofSize = roofNodes.Length;
+        int numRoofs = 4;
+
+        for (int i = 0; i < numRoofs; i++)
+        {
+            Vector3 newPos = roofNodes[i].gameObject.transform.position;
+            newPos.z = 10;
+            int roofIndex = Random.Range(0, theRoofs.Length);
+            GameObject tempRoof = Instantiate(theRoofs[roofIndex], newPos, gameObject.transform.rotation) as GameObject;
+        }
+
+        // Destroy all the house tags
+        for (int i = 4; i > 0; i--)
+        {
+            Destroy(roofNodes[numRoofs - 1]);
+            numRoofs -= 1;
+        }
     }
 
     void SpawnDecorations()
@@ -125,10 +151,10 @@ public class The_Director : MonoBehaviour {
         GameObject justSpawned = Instantiate(LevelChunk, newNode.gameObject.transform.position, gameObject.transform.rotation) as GameObject;
        
         Destroy(newNode);
+
         SpawnHouses();
         SpawnDecorations();
-
-       
+        SpawnRoofs();
 
         if(currChunk)
             Destroy(currChunk);
