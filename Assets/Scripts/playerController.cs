@@ -4,6 +4,7 @@ using System.Collections;
 public class playerController : MonoBehaviour {
 
 	int attackComboLength;
+	float comboInputTimer;
 	bool inAttackAnimation, facingRight;
 	public GameObject attackColliderPrefab;
 
@@ -18,6 +19,13 @@ public class playerController : MonoBehaviour {
 			this.GetComponent<Animator>().transform.localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
 		else
 			this.GetComponent<Animator>().transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+
+		if (attackComboLength > 0) {
+			if (comboInputTimer > 0.0f)
+				comboInputTimer -= Time.deltaTime;
+			else
+				attackComboLength = 0;
+		}
 	}
 
 	void FixedUpdate() {
@@ -80,31 +88,38 @@ public class playerController : MonoBehaviour {
 			if (attackComboLength == 0)
 			{
 				this.GetComponent<Animator> ().SetTrigger ("ComboPunchOne");
-				CreateAttackCollider(GetComponent<playerStats>().baseDamage);
+				CreateAttackCollider(GetComponent<playerStats>().baseDamage, facingRight);
 			}
 			else if (attackComboLength == 1)
 			{
 				this.GetComponent<Animator>().SetTrigger("ComboPunchTwo");
-				CreateAttackCollider(GetComponent<playerStats>().baseDamage);
+				CreateAttackCollider(GetComponent<playerStats>().baseDamage, facingRight);
 			}
 			else if (attackComboLength == 2)
 			{
 				this.GetComponent<Animator>().SetTrigger("ComboPunchThree");
-				CreateAttackCollider(GetComponent<playerStats>().baseDamage);
+				CreateAttackCollider(GetComponent<playerStats>().baseDamage, facingRight);
 			}
 		} else {
 			if (attackComboLength == 0)
 			{
 				this.GetComponent<Animator>().SetTrigger("ComboKickOne");
-				CreateAttackCollider(GetComponent<playerStats>().baseDamage);
+				CreateAttackCollider(GetComponent<playerStats>().baseDamage, facingRight);
 			}
 			else if (attackComboLength == 1)
 			{
 				this.GetComponent<Animator>().SetTrigger("ComboKickTwo");
-				CreateAttackCollider(GetComponent<playerStats>().baseDamage * 1.5f);
+				CreateAttackCollider(GetComponent<playerStats>().baseDamage * 1.5f, facingRight);
+			}
+			else if (attackComboLength == 2)
+			{
+				this.GetComponent<Animator>().SetTrigger("ComboKickThree");
+				CreateAttackCollider(GetComponent<playerStats>().baseDamage, facingRight);
+				CreateAttackCollider(GetComponent<playerStats>().baseDamage, !facingRight);
 			}
 		}
 
+		comboInputTimer = 0.5f;
 		++attackComboLength;
 		inAttackAnimation = true;
 	}
@@ -115,16 +130,15 @@ public class playerController : MonoBehaviour {
 	public void AnimationEnd()
 	{
 		inAttackAnimation = false;
-		attackComboLength = 0;
 	}
 
 	/// <summary>
 	/// Creates the attack collider.
 	/// </summary>
-	void CreateAttackCollider(float damage)
+	void CreateAttackCollider(float damage, bool direction)
 	{
 		attackColliderPrefab.GetComponent<attackCollider> ().dmg = GetComponent<playerStats> ().baseDamage;
-		attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = facingRight;
+		attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = direction;
 		Instantiate (attackColliderPrefab, this.transform.position, Quaternion.identity);
 	}
 }
