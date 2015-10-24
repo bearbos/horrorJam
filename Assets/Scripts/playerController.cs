@@ -43,10 +43,14 @@ public class playerController : MonoBehaviour {
 				testInputY = Input.GetAxis ("Vertical");
 		}
 
-		if (testInputX < 0.0f)
+		if (testInputX < 0.0f) {
 			facingRight = false;
-		else if (testInputX > 0.0f)
+			GetComponentInChildren<Transform> ().localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
+		} 
+		else if (testInputX > 0.0f) {
 			facingRight = true;
+			GetComponentInChildren<Transform>().localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
+		}
 
 		this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (3.0f * testInputX, 2.0f * testInputY);
 
