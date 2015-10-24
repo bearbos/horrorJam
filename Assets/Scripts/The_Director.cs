@@ -50,7 +50,8 @@ public class The_Director : MonoBehaviour {
         for(int i = 0; i < numHouses; i++)
         {
             int houseIndex = Random.Range(0, theHouses.Length);
-            Instantiate(theHouses[houseIndex], houseNodes[i].gameObject.transform.position, gameObject.transform.rotation);
+            GameObject tempHouse = Instantiate(theHouses[houseIndex], houseNodes[i].gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+           
             Debug.Log("Instantiating House " + houseIndex.ToString());
         }
 
@@ -70,13 +71,14 @@ public class The_Director : MonoBehaviour {
     {
         GameObject newNode = GameObject.FindWithTag("NewNodeSpawn");
         GameObject justSpawned = Instantiate(LevelChunk, newNode.gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+       
         Destroy(newNode);
+        SpawnHouses();
 
-        if(oldChunk)
-            Destroy(oldChunk);
+       
 
         if(currChunk)
-            oldChunk = currChunk;
+            Destroy(currChunk);
 
         if(newChunk)
             currChunk = newChunk;
