@@ -73,9 +73,9 @@ public class The_Director : MonoBehaviour {
 
     void SpawnDecorations()
     {
-        GameObject[] decorationNodes = GameObject.FindGameObjectsWithTag("HouseSpawner");
+        GameObject[] decorationNodes = GameObject.FindGameObjectsWithTag("miscSpawner");
 
-        int natureSize = Random.Range(7, 10);
+        int natureSize = Random.Range(0, theNatural.Length);
 
         int decorationSize = decorationNodes.Length;
         int numDecorations = Random.Range((int)(6 + streetLvl), (int)(10 + streetLvl));
@@ -85,33 +85,37 @@ public class The_Director : MonoBehaviour {
         {
             GameObject tempNats;
             int natureIndex = Random.Range(0, theNatural.Length);
-            bool isAvailable = theHouses[natureIndex].activeInHierarchy;
+            bool isAvailable = theDecorations[natureIndex].activeInHierarchy;
 
-            if (isAvailable == true)
-            {
-                tempNats = Instantiate(theNatural[natureIndex], decorationNodes[i].gameObject.transform.position, gameObject.transform.rotation) as GameObject;
-                theHouses[natureIndex].SetActive(false);
-            }
-            else
-                i--;
+            int spawnIndex = Random.Range(0, decorationSize);
+
+            tempNats = Instantiate(theNatural[natureIndex], decorationNodes[spawnIndex].gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+
+            isAvailable = true;
         }
 
         // Spawn decoration and shit
-        for (int i = 0; i < natureSize; i++)
+        for (int i = 0; i < numDecorations; i++)
         {
             GameObject tempDecor;
             int decorIndex = Random.Range(0, theDecorations.Length);
-            bool isAvailable = theHouses[decorIndex].activeInHierarchy;
+            bool isAvailable = theDecorations[decorIndex].activeInHierarchy;
 
-            if (isAvailable == true)
-            {
-                tempDecor = Instantiate(theDecorations[decorIndex], decorationNodes[i].gameObject.transform.position, gameObject.transform.rotation) as GameObject;
-                theHouses[decorIndex].SetActive(false);
-            }
-            else
-                i--;
+            int spawnIndex = Random.Range(0, decorationSize);
+
+            tempDecor = Instantiate(theDecorations[decorIndex], decorationNodes[spawnIndex].gameObject.transform.position, gameObject.transform.rotation) as GameObject;
         }
 
+        // Destroy all the house tags
+        for (int i = 50; i > 0; i--)
+        {
+            Destroy(decorationNodes[decorationSize - 1]);
+            decorationSize -= 1;
+            Debug.Log(decorationSize.ToString() + " houses remaining");
+        }
+
+        if (decorationSize == 0)
+            Debug.Log("All houses deleted");
 
     }
 
