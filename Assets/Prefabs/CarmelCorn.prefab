@@ -41,7 +41,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -73,6 +73,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreGiven: 5
   candyGiven: 2
+  healAmount: 25
+  heals: 1
 --- !u!212 &21220786
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -113,6 +115,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: candyGiven
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: heals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: healAmount
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

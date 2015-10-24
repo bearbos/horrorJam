@@ -7,6 +7,10 @@ public class Candy : MonoBehaviour
     int scoreGiven;
     [SerializeField]
     int candyGiven;
+    [SerializeField]
+    int healAmount;
+    [SerializeField]
+    bool heals = false;
     // Use this for initialization
     void Start()
     {
@@ -24,6 +28,10 @@ public class Candy : MonoBehaviour
         {
             other.gameObject.GetComponent<playerStats>().candy += candyGiven;
             other.gameObject.GetComponent<playerStats>().score += scoreGiven;
+            if (heals)
+            {
+                other.gameObject.GetComponent<playerStats>().currHealth += healAmount;
+            }
             Destroy(gameObject);
         }
     }

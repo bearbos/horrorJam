@@ -26,6 +26,8 @@ public class playerController : MonoBehaviour {
 			else
 				attackComboLength = 0;
 		}
+
+		transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
 	}
 
 	void FixedUpdate() {
@@ -123,7 +125,7 @@ public class playerController : MonoBehaviour {
 			}
 		}
 
-		comboInputTimer = 0.5f;
+		comboInputTimer = 0.7f;
 		++attackComboLength;
 		inAttackAnimation = true;
 	}

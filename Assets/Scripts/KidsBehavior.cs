@@ -54,6 +54,9 @@ public class KidsBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 pos = transform.position;
+        pos.z = transform.position.y;
+        transform.position = pos;
         if (Vector2.Distance(transform.position, player.transform.position) <= runDistance)
         {
             if (Random.value < runChance && !run)
