@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: HockeyMask
-  price: 0
+  price: 250
   description: Kids drop MORE CANDY
   wantedLevel: 0
   sprite: {fileID: 21300000, guid: 2f4ba39d8d1205d409bbc05a331cd852, type: 3}
@@ -87,6 +87,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 2f4ba39d8d1205d409bbc05a331cd852,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: price
+      value: 250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102862}

@@ -16,7 +16,7 @@ GameObject:
   - 95: {fileID: 9583418}
   m_Layer: 0
   m_Name: NinjaStar2
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,12 +102,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5a805f19e419441af6342b8d1579b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  price: 0
-  durability: 0
+  damage: 5
+  price: 30
+  durability: 8
   description: fwoosh
   weaponType: 2
   anchor: {fileID: 0}
+  player: {fileID: 0}
   sprite: {fileID: 0}
 --- !u!212 &21269456
 SpriteRenderer:
@@ -147,6 +148,22 @@ Prefab:
       value: 
       objectReference: {fileID: 21300002, guid: 1e9a0360d010c0c488fbe65699f16b63,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: price
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: durability
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194446}
