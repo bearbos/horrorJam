@@ -58,7 +58,7 @@ MonoBehaviour:
   price: 125
   durability: 8
   description: Hulk Smash
-  weaponType: 0
+  weaponType: 1
   anchor: {fileID: 0}
   player: {fileID: 0}
   sprite: {fileID: 21300000, guid: 9927de84bed65784b8f2ff3978563ead, type: 3}
@@ -115,6 +115,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: durability
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: weaponType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

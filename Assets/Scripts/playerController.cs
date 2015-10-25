@@ -255,7 +255,11 @@ public class playerController : MonoBehaviour {
 	/// </summary>
 	public void CreateAttackCollider(float numshots)
 	{
+		attackColliderPrefab.GetComponent<attackCollider> ().playerUser = true;
+
 		attackColliderPrefab.GetComponent<attackCollider> ().dmg = GetComponent<playerStats> ().TotalDamageDealt();
+
+
 		if (GetComponent<Rigidbody2D> ().transform.localScale.x < 0)
 			attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = false;
 		else if (GetComponent<Rigidbody2D>().transform.localScale.x > 0)

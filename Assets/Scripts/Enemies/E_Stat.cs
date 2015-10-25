@@ -9,8 +9,8 @@ public class E_Stat : MonoBehaviour
     [SerializeField]
     float maxHealth;
     public int score;
-    public float notriaty;
-    public GameObject textDamage;
+    public float notriaty, damage;
+    public GameObject textDamage, attackColliderPrefab;
     [SerializeField]
     AudioSource sfx;
 
@@ -23,6 +23,7 @@ public class E_Stat : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		maxHealth = 10.0f;
         //save the color of the enemy at start and have a bool set to false
         baseColor = gameObject.GetComponent<SpriteRenderer>().color;
         changeColor = false;
@@ -88,4 +89,27 @@ public class E_Stat : MonoBehaviour
         }
 
     }
+
+	public void CreateAttackCollider(float numshots)
+	{
+		attackColliderPrefab.GetComponent<attackCollider> ().playerUser = false;
+
+
+		attackColliderPrefab.GetComponent<attackCollider> ().dmg = damage;
+
+
+		if (GetComponent<Animator> ().transform.localScale.x < 0)
+			attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = false;
+		else if (GetComponent<Rigidbody2D>().transform.localScale.x > 0)
+			attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = true;
+		Instantiate (attackColliderPrefab, this.transform.position, Quaternion.identity);
+		
+		if (numshots != 0) {
+			if (GetComponent<Animator> ().transform.localScale.x < 0)
+				attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = true;
+			else if (GetComponent<Rigidbody2D>().transform.localScale.x > 0)
+				attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = false;
+			Instantiate (attackColliderPrefab, this.transform.position, Quaternion.identity);
+		}
+	}
 }
