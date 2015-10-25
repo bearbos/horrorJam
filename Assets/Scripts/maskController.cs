@@ -63,7 +63,7 @@ public class maskController : MonoBehaviour {
         Destroy(activeMask);
         if (maskCollection[currentIndex] != null)
         {
-            activeMask = Instantiate(maskCollection[currentIndex]); 
+            activeMask = Instantiate(maskCollection[currentIndex], this.transform.position, Quaternion.identity) as GameObject; 
         }
 	}
 
@@ -77,7 +77,7 @@ public class maskController : MonoBehaviour {
 
 		maskCollection [index] = mask;
 		currentIndex = index;
-		activeMask = Instantiate(maskCollection [currentIndex]);
+		activeMask = Instantiate(maskCollection [currentIndex], this.transform.position, Quaternion.identity) as GameObject;
         
     }
 }
