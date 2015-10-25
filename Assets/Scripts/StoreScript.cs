@@ -12,7 +12,7 @@ public class StoreScript : MonoBehaviour
     //[SerializeField]
     //SALE_ITEMS typeID;
     [SerializeField]
-    int selected = 0;     // active selected item. 0 is the flash image and 1 is the panel with Sam.
+    int selected = 2;     // active selected item. 0 is the flash image and 1 is the panel with Sam.
     [SerializeField]
     bool[] purchased;     // each slot, to show it is has been purchased.
     [SerializeField]
@@ -28,6 +28,8 @@ public class StoreScript : MonoBehaviour
     GameObject player;
     [SerializeField]
     int buffer = 30;
+
+	public GameObject parent;
     // Use this for initialization
     void Start()
     {
@@ -303,12 +305,17 @@ public class StoreScript : MonoBehaviour
         if (Input.GetButtonDown("B"))
         {
             Time.timeScale = 1.0f;
-            GameObject.FindGameObjectWithTag("Store").SendMessage("Destroy");
+			if (parent != null)
+            	Destroy(parent);
         }
 
         //transform.GetChild(2).transform.GetChild(1).GetComponent<Text>().text = "Testing";    //// Works
     }
 
+
+	/// <summary>
+	/// Rolls the items continuing the loop if the player has already purchased a mask before.
+	/// </summary>
     void RollItems()
     {
         //int temp = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
@@ -348,7 +355,7 @@ public class StoreScript : MonoBehaviour
                         break;
                     }
                 }
-                continue;
+				break;
             }
             else
             {
@@ -373,7 +380,7 @@ public class StoreScript : MonoBehaviour
                         break;
                     }
                 }
-                continue;
+                break;
             }
             else
             {
