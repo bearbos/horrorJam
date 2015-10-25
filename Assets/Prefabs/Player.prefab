@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1e24b512841df478e5863ce91e6397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maskCollection: []
 --- !u!114 &11467156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,6 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c361947d81bdd49894cda756c588cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inAttackAnimation: 0
+  facingRight: 0
   attackColliderPrefab: {fileID: 197996, guid: 4037536ceb7b2cd4d9bdfe870479962d, type: 2}
 --- !u!114 &11499522
 MonoBehaviour:
@@ -196,8 +199,11 @@ MonoBehaviour:
   adrenaline: 0
   timer: 0
   notoriety: 0
+  timeMulti: 0
+  damageMulti: 0
   score: 0
   candy: 0
+  superSaiyan: 0
 --- !u!212 &21246666
 SpriteRenderer:
   m_ObjectHideFlags: 1
