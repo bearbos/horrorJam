@@ -40,6 +40,10 @@ public class Weather : MonoBehaviour
         {
             timer += Time.deltaTime;
            wtf =(int) GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().notoriety;
+            if(wtf == 5)
+            {
+                wtf *= 5;
+            }
             for (int i = 0; i < wtf; i++)
             {
                 
@@ -64,9 +68,9 @@ public class Weather : MonoBehaviour
                 }
             }
         }
-        else if (effect == 2)
+         if (wtf == 5)
         {
-                rainSFX.Stop();
+                //rainSFX.Stop();
             for (int i = 0; i < 3; i++)
             {
 

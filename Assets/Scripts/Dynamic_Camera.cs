@@ -5,7 +5,7 @@ public class Dynamic_Camera : MonoBehaviour {
 
     // Reference to the player
     GameObject thePlayer;
-
+   
     public GameObject theSpawner;
 
     // Camera Stuff
@@ -25,13 +25,14 @@ public class Dynamic_Camera : MonoBehaviour {
         // Find the player
         if (GameObject.FindWithTag("Player"))
             thePlayer = GameObject.FindWithTag("Player");
+        
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         gameTime += Time.deltaTime;
-
+       
         Vector3 newPos = gameObject.transform.position;
         newPos.x += 20.0f;
         theSpawner.gameObject.transform.position = newPos;

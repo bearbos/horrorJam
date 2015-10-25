@@ -11,6 +11,8 @@ public class E_Stat : MonoBehaviour
     public int score;
     public float notriaty;
     public GameObject textDamage;
+    [SerializeField]
+    AudioSource sfx;
 
     //varibles for the visual feedback when the enemy takes damage
     Color baseColor;
@@ -26,6 +28,7 @@ public class E_Stat : MonoBehaviour
         changeColor = false;
         delayColorChanger = 0.0f;
         currHealth = maxHealth;
+        sfx.volume = 10;
     }
 
     // Update is called once per frame
@@ -55,7 +58,10 @@ public class E_Stat : MonoBehaviour
         GameObject textDam = Instantiate(textDamage, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
         textDam.gameObject.GetComponent<Damage_Text>().SetDamageText((int)_dam);
         changeColor = true;
-
+        if(!sfx.isPlaying)
+        {
+            sfx.Play();
+        }
         if (GetComponent<Rigidbody2D>() != null)
         {
             float moveAmount = 500f * (_dam / 20f);
