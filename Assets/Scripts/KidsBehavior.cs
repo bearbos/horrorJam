@@ -20,6 +20,7 @@ public class KidsBehavior : MonoBehaviour
     public int minCandy = 3;
     public int maxCandy = 5;
     bool dead = false;
+    bool randomed = false;
     // Use this for initialization
     void Start()
     {
@@ -65,6 +66,7 @@ public class KidsBehavior : MonoBehaviour
             transform.position = pos;
             if (Vector2.Distance(transform.position, player.transform.position) <= runDistance)
             {
+                randomed = false;
                 if (Random.value < runChance && !run)
                 {
                     run = true;
@@ -112,11 +114,8 @@ public class KidsBehavior : MonoBehaviour
             else
             {
                 run = false;
-                runDirection = Vector2.zero;
-                if (GetComponent<Animator>() != null)
-                {
-                    GetComponent<Animator>().SetBool("running", false); 
-                }
+                //runDirection = Vector2.zero;
+                RandomDir();
             }
             Vector2 rb = GetComponent<Rigidbody2D>().velocity;
             rb = new Vector2(runDirection.x * runSpeed, runDirection.y * runSpeed);
@@ -161,5 +160,31 @@ public class KidsBehavior : MonoBehaviour
         Vector3 scale = transform.localScale;
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
         transform.localScale = scale;
+    }
+    void RandomDir()
+    {
+        if (!randomed)
+        {
+            runDirection = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
+            if (GetComponent<Animator>() != null && runDirection == Vector2.zero)
+            {
+                GetComponent<Animator>().SetBool("running", false);
+            }
+            else if (GetComponent<Animator>() != null)
+            {
+                GetComponent<Animator>().SetBool("running", true);
+            }
+            randomed = true;
+            Invoke("Reverse", 2.0f);
+        }
+    }
+    void Reverse()
+    {
+        runDirection = -runDirection;
+        Invoke("Truth", 2.0f);
+    }
+    void Truth()
+    {
+        randomed = false;
     }
 }
