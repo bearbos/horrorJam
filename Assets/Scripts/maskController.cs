@@ -10,7 +10,9 @@ public class maskController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		for (int i = 0; i < 5; ++i) {
+			maskCollection.Add(null);
+		}
 	}
 	
 	// Update is called once per frame
