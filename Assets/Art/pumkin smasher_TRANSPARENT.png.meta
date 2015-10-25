@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: bb95176866ca08042a3611eebcd01aae
-timeCreated: 1445733662
+timeCreated: 1445734662
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -119,6 +119,13 @@ TextureImporter:
     21300224: pumkin smasher_TRANSPARENT_112
     21300226: pumkin smasher_TRANSPARENT_113
     21300228: pumkin smasher_TRANSPARENT_114
+    21300230: pumkin smasher_TRANSPARENT_115
+    21300232: pumkin smasher_TRANSPARENT_116
+    21300234: pumkin smasher_TRANSPARENT_117
+    21300236: pumkin smasher_TRANSPARENT_118
+    21300238: pumkin smasher_TRANSPARENT_119
+    21300240: pumkin smasher_TRANSPARENT_120
+    21300242: pumkin smasher_TRANSPARENT_121
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -1313,6 +1320,76 @@ TextureImporter:
         height: 55
       alignment: 6
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_115
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 954
+        width: 51
+        height: 64
+      alignment: 9
+      pivot: {x: .334806561, y: .0195217133}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_116
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 955
+        width: 38
+        height: 64
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_117
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 955
+        width: 42
+        height: 63
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_118
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 955
+        width: 32
+        height: 64
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_119
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 955
+        width: 41
+        height: 64
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_120
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 951
+        width: 51
+        height: 68
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_121
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 952
+        width: 54
+        height: 67
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
