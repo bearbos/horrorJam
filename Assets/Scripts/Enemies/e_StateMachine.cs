@@ -86,13 +86,13 @@ public class e_StateMachine : MonoBehaviour {
                     float _X = 0;
                     float _Y = 0;
                     if (playerX >= enemyX)         // enemy move left
-                        _X = 2;
+                        _X = 4;
                     if (playerX <= enemyX)         // enemy move right
-                        _X = -2;
+                        _X = -4;
                     if (playerY >= enemyY)         // enemy move down
-                        _Y = 2;
+                        _Y = 4;
                     if (playerY <= enemyY)         // enemy move up
-                        _Y = -2;
+                        _Y = -4;
                     gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(_X, _Y);
                 }
                 Animationflip();

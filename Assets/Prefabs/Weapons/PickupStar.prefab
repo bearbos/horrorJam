@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   price: 30
-  durability: 8
+  durability: 20
   description: fwoosh
   weaponType: 2
   anchor: {fileID: 0}
@@ -161,6 +161,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: ac73a91c96aeaa548b85981f62befb9f,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: durability
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 125910}
