@@ -97,7 +97,7 @@ MonoBehaviour:
   weaponType: 2
   anchor: {fileID: 0}
   player: {fileID: 0}
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: ac73a91c96aeaa548b85981f62befb9f, type: 3}
 --- !u!114 &11452320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,6 +156,11 @@ Prefab:
       propertyPath: Distance.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ac73a91c96aeaa548b85981f62befb9f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 125910}
