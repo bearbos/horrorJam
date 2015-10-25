@@ -15,7 +15,7 @@ public class SamStoreLauncherScript : MonoBehaviour {
 
     void OnTriggerStay2D (Collider2D other)
     {
-        if (Input.GetButtonDown("A"))
+        if (other.tag == "Player" && Input.GetButtonDown("A"))
         {
             LaunchStore();
         }
@@ -43,8 +43,12 @@ public class SamStoreLauncherScript : MonoBehaviour {
     {
         Time.timeScale = 0.0f;
         Input.ResetInputAxes();
-        transform.GetChild(2).gameObject.SetActive(true);
-		transform.GetChild (2).GetComponent<StoreScript> ().parent = this.gameObject;
+
+        GameObject.FindGameObjectWithTag("storeCanvas").GetComponent<Canvas>().enabled = true;
+        GameObject.FindGameObjectWithTag("storeCanvas").GetComponent<StoreScript>().parent = this.gameObject;
+
+        //transform.GetChild(2).gameObject.SetActive(true);
+		//transform.GetChild (2).GetComponent<StoreScript> ().parent = this.gameObject;
 
     }
 
