@@ -170,7 +170,76 @@ public class StoreScript : MonoBehaviour
                 buffer = 30;
             }
 
+            if (Input.GetKeyDown(KeyCode.D) && buffer == 0)
+            {
+                //Right
+                if (selected == 3)
+                {
+                    selected = 2;
+                }
+                else if (selected == 2)
+                {
+                    selected = 3;
+                }
+                else
+                {
+                    selected = 4;
+                }
+                buffer = 30;
 
+            }
+            else if (Input.GetKeyDown(KeyCode.A) && buffer == 0)
+            {
+                //Left
+                if (selected == 3)
+                {
+                    selected = 2;
+                }
+                else if (selected == 2)
+                {
+                    selected = 3;
+                }
+                else
+                {
+                    selected = 4;
+                }
+                buffer = 30;
+            }
+
+            if (Input.GetKeyDown(KeyCode.W) & buffer == 0)
+            {
+                // Up
+                if (selected == 3)
+                {
+                    selected = 4;
+                }
+                else if (selected == 4)
+                {
+                    selected = 3;
+                }
+                else
+                {
+                    selected = 2;
+                }
+                buffer = 30;
+            }
+            else if (Input.GetKeyDown(KeyCode.S) && buffer == 0)
+            {
+                // Down
+                if (selected == 4)
+                {
+                    selected = 3;
+                }
+                else if (selected == 3)
+                {
+                    selected = 4;
+                }
+                else
+                {
+                    selected = 2;
+                }
+                buffer = 30;
+            }
 
             for (int i = 2; i <= 4; i++)
             {
