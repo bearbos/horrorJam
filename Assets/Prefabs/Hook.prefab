@@ -44,7 +44,7 @@ MonoBehaviour:
   price: 65
   durability: 7
   description: I'm a pirate
-  weaponType: 0
+  weaponType: 1
   anchor: {fileID: 0}
   player: {fileID: 0}
   sprite: {fileID: 21300000, guid: 5e41737e8c751614d9fa8487cb128d50, type: 3}
@@ -101,6 +101,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: weaponType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -44,7 +44,7 @@ MonoBehaviour:
   price: 60
   durability: 8
   description: Candy Pirate Hook
-  weaponType: 0
+  weaponType: 1
   anchor: {fileID: 0}
   player: {fileID: 0}
   sprite: {fileID: 21300000, guid: 352cd6a207e0d8f419946e44f93291bc, type: 3}
@@ -101,6 +101,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: weaponType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
