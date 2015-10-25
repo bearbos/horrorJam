@@ -3,7 +3,7 @@ using System.Collections;
 
 public class playerStats : MonoBehaviour {
 
-    public float baseDamage, damageModifier, maxHealth, currHealth, adrenaline, timer, notoriety, timeMulti, damageMulti;
+    public float baseDamage, damageModifier, maxHealth, currHealth, adrenaline, timer, notoriety, timeMulti, damageMulti,pressure;
 	float adrenalineFalloffRate, adrenalineFalloffTime, superSaiyanDuration;
 	public int score, candy;
 	public bool superSaiyan;
@@ -18,7 +18,12 @@ public class playerStats : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         timer -= (Time.deltaTime * timeMulti);
-
+        if(pressure >= 1)
+        {
+            if (notoriety < 5)
+                notoriety += 1;
+            pressure = 0;
+        }
 
 		if (currHealth > maxHealth)
 			currHealth = maxHealth;

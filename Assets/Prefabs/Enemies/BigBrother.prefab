@@ -91,8 +91,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbe0387b2365b1488e421323c4d9981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHealth: 11000
-  maxHealth: 11000
+  currHealth: 20
+  maxHealth: 150
+  score: 0
+  notriaty: .100000001
 --- !u!114 &11476242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -175,6 +177,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: maxHealth
       value: 11000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHealth
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: notriaty
+      value: .100000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

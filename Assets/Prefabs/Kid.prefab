@@ -114,6 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHealth: 20
   maxHealth: 20
+  score: 0
+  notriaty: .0500000007
 --- !u!212 &21271450
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -174,6 +176,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: runDistance
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: notriaty
+      value: .0500000007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
