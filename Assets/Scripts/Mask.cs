@@ -31,12 +31,15 @@ public class Mask : MonoBehaviour
         }
         else if (!isHockey && name == "HockeyMask")
         {
-            GameObject[] kids = GameObject.FindGameObjectsWithTag("Kids");
-            for (int i = 0; i < kids.Length; i++)
-            {
-                kids[i].GetComponent<KidsBehavior>().minCandy -= 2;
-                kids[i].GetComponent<KidsBehavior>().maxCandy -= 2;
-            }
+                GameObject[] kids = GameObject.FindGameObjectsWithTag("Enemy");
+                for (int i = 0; i < kids.Length; i++)
+                {
+                    if (kids[i].GetComponent<KidsBehavior>() != null)
+                    {
+                        kids[i].GetComponent<KidsBehavior>().minCandy -= 2;
+                        kids[i].GetComponent<KidsBehavior>().maxCandy -= 2; 
+                    }
+                }
         }
     }
     public void ApplyBuff()

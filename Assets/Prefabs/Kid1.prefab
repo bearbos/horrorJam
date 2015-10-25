@@ -13,6 +13,7 @@ GameObject:
   - 61: {fileID: 6170808}
   - 114: {fileID: 11402922}
   - 114: {fileID: 11410718}
+  - 95: {fileID: 9562870}
   m_Layer: 0
   m_Name: Kid1
   m_TagString: Enemy
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.71000862, y: 1.84382558, z: 0}
+  m_LocalPosition: {x: 8.79675293, y: -.523280084, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,9 +59,26 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -.00814533234, y: .383865833}
+  m_Offset: {x: -.00814533234, y: -.678770602}
   serializedVersion: 2
-  m_Size: {x: 2.11971378, y: .767731667}
+  m_Size: {x: 2.11971378, y: .787972391}
+--- !u!95 &9562870
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127534}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ee5accbadd64a548918b895908d16c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11402922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,7 +140,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 55a18ebeb7652df4aa3f7d61349841df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5f4f75f86b684543998b59557f0988a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -140,9 +158,16 @@ Prefab:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+<<<<<<< HEAD
       propertyPath: notriaty
       value: .0500000007
       objectReference: {fileID: 0}
+=======
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c5f4f75f86b684543998b59557f0988a,
+        type: 3}
+>>>>>>> 10ca1e85c67d084ae759b4b7a33dfd9affc3d1fc
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127534}

@@ -4,15 +4,32 @@ using System.Collections;
 public class The_Director : MonoBehaviour {
 
     // Data Members
-    int wantedLevel = 1;
-    int streetLvl = 2;
-    int candy = 0;
-    float healthRatio = 1.0f;
-
     public int prevEnemies = 0;
     public int numEnemies;
 
     public GameObject LevelChunk;
+
+    // HUD
+    public GameObject theTimer;
+    public GameObject theCandy;
+    public GameObject theScore;
+    public GameObject theStreet;
+    public GameObject theWantedLvl;
+
+    int GameTimer = 91;
+    int CandyCount = 0;
+    int PlayerScore = 0;
+    int wantedLevel = 0;
+    public int streetLvl = 1;
+    string streetName;
+    string wantedName;
+
+    public GameObject fadeToBlack;
+    bool fadeToBlackBool = false;
+    float transitionTimer = 0.0f;
+
+    public GameObject nextLevelText;
+    public string nextLevelString = " ";
 
     // Things to spawn
     [SerializeField]
@@ -38,6 +55,12 @@ public class The_Director : MonoBehaviour {
 
     public float privateTimer = 0.0f;
 
+    [SerializeField]
+    string[] streetName1;
+
+    [SerializeField]
+    string[] streetName2;
+
 
     // Use this for initialization
     void Start ()
@@ -46,11 +69,28 @@ public class The_Director : MonoBehaviour {
         SpawnDecorations();
         SpawnRoofs();
         SpawnEnemies();
-	}
+        LoadNewStreet();
+
+        Color empty = new Color(0, 0, 0, 0);
+        fadeToBlack.gameObject.GetComponent<SpriteRenderer>().color = empty;
+        nextLevelText.gameObject.GetComponent<TextMesh>().text = " ";
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        if (fadeToBlackBool == true)
+            transitionTimer += Time.deltaTime;
+
+        if(transitionTimer >= 3.0f)
+        {
+            nextLevelText.gameObject.GetComponent<TextMesh>().text = " ";
+            Color empty = new Color(0, 0, 0, 0);
+            fadeToBlack.gameObject.GetComponent<SpriteRenderer>().color = empty;
+            fadeToBlackBool = false;
+            transitionTimer = 0.0f;
+        }
+
         privateTimer += Time.deltaTime;
 
 	    if(privateTimer >= 0.5f)
@@ -58,7 +98,27 @@ public class The_Director : MonoBehaviour {
             ManageEnemies();
             privateTimer = 0.0f;
         }
-	}
+
+        // Update the time
+        GameTimer = 90;
+        GameTimer += (int)GameObject.FindWithTag("Player").gameObject.GetComponent<playerStats>().timer;
+        theTimer.gameObject.GetComponent<TextMesh>().text = GameTimer.ToString();
+
+        if (GameTimer < 0)
+        {
+            LoadNewStreet();
+            GameObject.FindWithTag("Player").gameObject.GetComponent<playerStats>().timer = 5.0f;
+        }
+
+        // Update the Candy
+        CandyCount = (int)GameObject.FindWithTag("Player").gameObject.GetComponent<playerStats>().candy;
+        theCandy.gameObject.GetComponent<TextMesh>().text = CandyCount.ToString();
+
+        // Update score
+        PlayerScore = (int)GameObject.FindWithTag("Player").gameObject.GetComponent<playerStats>().score;
+        theScore.gameObject.GetComponent<TextMesh>().text = PlayerScore.ToString();
+
+    }
 
     void SpawnHouses()
     {
@@ -74,7 +134,6 @@ public class The_Director : MonoBehaviour {
             int houseIndex = Random.Range(0, theHouses.Length);
             GameObject tempHouse = Instantiate(theHouses[houseIndex], newPos, gameObject.transform.rotation) as GameObject;
            
-            Debug.Log("Instantiating House " + houseIndex.ToString());
         }
 
         // Destroy all the house tags
@@ -82,11 +141,9 @@ public class The_Director : MonoBehaviour {
         {
             Destroy(houseNodes[numHouses - 1]);
             numHouses -= 1;
-            Debug.Log(numHouses.ToString() + " houses remaining");
+           
         }
-
-        if (numHouses == 0)
-            Debug.Log("All houses deleted");
+  
     }
 
     void SpawnRoofs()
@@ -152,11 +209,9 @@ public class The_Director : MonoBehaviour {
         {
             Destroy(decorationNodes[decorationSize - 1]);
             decorationSize -= 1;
-            Debug.Log(decorationSize.ToString() + " houses remaining");
+           
         }
-
-        if (decorationSize == 0)
-            Debug.Log("All houses deleted");
+        
 
     }
 
@@ -173,7 +228,7 @@ public class The_Director : MonoBehaviour {
         int numChildren = 10;
         int candyLevel = 15;
 
-        for(int i = candy; i > 0; i -= 50)
+        for(int i = CandyCount; i > 0; i -= 50)
         {
             candyLevel -= 1;
         }
@@ -282,5 +337,30 @@ public class The_Director : MonoBehaviour {
         }
 
         prevEnemies = numEnemies;
+    }
+
+    void LoadNewStreet()
+    {
+        GenerateStreetName();
+
+        streetLvl += 1;
+        Color empty = new Color(1, 1, 1, 1);
+        fadeToBlack.gameObject.GetComponent<SpriteRenderer>().color = empty;
+        nextLevelText.gameObject.GetComponent<TextMesh>().text = "Street " + streetLvl.ToString();
+        fadeToBlackBool = true;
+    }
+
+    void GenerateStreetName()
+    {
+        int randName1 = Random.Range(0, streetName1.Length);
+        int randName2 = Random.Range(0, streetName2.Length);
+
+        string temp = " ";
+        string temp2 = streetName1[randName1].ToString();
+        string temp3 = " ";
+        string temp4 = streetName2[randName2].ToString();
+
+        temp = temp2 + temp3 + temp4;
+        theStreet.GetComponent<TextMesh>().text = temp;
     }
 }

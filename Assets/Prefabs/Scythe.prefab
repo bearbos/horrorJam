@@ -10,7 +10,8 @@ GameObject:
   - 4: {fileID: 429992}
   - 212: {fileID: 21294290}
   - 114: {fileID: 11415684}
-  - 61: {fileID: 6188718}
+  - 60: {fileID: 6053842}
+  - 50: {fileID: 5047700}
   m_Layer: 0
   m_Name: Scythe
   m_TagString: Pickup
@@ -25,13 +26,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5999999, y: -5.71999979, z: 0}
+  m_LocalPosition: {x: -1.60080099, y: .412451446, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6188718
-BoxCollider2D:
+--- !u!50 &5047700
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 123374}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &6053842
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -40,9 +57,34 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: .170063019, y: 1.90032673}
-  serializedVersion: 2
-  m_Size: {x: 1.79494929, y: 2.69147491}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: .0453925133, y: 2.69983029}
+      - {x: .576642513, y: 2.63733029}
+      - {x: .982892513, y: 2.19983029}
+      - {x: 1.13914251, y: 2.26233029}
+      - {x: 1.13914251, y: 2.38733029}
+      - {x: .889142513, y: 3.07483029}
+      - {x: .295392513, y: 3.29358029}
+      - {x: -.298357487, y: 3.29358029}
+      - {x: -.673357487, y: 3.19983029}
+      - {x: -.798357487, y: 2.94983029}
+      - {x: -.798357487, y: 2.76233029}
+      - {x: -.704607487, y: 2.63733029}
+      - {x: -.517107487, y: 2.41858029}
+      - {x: -.454607487, y: 2.41858029}
+      - {x: -.423357487, y: 2.51233029}
+      - {x: -.267107487, y: 2.51233029}
+      - {x: -.298357487, y: 1.69983029}
+      - {x: -.142107487, y: .481080294}
+      - {x: -.110857487, y: -.331419706}
+      - {x: -.0171074867, y: -.456419706}
+      - {x: .0453925133, y: -.456419706}
+      - {x: .201642513, y: -.393919706}
+      - {x: .0453925133, y: 1.19983029}
+      - {x: .232892513, y: 1.60608029}
+      - {x: .232892513, y: 1.88733029}
 --- !u!114 &11415684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60,6 +102,7 @@ MonoBehaviour:
   description: Grim Raper
   weaponType: 0
   anchor: {fileID: 0}
+  player: {fileID: 0}
   sprite: {fileID: 21300000, guid: 6c9a56a22cf27f247a07e320163a0fac, type: 3}
 --- !u!212 &21294290
 SpriteRenderer:
