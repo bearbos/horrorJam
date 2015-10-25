@@ -42,7 +42,14 @@ public class playerStats : MonoBehaviour {
 		if (adrenaline < 0.0f)
 			adrenaline = 0.0f;
 
-
+        if(pressure >= 1)
+        {
+            if(notoriety < 5)
+            {
+                notoriety += 1;
+            }
+            pressure = 0;
+        }
 		if (superSaiyanDuration > 0.0f) {
 			superSaiyanDuration -= Time.deltaTime;
 		} else if (superSaiyanDuration < 0.0f) {
