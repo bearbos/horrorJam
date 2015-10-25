@@ -2,13 +2,20 @@
 using System.Collections;
 
 public class e_StateMachine : MonoBehaviour {
-   public bool eIdle,
+
+    [SerializeField]
+    bool ironman;
+    bool takdam;
+
+    public bool eIdle,
          eAggro,
          eGuard;
     bool isRight;
     bool attacking;
 
+    float attacktimer = 0;
     float timer = 0;
+    int num = 0;
 
     Animator theAnimator;
     GameObject thePlayer;
@@ -65,23 +72,62 @@ public class e_StateMachine : MonoBehaviour {
         //if enemy is going after the player
         if (eAggro)
         {
-            theAnimator.SetBool("run", true);
-            float _X = 0;
-            float _Y = 0;
-            if (playerX >= enemyX)         // enemy move left
-                _X = 2;
-            if (playerX <= enemyX)         // enemy move right
-                _X = -2;
-            if (playerY >= enemyY)         // enemy move down
-                _Y = 2;
-            if (playerY <= enemyY)         // enemy move up
-                _Y = -2;
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(_X , _Y );
-            Animationflip();
+            if (ironman == true)
+            {
+                if (attacking == true)
+                {
+                    gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
 
-            if (attacking == true)
-            {   
-                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                    attacktimer += Time.deltaTime;
+                   
+                        if(attacktimer >= 2.1f)
+                        {
+                            
+                            attacktimer = 0;
+                            attacking = false;
+                            theAnimator.SetBool("attack1", false);
+                        }
+                   
+
+                }
+                else
+                {
+                    theAnimator.SetBool("run", true);
+                    float _X = 0;
+                    float _Y = 0;
+                    if (playerX >= enemyX)         // enemy move left
+                        _X = 2;
+                    if (playerX <= enemyX)         // enemy move right
+                        _X = -2;
+                    if (playerY >= enemyY)         // enemy move down
+                        _Y = 2;
+                    if (playerY <= enemyY)         // enemy move up
+                        _Y = -2;
+                    gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(_X, _Y);
+                }
+                Animationflip();
+
+            }
+            else
+            {
+                theAnimator.SetBool("run", true);
+                float _X = 0;
+                float _Y = 0;
+                if (playerX >= enemyX)         // enemy move left
+                    _X = 2;
+                if (playerX <= enemyX)         // enemy move right
+                    _X = -2;
+                if (playerY >= enemyY)         // enemy move down
+                    _Y = 2;
+                if (playerY <= enemyY)         // enemy move up
+                    _Y = -2;
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(_X, _Y);
+                Animationflip();
+
+                if (attacking == true)
+                {
+                    gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                }
             }
         }
 
@@ -186,6 +232,24 @@ public class e_StateMachine : MonoBehaviour {
         theAnimator.SetBool("run", true);
         theAnimator.SetBool("attack1", false);
         attacking = false;
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+           
+                theAnimator.SetBool("run", false);
+
+                theAnimator.SetBool("attack1", true);
+                attacking = true;
+
+                if (takdam == true)
+                { 
+                    takdam = false;
+                }
+           
+        }
+
     }
 
 

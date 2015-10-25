@@ -17,12 +17,15 @@ public class Warning_range : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Enemy")
         {
-            if(coll.gameObject.GetComponent<e_StateMachine>().eAggro)
+            if (coll.gameObject.GetComponent<e_StateMachine>())
             {
+                if (coll.gameObject.GetComponent<e_StateMachine>().eAggro)
+                {
 
+                }
+                else
+                    coll.gameObject.SendMessage("SetGuard");
             }
-            else
-                coll.gameObject.SendMessage("SetGuard");
         }
     }
 }

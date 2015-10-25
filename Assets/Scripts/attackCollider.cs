@@ -30,5 +30,7 @@ public class attackCollider : MonoBehaviour {
 	{
 		if (other.CompareTag ("Enemy") || other.CompareTag ("Decoration"))
 			other.SendMessage ("TakeDamage", 20.0f);
+
+		GameObject.FindGameObjectWithTag ("Player").GetComponent<playerStats> ().IncreaseAdrenaline ();
 	}
 }
