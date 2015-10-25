@@ -54,11 +54,15 @@ public class StoreScript : MonoBehaviour
         {
             for (int j = 0; j < 5; j++)
             {
-                if (player.GetComponentInChildren<maskController>().maskCollection[i].GetComponent<Mask>().name == possible_sale_items[j].GetComponent<Mask>().name)
+                if (player.GetComponentInChildren<maskController>().maskCollection[i].GetComponent<Mask>().name != null)
                 {
-                    playerHas[i] = true;
-                    break;
+                    if (player.GetComponentInChildren<maskController>().maskCollection[i].GetComponent<Mask>().name == possible_sale_items[j].GetComponent<Mask>().name)
+                    {
+                        playerHas[i] = true;
+                        break;
+                    }
                 }
+                
 
             }
         }
