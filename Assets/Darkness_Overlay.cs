@@ -16,6 +16,7 @@ public class Darkness_Overlay : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+       
         currTrans = (float)GameObject.FindWithTag("Director").GetComponent<The_Director>().streetLvl * 0.1f;
 
         if (currTrans >= 0.7)
