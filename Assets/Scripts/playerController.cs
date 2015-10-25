@@ -227,6 +227,10 @@ public class playerController : MonoBehaviour {
 			}
 		}
 
+		if (aT && (objectInHand && objectBeingUsed.GetComponent<weapon> ().weaponType == weaponType.THROWN)) {
+
+		}
+
         if (validInput)
         {
             ++attackComboLength;
