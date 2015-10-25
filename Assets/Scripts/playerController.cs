@@ -243,8 +243,10 @@ public class playerController : MonoBehaviour {
 
         if (validInput)
         {
+			if (objectBeingUsed != null){
 			if (objectBeingUsed.GetComponent<weapon>().weaponType == weaponType.FIST)
 				--objectBeingUsed.GetComponent<weapon>().durability;
+			}
             ++attackComboLength;
             comboInputTimer = 0.5f;
         }
