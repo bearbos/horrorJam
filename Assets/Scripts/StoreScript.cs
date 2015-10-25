@@ -29,110 +29,25 @@ public class StoreScript : MonoBehaviour
     [SerializeField]
     int buffer = 30;
     [SerializeField]
-    bool blink = false;
+    bool disabled = false;
 
     public GameObject parent;
     // Use this for initialization
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        transform.GetChild(0).GetComponent<Image>().enabled = true;
-        transform.GetChild(1).GetComponent<Image>().enabled = false;
-        transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().enabled = false;
-        for (int i = 2; i <= 4; i++)
-        {
-            transform.GetChild(i).GetComponent<Image>().enabled = false;
-
-            transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().enabled = false;
-            transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().enabled = false;
-            transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().enabled = false;
-            transform.GetChild(i).transform.GetChild(3).GetComponent<Text>().enabled = false;
-
-        }
-
-        purchased = new bool[3];
-        //sale_items = new GameObject[(int)SALE_ITEMS.NUM_MAX];
-        //possible_sale_items = GetComponent<StoreDatabaseScript>().storeDatabase;
-        playerHas = new bool[5];
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 5; j++)
-            {
-                if (player.GetComponentInChildren<maskController>().maskCollection[i] != null)
-                {
-                    if (player.GetComponentInChildren<maskController>().maskCollection[i].GetComponent<Mask>().name == possible_sale_items[j].GetComponent<Mask>().name)
-                    {
-                        playerHas[i] = true;
-                        break;
-                    }
-                }
-                else
-                {
-                    break;
-                }
-
-
-            }
-        }
-        sale_items = new int[3];
-        itemType = new int[3];
-        RollItems();
-
-        for (int i = 2, j = 0; i <= 4; i++, j++)
-        {
-            switch (itemType[j])
-            {
-                case 0:
-                    {
-                        // transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = sale_items[j].GetComponent<Mask>().sprite;
-                        // transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = sale_items[j].GetComponent<Mask>().description;
-                        // transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = sale_items[j].GetComponent<Mask>().price.ToString();
-                        //transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<Mask>().sprite;
-                        //transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<Mask>().description;
-                        //transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<Mask>().price.ToString();
-                        transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = possible_sale_items[sale_items[j]].GetComponent<Mask>().sprite;
-                        transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = possible_sale_items[sale_items[j]].GetComponent<Mask>().description;
-                        transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = possible_sale_items[sale_items[j]].GetComponent<Mask>().price.ToString();
-                        break;
-                    }
-                case 1:
-                    {
-                        // transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = sale_items[j].GetComponent<SpriteRenderer>().sprite;
-                        // transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = "Eat me to heal " + sale_items[j].GetComponent<Candy>().healAmount.ToString() + " points of damage.";
-                        // transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = sale_items[j].GetComponent<Candy>().price.ToString();
-                        //transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<SpriteRenderer>().sprite;
-                        //transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = "Eat me to heal " + GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<Candy>().healAmount.ToString() + " points of damage.";
-                        //transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<Candy>().price.ToString();
-                        transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = possible_sale_items[sale_items[j]].GetComponent<SpriteRenderer>().sprite;
-                        transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = "Eat me to heal " + possible_sale_items[sale_items[j]].GetComponent<Candy>().healAmount.ToString() + " points of damage.";
-                        transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = possible_sale_items[sale_items[j]].GetComponent<Candy>().price.ToString();
-                        break;
-                    }
-                case 2:
-                    {
-                        // transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = sale_items[j].GetComponent<weapon>().sprite;
-                        // transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = sale_items[j].GetComponent<weapon>().description;
-                        // transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = sale_items[j].GetComponent<weapon>().price.ToString();
-                        //transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<weapon>().sprite;
-                        //transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<weapon>().description;
-                        //transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<weapon>().price.ToString();
-                        transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = possible_sale_items[sale_items[j]].GetComponent<weapon>().sprite;
-                        transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = possible_sale_items[sale_items[j]].GetComponent<weapon>().description;
-                        transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = possible_sale_items[sale_items[j]].GetComponent<weapon>().price.ToString();
-                        break;
-                    }
-                default:
-                    break;
-            }
-
-        }
-
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (disabled)
+        {
+            Enable();
+            disabled = false;
+        }
+
         if (buffer > 0)
         {
             //    if (blink)
@@ -168,7 +83,7 @@ public class StoreScript : MonoBehaviour
                 transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().enabled = true;
 
             }
-
+            run = 2;
         }
         else if (run > -3)
         {
@@ -342,8 +257,11 @@ public class StoreScript : MonoBehaviour
         if (Input.GetButtonDown("B"))
         {
             Time.timeScale = 1.0f;
+            disabled = true;
             if (parent != null)
                 Destroy(parent);
+            gameObject.GetComponent<Canvas>().enabled = false;
+
         }
 
         //transform.GetChild(2).transform.GetChild(1).GetComponent<Text>().text = "Testing";    //// Works
@@ -457,14 +375,99 @@ public class StoreScript : MonoBehaviour
     }
 
 
-    void BlinkYellow()
-    {
-        transform.GetChild(selected).GetComponent<Image>().color = Color.yellow;
 
+    void Enable()
+    {
+        transform.GetChild(0).GetComponent<Image>().enabled = true;
+        transform.GetChild(1).GetComponent<Image>().enabled = false;
+        transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().enabled = false;
+        for (int i = 2; i <= 4; i++)
+        {
+            transform.GetChild(i).GetComponent<Image>().enabled = false;
+
+            transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().enabled = false;
+            transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().enabled = false;
+            transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().enabled = false;
+            transform.GetChild(i).transform.GetChild(3).GetComponent<Text>().enabled = false;
+
+        }
+
+        purchased = new bool[3];
+        //sale_items = new GameObject[(int)SALE_ITEMS.NUM_MAX];
+        //possible_sale_items = GetComponent<StoreDatabaseScript>().storeDatabase;
+        playerHas = new bool[5];
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                if (player.GetComponentInChildren<maskController>().maskCollection[i] != null)
+                {
+                    if (player.GetComponentInChildren<maskController>().maskCollection[i].GetComponent<Mask>().name == possible_sale_items[j].GetComponent<Mask>().name)
+                    {
+                        playerHas[i] = true;
+                        break;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+
+
+            }
+        }
+        sale_items = new int[3];
+        itemType = new int[3];
+        RollItems();
+
+        for (int i = 2, j = 0; i <= 4; i++, j++)
+        {
+            switch (itemType[j])
+            {
+                case 0:
+                    {
+                        // transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = sale_items[j].GetComponent<Mask>().sprite;
+                        // transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = sale_items[j].GetComponent<Mask>().description;
+                        // transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = sale_items[j].GetComponent<Mask>().price.ToString();
+                        //transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<Mask>().sprite;
+                        //transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<Mask>().description;
+                        //transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<Mask>().price.ToString();
+                        transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = possible_sale_items[sale_items[j]].GetComponent<Mask>().sprite;
+                        transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = possible_sale_items[sale_items[j]].GetComponent<Mask>().description;
+                        transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = possible_sale_items[sale_items[j]].GetComponent<Mask>().price.ToString();
+                        break;
+                    }
+                case 1:
+                    {
+                        // transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = sale_items[j].GetComponent<SpriteRenderer>().sprite;
+                        // transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = "Eat me to heal " + sale_items[j].GetComponent<Candy>().healAmount.ToString() + " points of damage.";
+                        // transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = sale_items[j].GetComponent<Candy>().price.ToString();
+                        //transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<SpriteRenderer>().sprite;
+                        //transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = "Eat me to heal " + GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<Candy>().healAmount.ToString() + " points of damage.";
+                        //transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<Candy>().price.ToString();
+                        transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = possible_sale_items[sale_items[j]].GetComponent<SpriteRenderer>().sprite;
+                        transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = "Eat me to heal " + possible_sale_items[sale_items[j]].GetComponent<Candy>().healAmount.ToString() + " points of damage.";
+                        transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = possible_sale_items[sale_items[j]].GetComponent<Candy>().price.ToString();
+                        break;
+                    }
+                case 2:
+                    {
+                        // transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = sale_items[j].GetComponent<weapon>().sprite;
+                        // transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = sale_items[j].GetComponent<weapon>().description;
+                        // transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = sale_items[j].GetComponent<weapon>().price.ToString();
+                        //transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<weapon>().sprite;
+                        //transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<weapon>().description;
+                        //transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = GetComponent<StoreDatabaseScript>().storeDatabase[sale_items[i]].GetComponent<weapon>().price.ToString();
+                        transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().sprite = possible_sale_items[sale_items[j]].GetComponent<weapon>().sprite;
+                        transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().text = possible_sale_items[sale_items[j]].GetComponent<weapon>().description;
+                        transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().text = possible_sale_items[sale_items[j]].GetComponent<weapon>().price.ToString();
+                        break;
+                    }
+                default:
+                    break;
+            }
+
+        }
     }
 
-    void BlinkBlack()
-    {
-        transform.GetChild(selected).GetComponent<Image>().color = Color.black;
-    }
 }
