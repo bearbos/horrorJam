@@ -27,7 +27,7 @@ public class PressStart : MonoBehaviour {
         {
             gameObject.GetComponent<TextMesh>().color = colorOn;
         }
-        if (Input.GetButtonDown("Start Button"))
+        if (Input.GetButtonDown("Start Button") || Input.GetKeyDown(KeyCode.Return))
         {
             Application.LoadLevel(0);
         }

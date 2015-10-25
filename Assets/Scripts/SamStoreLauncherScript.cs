@@ -15,7 +15,7 @@ public class SamStoreLauncherScript : MonoBehaviour {
 
     void OnTriggerStay2D (Collider2D other)
     {
-        if (other.tag == "Player" && Input.GetButtonDown("A"))
+        if ((other.tag == "Player" && Input.GetButtonDown("A")) || other.tag == "Player" && Input.GetKeyDown(KeyCode.Space))
         {
             LaunchStore();
         }

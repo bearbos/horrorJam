@@ -91,29 +91,29 @@ public class playerController : MonoBehaviour {
 
 		///////////////////////////// Attacking /////////////////////////////
 		/// 
-		if (Input.GetButtonDown ("X"))
+		if (Input.GetButtonDown ("X") || Input.GetKeyDown(KeyCode.J))
 			ComboManager(true);
 		   
-		if (Input.GetButtonDown ("Y"))
+		if (Input.GetButtonDown ("Y") || Input.GetKeyDown(KeyCode.K))
 			ComboManager(false);
 
 
 		///////////////////////////// Mask Switching ////////////////////////////
 		/// 
-		if (Input.GetButtonDown ("Left Bumper"))
+		if (Input.GetButtonDown ("Left Bumper") || Input.GetKeyDown(KeyCode.Q))
 			GetComponentInChildren<maskController>().ChangeMask(false);
 
-		if (Input.GetButtonDown ("Right Bumper"))
+		if (Input.GetButtonDown ("Right Bumper") || Input.GetKeyDown(KeyCode.E))
 			GetComponentInChildren<maskController>().ChangeMask(true);
 
 		///////////////////////////// Interaction and Menus /////////////////////////////////
 		/// 
-		if (Input.GetButtonDown ("A") && usableObject != null) {
+		if ((Input.GetButtonDown ("A") && usableObject != null) || (Input.GetKeyDown(KeyCode.Space) && usableObject != null)) {
 			objectInHand = true;
 			PickupItem();
 		}
 
-		if (Input.GetButtonDown ("B") && objectInHand == true) {
+		if ((Input.GetButtonDown ("B") && objectInHand == true) || (Input.GetKeyDown(KeyCode.Z) && objectInHand == true)) {
 			objectInHand = false;
 			DropItem();
 		}

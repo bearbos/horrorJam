@@ -253,7 +253,7 @@ public class StoreScript : MonoBehaviour
                 }
             }
 
-            if (Input.GetButtonDown("A"))
+            if (Input.GetButtonDown("A") || Input.GetKeyDown(KeyCode.Space))
             {
                 if (purchased[selected - 2] == false)
                 {
@@ -327,7 +327,7 @@ public class StoreScript : MonoBehaviour
 
             }
 
-            if (Input.GetButtonDown("B"))
+            if (Input.GetButtonDown("B") || Input.GetKeyDown(KeyCode.Z))
             {
                 Time.timeScale = 1.0f;
                 disabled = true;
