@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11402922}
   - 114: {fileID: 11410718}
   - 95: {fileID: 9562870}
+  - 82: {fileID: 8291280}
   m_Layer: 0
   m_Name: Kid1
   m_TagString: Enemy
@@ -62,6 +63,75 @@ BoxCollider2D:
   m_Offset: {x: -.00814533234, y: -.678770602}
   serializedVersion: 2
   m_Size: {x: 2.11971378, y: .787972391}
+--- !u!82 &8291280
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127534}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e56f36d1e6520d641b0bc7d483f620ad, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9562870
 Animator:
   serializedVersion: 3
@@ -117,9 +187,9 @@ MonoBehaviour:
   score: 0
   notriaty: .0500000007
   damage: 0
-  textDamage: {fileID: 0}
+  textDamage: {fileID: 148546, guid: 1f6e1cae29a0f48418ce39add8ec55be, type: 2}
   attackColliderPrefab: {fileID: 0}
-  sfx: {fileID: 0}
+  sfx: {fileID: 8291280}
 --- !u!212 &21238386
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -166,6 +236,22 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: c5f4f75f86b684543998b59557f0988a,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e56f36d1e6520d641b0bc7d483f620ad, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 8291280}
+    - target: {fileID: 0}
+      propertyPath: textDamage
+      value: 
+      objectReference: {fileID: 148546, guid: 1f6e1cae29a0f48418ce39add8ec55be, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127534}
