@@ -191,6 +191,10 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!1 &290847971 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 192030, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
+  m_PrefabInternal: {fileID: 1626278060}
 --- !u!1 &413610120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1124,10 @@ Prefab:
       propertyPath: m_Offset.y
       value: .400000006
       objectReference: {fileID: 0}
+    - target: {fileID: 11499522, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
+      propertyPath: childAnimator
+      value: 
+      objectReference: {fileID: 290847971}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
   m_IsPrefabParent: 0
