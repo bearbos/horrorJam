@@ -7,6 +7,8 @@ public class Dynamic_Camera : MonoBehaviour {
     GameObject thePlayer;
     [SerializeField]
     AudioSource music;
+    public GameObject theSpawner;
+
     // Camera Stuff
     Vector3 prevPos;
     Vector3 currPos;
@@ -35,8 +37,12 @@ public class Dynamic_Camera : MonoBehaviour {
         {
             music.Play();
         }
+        Vector3 newPos = gameObject.transform.position;
+        newPos.x += 20.0f;
+        theSpawner.gameObject.transform.position = newPos;
+
         // Clean up old shit
-        if(gameTime >= 1.0f)
+        if (gameTime >= 1.0f)
         {
             CleanUp();
         }
@@ -89,11 +95,11 @@ public class Dynamic_Camera : MonoBehaviour {
 
         int oldObjectsLength = oldObjects.Length;
 
-        for (int i = oldObjectsLength; i > 0; i--)
+        for (int i = 0; i < oldObjectsLength; i++)
         {
-            if (oldObjects[i - 1].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 70.0f))
+            if (oldObjects[i].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 70.0f))
             {
-                GameObject deleteThis = oldObjects[i - 1];
+                GameObject deleteThis = oldObjects[i];
                 if (deleteThis.gameObject.tag == "Director")
                 {
                        

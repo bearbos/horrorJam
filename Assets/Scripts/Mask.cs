@@ -4,7 +4,7 @@ using System.Collections;
 public class Mask : MonoBehaviour
 {
     [SerializeField]
-    string name;
+    string maskName;
     public int price;
     public string description;
     public int wantedLevel;
@@ -20,7 +20,7 @@ public class Mask : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isHockey && name == "HockeyMask")
+        if (isHockey && maskName == "HockeyMask")
         {
             GameObject[] kids = GameObject.FindGameObjectsWithTag("Kids");
             for (int i = 0; i < kids.Length; i++)
@@ -29,7 +29,7 @@ public class Mask : MonoBehaviour
                 kids[i].GetComponent<KidsBehavior>().maxCandy += 2;
             }
         }
-        else if (!isHockey && name == "HockeyMask")
+        else if (!isHockey && maskName == "HockeyMask")
         {
                 GameObject[] kids = GameObject.FindGameObjectsWithTag("Enemy");
                 for (int i = 0; i < kids.Length; i++)
@@ -44,7 +44,7 @@ public class Mask : MonoBehaviour
     }
     public void ApplyBuff()
     {
-        switch (name)
+        switch (maskName)
         {
             case "Werewolf":
                 GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().timeMulti = 0.8f;
@@ -64,7 +64,7 @@ public class Mask : MonoBehaviour
     }
     public void ResetBuff()
     {
-        switch (name)
+        switch (maskName)
         {
             case "Werewolf":
                 GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().timeMulti = 1f;

@@ -439,6 +439,10 @@ Prefab:
       propertyPath: childAnimator
       value: 
       objectReference: {fileID: 1793926505}
+    - target: {fileID: 183266, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
+      propertyPath: m_Name
+      value: GameObject
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
   m_IsPrefabParent: 0
