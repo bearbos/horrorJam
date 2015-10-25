@@ -32,7 +32,7 @@ public class Destructable : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().pressure += pressure;
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().score += score;
             int spawnedNum = Random.Range(1, 3);
-            Debug.Log(spawnedNum);
+           // Debug.Log(spawnedNum);
             for (int i = 0; i < spawnedNum; i++)
             {
                 GameObject summonedCandy = Instantiate(candy[Random.Range(0, candy.Length)]);

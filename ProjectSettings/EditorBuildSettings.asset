@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/TITLE_SCREEN.unity
   - enabled: 1
     path: Assets/Scenes/MAIN_GAME.unity
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity

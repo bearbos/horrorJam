@@ -79,6 +79,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHealth: 20
   maxHealth: 150
-  score: 0
+  score: 35
   notriaty: .100000001
   damage: 10
   textDamage: {fileID: 148546, guid: 1f6e1cae29a0f48418ce39add8ec55be, type: 2}
@@ -276,6 +277,10 @@ Prefab:
       propertyPath: sfx
       value: 
       objectReference: {fileID: 8256912}
+    - target: {fileID: 0}
+      propertyPath: score
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 129596}
