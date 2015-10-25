@@ -47,7 +47,10 @@ public class E_Stat : MonoBehaviour {
     {
         currHealth -= _dam;
         changeColor = true;
-
+        if (GetComponent<Rigidbody2D>() != null)
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(500f, 0f));
+        }
         if (currHealth <= 0)
         {
             gameObject.SendMessage("Death");
