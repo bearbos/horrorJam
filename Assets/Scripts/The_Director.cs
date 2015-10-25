@@ -100,7 +100,7 @@ public class The_Director : MonoBehaviour {
         }
 
         // Update the time
-        GameTimer = 10;
+        GameTimer = 90;
         GameTimer += (int)GameObject.FindWithTag("Player").gameObject.GetComponent<playerStats>().timer;
         theTimer.gameObject.GetComponent<TextMesh>().text = GameTimer.ToString();
 
@@ -134,7 +134,6 @@ public class The_Director : MonoBehaviour {
             int houseIndex = Random.Range(0, theHouses.Length);
             GameObject tempHouse = Instantiate(theHouses[houseIndex], newPos, gameObject.transform.rotation) as GameObject;
            
-            Debug.Log("Instantiating House " + houseIndex.ToString());
         }
 
         // Destroy all the house tags
@@ -142,11 +141,9 @@ public class The_Director : MonoBehaviour {
         {
             Destroy(houseNodes[numHouses - 1]);
             numHouses -= 1;
-            Debug.Log(numHouses.ToString() + " houses remaining");
+           
         }
-
-        if (numHouses == 0)
-            Debug.Log("All houses deleted");
+  
     }
 
     void SpawnRoofs()
@@ -212,11 +209,9 @@ public class The_Director : MonoBehaviour {
         {
             Destroy(decorationNodes[decorationSize - 1]);
             decorationSize -= 1;
-            Debug.Log(decorationSize.ToString() + " houses remaining");
+           
         }
-
-        if (decorationSize == 0)
-            Debug.Log("All houses deleted");
+        
 
     }
 
