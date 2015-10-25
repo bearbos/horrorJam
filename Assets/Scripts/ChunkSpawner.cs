@@ -20,7 +20,8 @@ public class ChunkSpawner : MonoBehaviour
     {
         if (col.gameObject.tag == "NodeSpawner")
         {
-            GameObject.FindGameObjectWithTag("Director").SendMessage("SpawnNewChunk");
+                GameObject.FindGameObjectWithTag("Director").SendMessage("SpawnNewChunk");
         }
     }
+    
 }

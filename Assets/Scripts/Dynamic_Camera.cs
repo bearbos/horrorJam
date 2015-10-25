@@ -7,6 +7,7 @@ public class Dynamic_Camera : MonoBehaviour {
     GameObject thePlayer;
    
     public GameObject theSpawner;
+    bool initCamera = true;
 
     // Camera Stuff
     Vector3 prevPos;
@@ -31,6 +32,13 @@ public class Dynamic_Camera : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if(initCamera == true)
+        {
+            Vector3 newCamPos = new Vector3(0, 0, -10);
+            gameObject.transform.position = newCamPos;
+            initCamera = false;
+        }
+
         gameTime += Time.deltaTime;
        
         Vector3 newPos = gameObject.transform.position;

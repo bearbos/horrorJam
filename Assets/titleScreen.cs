@@ -11,7 +11,7 @@ public class titleScreen : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButtonDown ("Start Button"))
-			Application.LoadLevel ("MAIN_GAME");
+			Application.LoadLevelAsync("MAIN_GAME");
 
 		if (Input.GetButtonDown ("Back Button"))
 			Application.Quit ();
