@@ -30,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.04500341, y: .035756588, z: .837890625}
+  m_LocalPosition: {x: -2.29822683, y: .0410398729, z: .837890625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +79,6 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -166,7 +165,9 @@ MonoBehaviour:
   maxHealth: 150
   score: 0
   notriaty: .100000001
+  damage: 10
   textDamage: {fileID: 148546, guid: 1f6e1cae29a0f48418ce39add8ec55be, type: 2}
+  attackColliderPrefab: {fileID: 197996, guid: 4037536ceb7b2cd4d9bdfe870479962d, type: 2}
   sfx: {fileID: 8256912}
 --- !u!114 &11476242
 MonoBehaviour:

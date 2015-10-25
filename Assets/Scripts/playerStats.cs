@@ -11,6 +11,7 @@ public class playerStats : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		maxHealth = currHealth = 100.0f;
 		baseDamage = 20.0f;
         timeMulti = 1.0f;
 		damageMulti = 1.0f;
@@ -85,6 +86,12 @@ public class playerStats : MonoBehaviour {
 
 	public void TakeDamage(float damage)
 	{
+		currHealth -= damage;
 
+		if (currHealth <= 0.0f) {
+			Debug.Log("Player Died");
+
+			currHealth = 10.0f;
+		}
 	}
 }
