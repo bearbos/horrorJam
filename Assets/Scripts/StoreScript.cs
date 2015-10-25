@@ -8,7 +8,7 @@ public class StoreScript : MonoBehaviour
 {
     /*FIRECRACKER,*//* TOILET_PAPER, YELLOW_EGG, SHIT_EGG, SHADE_EGG, SEA_EGG, RED_EGG, PURPLE_EGG, PINK_EGG, LIGHT_PURPLE_EGG, LIGHT_GREEN_EGG, LIGHT_BLUE_EGG, GREY_EGG, GOLDEN_EGG, CLEAR_GREEN_EGG, BLUE_EGG, BLACK_EGG,*//* NINJASTAR, NINJASTAR2, NINJASTAR3, NINJASTAR4, NINJASTAR5, NINJASTAR6, NINJASTAR7, NINJASTAR8,*/
     int run = 2;       // frames the images is displayed when the store opens.
-    enum SALE_ITEMS { WEREWOLF, DEVIL, NUN, HOCKEY, TROLL, CANDY_APPLE, PIE, BAT, BOXING, CANDY_HOOK, CANDY_SWORD, GREAT_AXE, HOOK, KATANA, HULK_FIST, NUNCHUCKS, SCYTHE, ZOMBIE_ARM, NUM_MAX };
+    enum SALE_ITEMS { WEREWOLF, DEVIL, NUN, HOCKEY, TROLL, CANDY_APPLE, PIE, BAT, BOXING, CANDY_HOOK, CANDY_SWORD, GREAT_AXE, HOOK, KATANA, HULK_FIST, NUNCHUCKS, SCYTHE, ZOMBIE_ARM, EGG, NINJASTAR, NUM_MAX };
     //[SerializeField]
     //SALE_ITEMS typeID;
     [SerializeField]
@@ -374,7 +374,7 @@ public class StoreScript : MonoBehaviour
             {
                 itemType[i] = 1;
             }
-            else if (temp[i] < (int)SALE_ITEMS.NUM_MAX || temp[i] > 6)
+            else if (temp[i] < (int)SALE_ITEMS.NUM_MAX && temp[i] > 6)
             {
                 itemType[i] = 2;
             }
