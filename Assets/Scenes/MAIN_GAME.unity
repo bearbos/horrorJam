@@ -943,10 +943,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!4 &1039612018 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 403354, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
-  m_PrefabInternal: {fileID: 1870538865}
 --- !u!1 &1051514730
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,8 +970,8 @@ Transform:
   m_LocalPosition: {x: -13.1099997, y: 9.84000015, z: 0}
   m_LocalScale: {x: .100000001, y: .100000001, z: 1}
   m_Children: []
-  m_Father: {fileID: 1851671796}
-  m_RootOrder: 9
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!102 &1051514732
 TextMesh:
   serializedVersion: 3
