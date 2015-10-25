@@ -151,7 +151,7 @@ public class StoreScript : MonoBehaviour
 
 
 
-        if (Input.GetAxis("Horizontal") > 0)
+        if (Input.GetAxis("Horizontal") > 0 && buffer == 0)
         {
             //Right
             if (selected == 3)
@@ -169,7 +169,7 @@ public class StoreScript : MonoBehaviour
             buffer = 5;
 
         }
-        else if (Input.GetAxis("Horizontal") < 0)
+        else if (Input.GetAxis("Horizontal") < 0 && buffer == 0)
         {
             //Left
             if (selected == 3)
@@ -187,7 +187,7 @@ public class StoreScript : MonoBehaviour
             buffer = 5;
         }
 
-        if (Input.GetAxis("Vertical") > 0)
+        if (Input.GetAxis("Vertical") > 0  & buffer == 0)
         {
             // Up
             if (selected == 3)
@@ -204,7 +204,7 @@ public class StoreScript : MonoBehaviour
             }
             buffer = 5;
         }
-        else if (Input.GetAxis("Vertical") < 0)
+        else if (Input.GetAxis("Vertical") < 0 && buffer == 0)
         {
             // Down
             if (selected == 4)
