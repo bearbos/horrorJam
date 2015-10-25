@@ -352,22 +352,22 @@ public class The_Director : MonoBehaviour {
         switch(wantedLevel)
         {
             case 0:
-                numPolice = 0;
-                break;
-            case 1:
                 numPolice = 1;
                 break;
-            case 2:
+            case 1:
                 numPolice = 2;
                 break;
-            case 3:
+            case 2:
                 numPolice = 4;
                 break;
-            case 4:
+            case 3:
                 numPolice = 8;
                 break;
-            case 5:
+            case 4:
                 numPolice = 16;
+                break;
+            case 5:
+                numPolice = 32;
                 break;
                 // Fuck
         }
