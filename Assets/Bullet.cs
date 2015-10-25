@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(Distance);
-        Invoke("ZeroGravity", 1.4f);
+        Invoke("ZeroGravity", 1.0f);
 	}
 	
 	// Update is called once per frame
