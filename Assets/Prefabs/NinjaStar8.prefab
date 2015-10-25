@@ -91,6 +91,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Distance: {x: 500, y: 0}
+  differenttypes:
+  - {fileID: 21300000, guid: 1e9a0360d010c0c488fbe65699f16b63, type: 3}
+  - {fileID: 21300002, guid: 1e9a0360d010c0c488fbe65699f16b63, type: 3}
+  - {fileID: 21300004, guid: 1e9a0360d010c0c488fbe65699f16b63, type: 3}
+  - {fileID: 21300006, guid: 1e9a0360d010c0c488fbe65699f16b63, type: 3}
+  - {fileID: 21300010, guid: 1e9a0360d010c0c488fbe65699f16b63, type: 3}
+  - {fileID: 21300012, guid: 1e9a0360d010c0c488fbe65699f16b63, type: 3}
+  - {fileID: 21300014, guid: 1e9a0360d010c0c488fbe65699f16b63, type: 3}
+  - {fileID: 21300016, guid: 1e9a0360d010c0c488fbe65699f16b63, type: 3}
 --- !u!114 &11440936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,6 +153,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: differenttypes.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: damage
       value: 5
       objectReference: {fileID: 0}
@@ -159,6 +172,46 @@ Prefab:
       propertyPath: m_TagString
       value: Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: differenttypes.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1e9a0360d010c0c488fbe65699f16b63,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: differenttypes.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300002, guid: 1e9a0360d010c0c488fbe65699f16b63,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: differenttypes.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300004, guid: 1e9a0360d010c0c488fbe65699f16b63,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: differenttypes.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300006, guid: 1e9a0360d010c0c488fbe65699f16b63,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: differenttypes.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300010, guid: 1e9a0360d010c0c488fbe65699f16b63,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: differenttypes.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300012, guid: 1e9a0360d010c0c488fbe65699f16b63,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: differenttypes.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300014, guid: 1e9a0360d010c0c488fbe65699f16b63,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: differenttypes.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300016, guid: 1e9a0360d010c0c488fbe65699f16b63,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 112042}
