@@ -83,7 +83,7 @@ public class The_Director : MonoBehaviour {
         if (fadeToBlackBool == true)
             transitionTimer += Time.deltaTime;
 
-        if(transitionTimer >= 3.0f)
+        if(transitionTimer >= 1.5f)
         {
             nextLevelText.gameObject.GetComponent<TextMesh>().text = " ";
             Color empty = new Color(0, 0, 0, 0);
@@ -411,6 +411,7 @@ public class The_Director : MonoBehaviour {
 
     void LoadNewStreet()
     {
+        /*
         SpawnNewChunk();
         Vector3 newCamPos;
         Vector3 newPlayerPos;
@@ -419,13 +420,13 @@ public class The_Director : MonoBehaviour {
         GameObject thePlayer = GameObject.FindWithTag("Player");
 
         newCamPos = theCamera.transform.position;
-        newPlayerPos = thePlayer.transform.position;
 
         newCamPos.x += 54;
-        newPlayerPos.x += 50;
-
         theCamera.transform.position = newCamPos;
-        thePlayer.transform.position = newPlayerPos;
+
+        newPlayerPos = GameObject.FindWithTag("PlayerSpawn").transform.position;
+        thePlayer.transform.position = newCamPos;
+        */
 
         GenerateStreetName();
 

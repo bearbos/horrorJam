@@ -13,6 +13,7 @@ public class Destructable : MonoBehaviour
     AudioSource sfx;
     [SerializeField]
     GameObject[] candy;
+
     // Use this for initialization
     void Start()
     {
@@ -27,7 +28,12 @@ public class Destructable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(HP <= 0)
+        Vector3 newPos;
+        newPos = gameObject.transform.position;
+        newPos.z = newPos.y;
+        gameObject.transform.position = newPos;
+
+        if (HP <= 0)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().pressure += pressure;
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().score += score;
