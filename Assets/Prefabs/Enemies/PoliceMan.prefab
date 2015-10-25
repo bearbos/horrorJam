@@ -165,6 +165,7 @@ MonoBehaviour:
   eIdle: 0
   eAggro: 0
   eGuard: 0
+  attacking: 0
 --- !u!114 &11435214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,7 +181,7 @@ MonoBehaviour:
   maxHealth: 200
   score: 80
   notriaty: .200000003
-  damage: 7
+  damage: 9
   textDamage: {fileID: 148546, guid: 1f6e1cae29a0f48418ce39add8ec55be, type: 2}
   attackColliderPrefab: {fileID: 197996, guid: 4037536ceb7b2cd4d9bdfe870479962d, type: 2}
   sfx: {fileID: 8273960}
@@ -257,7 +258,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: damage
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
