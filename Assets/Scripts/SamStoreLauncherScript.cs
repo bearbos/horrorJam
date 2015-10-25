@@ -45,7 +45,7 @@ public class SamStoreLauncherScript : MonoBehaviour {
         Input.ResetInputAxes();
 
         GameObject.FindGameObjectWithTag("storeCanvas").GetComponent<Canvas>().enabled = true;
-        GameObject.FindGameObjectWithTag("storeCanvas").GetComponent<StoreScript>().disabled = true;
+        GameObject.FindGameObjectWithTag("storeCanvas").GetComponent<StoreScript>().go = true;
         GameObject.FindGameObjectWithTag("storeCanvas").GetComponent<StoreScript>().parent = this.gameObject;
 
         //transform.GetChild(2).gameObject.SetActive(true);
