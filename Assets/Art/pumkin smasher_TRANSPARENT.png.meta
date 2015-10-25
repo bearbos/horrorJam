@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: bb95176866ca08042a3611eebcd01aae
-timeCreated: 1445734895
+timeCreated: 1445757314
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -1378,7 +1378,7 @@ TextureImporter:
     - name: pumkin smasher_TRANSPARENT_120
       rect:
         serializedVersion: 2
-        x: 5
+        x: 7
         y: 951
         width: 51
         height: 68
@@ -1392,14 +1392,14 @@ TextureImporter:
         y: 951
         width: 54
         height: 68
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: pumkin smasher_TRANSPARENT_122
       rect:
         serializedVersion: 2
         x: 111
-        y: 951
+        y: 953
         width: 58
         height: 73
       alignment: 6
