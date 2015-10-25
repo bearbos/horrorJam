@@ -11,6 +11,8 @@ public class Destructable : MonoBehaviour
     float delayColorChanger;
     [SerializeField]
     AudioSource sfx;
+    [SerializeField]
+    GameObject[] candy;
     // Use this for initialization
     void Start()
     {
@@ -29,6 +31,16 @@ public class Destructable : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().pressure += pressure;
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().score += score;
+            int spawnedNum = Random.Range(1, 3);
+            Debug.Log(spawnedNum);
+            for (int i = 0; i < spawnedNum; i++)
+            {
+                GameObject summonedCandy = Instantiate(candy[Random.Range(0, candy.Length)]);
+                summonedCandy.transform.position = transform.position;
+                Rigidbody2D candyRB = summonedCandy.GetComponent<Rigidbody2D>();
+                candyRB.velocity = new Vector2(Random.Range(-7, 7), Random.Range(5, 10));
+                candyRB.gravityScale = 1.5f;
+            }
             Destroy(gameObject);
         }
         if (changeColor == true)

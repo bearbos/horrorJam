@@ -57,6 +57,14 @@ MonoBehaviour:
   HP: 160
   pressure: .300000012
   score: 600
+  sfx: {fileID: 0}
+  candy:
+  - {fileID: 159468, guid: ba52f9071c7edf146a0adcadd2ab72ab, type: 2}
+  - {fileID: 109278, guid: 22214b63e8e3d3f4aba8787b5a5f9e4d, type: 2}
+  - {fileID: 152860, guid: 610acc4992e7aec48b30e0b3df8e0054, type: 2}
+  - {fileID: 177744, guid: 6ad354e406410614ca54437d2e40a5b0, type: 2}
+  - {fileID: 123750, guid: 0ee2b12c24551244ea0e7107d7388aa9, type: 2}
+  - {fileID: 186786, guid: 3c25deb830cb26941b771fefa760b48f, type: 2}
 --- !u!212 &21245366
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -90,6 +98,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: candy.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: score
       value: 600
