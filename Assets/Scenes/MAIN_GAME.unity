@@ -65,7 +65,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -964,7 +963,6 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -1744,6 +1742,10 @@ Prefab:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11438310, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
+      propertyPath: theNatural.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11438310, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
       propertyPath: theDecorations.Array.size
       value: 9
       objectReference: {fileID: 0}
@@ -1831,6 +1833,18 @@ Prefab:
       propertyPath: thePolice.Array.data[2]
       value: 
       objectReference: {fileID: 195912, guid: 1423f8af3afbb7e48ab7eecc73b80bad, type: 2}
+    - target: {fileID: 11438310, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
+      propertyPath: theNatural.Array.data[1]
+      value: 
+      objectReference: {fileID: 141370, guid: 303960b08b2737041a4dff2c5ddc3553, type: 2}
+    - target: {fileID: 11438310, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
+      propertyPath: theNatural.Array.data[2]
+      value: 
+      objectReference: {fileID: 122542, guid: cb605202208467444be47f44e6bfcaa7, type: 2}
+    - target: {fileID: 11438310, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
+      propertyPath: theNatural.Array.data[3]
+      value: 
+      objectReference: {fileID: 141370, guid: 303960b08b2737041a4dff2c5ddc3553, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
   m_IsPrefabParent: 0
