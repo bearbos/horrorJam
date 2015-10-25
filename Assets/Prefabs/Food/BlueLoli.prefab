@@ -73,6 +73,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreGiven: 20
   candyGiven: 3
+  healAmount: 0
+  heals: 0
+  price: 0
 --- !u!212 &21243190
 SpriteRenderer:
   m_ObjectHideFlags: 1

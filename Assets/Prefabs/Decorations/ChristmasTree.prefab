@@ -12,6 +12,7 @@ GameObject:
   - 61: {fileID: 6141090}
   - 114: {fileID: 11400158}
   - 82: {fileID: 8221600}
+  - 61: {fileID: 6100830}
   m_Layer: 0
   m_Name: ChristmasTree
   m_TagString: Decoration
@@ -26,11 +27,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.61000001, y: -2.82999992, z: 0}
+  m_LocalPosition: {x: 19.6399994, y: -2.82999992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6100830
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172642}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -.300000012}
+  serializedVersion: 2
+  m_Size: {x: .5, y: 1}
 --- !u!61 &6141090
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -41,9 +55,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: .0768613815, y: -.362347603}
+  m_Offset: {x: 0, y: -.300000012}
   serializedVersion: 2
-  m_Size: {x: 1.85645556, y: 1.28548813}
+  m_Size: {x: 1, y: 1.28548813}
 --- !u!82 &8221600
 AudioSource:
   m_ObjectHideFlags: 1
@@ -59,9 +73,10 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: .808137894
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
