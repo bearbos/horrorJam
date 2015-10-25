@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class E_Stat : MonoBehaviour {
+public class E_Stat : MonoBehaviour
+{
 
     [SerializeField]
     float currHealth;
@@ -17,16 +18,18 @@ public class E_Stat : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         //save the color of the enemy at start and have a bool set to false
         baseColor = gameObject.GetComponent<SpriteRenderer>().color;
         changeColor = false;
         delayColorChanger = 0.0f;
         currHealth = maxHealth;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         //  if enemy took damage  
         if (changeColor == true)
         {
@@ -45,12 +48,23 @@ public class E_Stat : MonoBehaviour {
         }
     }
 
-   
+
     public void TakeDamage(float _dam)
     {
         currHealth -= _dam;
         changeColor = true;
-
+        if (GetComponent<Rigidbody2D>() != null)
+        {
+            float moveAmount = 500f * (_dam / 20f);
+            if (!GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().facingRight)
+            {
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(-moveAmount, 0f));
+            }
+            else if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().facingRight)
+            {
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(moveAmount, 0f));
+            }
+        }
         if (currHealth <= 0)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().pressure += notriaty;
@@ -62,6 +76,6 @@ public class E_Stat : MonoBehaviour {
             //transform.localScale = scale;
             //GetComponent<BoxCollider2D>().enabled = false;
         }
-        
+
     }
 }

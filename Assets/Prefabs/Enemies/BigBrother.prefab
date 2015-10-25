@@ -171,6 +171,14 @@ Prefab:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: currHealth
+      value: 11000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHealth
+      value: 11000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: maxHealth
       value: 150
       objectReference: {fileID: 0}
