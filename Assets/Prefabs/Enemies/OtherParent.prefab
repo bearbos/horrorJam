@@ -79,7 +79,6 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -189,6 +188,7 @@ MonoBehaviour:
   eIdle: 0
   eAggro: 0
   eGuard: 0
+  attacking: 0
 --- !u!114 &11454176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,7 +204,7 @@ MonoBehaviour:
   maxHealth: 150
   score: 40
   notriaty: .100000001
-  damage: 6
+  damage: 12
   textDamage: {fileID: 148546, guid: 1f6e1cae29a0f48418ce39add8ec55be, type: 2}
   attackColliderPrefab: {fileID: 197996, guid: 4037536ceb7b2cd4d9bdfe870479962d, type: 2}
   sfx: {fileID: 8299454}
@@ -271,7 +271,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: damage
-      value: 6
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

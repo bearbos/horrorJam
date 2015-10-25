@@ -19,7 +19,13 @@ public class playerStats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (superSaiyan)
+        if (currHealth <= 0.0f)
+        {
+            //Debug.Log("Player Died");
+
+            Application.LoadLevel("Credits");
+        }
+        if (superSaiyan)
 			childAnimator.GetComponent<Animator>().SetBool ("superSaiyan", true);
 		else
 			childAnimator.GetComponent<Animator>().SetBool ("superSaiyan", false);
@@ -88,10 +94,6 @@ public class playerStats : MonoBehaviour {
 	{
 		currHealth -= damage;
 
-		if (currHealth <= 0.0f) {
-            //Debug.Log("Player Died");
-
-            Application.LoadLevel("Credits");
-		}
+		
 	}
 }

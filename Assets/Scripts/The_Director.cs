@@ -67,7 +67,7 @@ public class The_Director : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start ()
+    void Awake()
     {
         SpawnHouses();
         SpawnDecorations();
@@ -77,6 +77,11 @@ public class The_Director : MonoBehaviour {
         Color empty = new Color(0, 0, 0, 0);
         fadeToBlack.gameObject.GetComponent<SpriteRenderer>().color = empty;
         nextLevelText.gameObject.GetComponent<TextMesh>().text = " ";
+    }
+
+    void Start ()
+    {
+        
     }
 	
 	// Update is called once per frame

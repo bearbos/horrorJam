@@ -56,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   price: 10
-  durability: 30
+  durability: 300
   description: Whomp Bamn
   weaponType: 1
   anchor: {fileID: 0}
@@ -110,7 +110,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: durability
-      value: 30
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
