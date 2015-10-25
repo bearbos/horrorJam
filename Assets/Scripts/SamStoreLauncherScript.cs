@@ -42,6 +42,7 @@ public class SamStoreLauncherScript : MonoBehaviour {
     void LaunchStore()
     {
         Time.timeScale = 0.0f;
+        Input.ResetInputAxes();
         transform.GetChild(2).gameObject.SetActive(true);
     }
 
