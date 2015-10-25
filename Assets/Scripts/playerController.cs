@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class playerController : MonoBehaviour {
 
-	int attackComboLength;
+	int attackComboLength, maxCombo;
 	float comboInputTimer;
 	public bool inAttackAnimation, facingRight;
 	bool objectInHand;
@@ -125,7 +125,6 @@ public class playerController : MonoBehaviour {
 	/// <param name="aT">If set to <c>true</c> the attack type is a punch, else it is a kick.</param>
 	void ComboManager(bool aT)
 	{
-		int maxCombo;
 
 		if (GetComponent<playerStats> ().superSaiyan)
 			maxCombo = 5;
@@ -229,6 +228,9 @@ public class playerController : MonoBehaviour {
 	public void AnimationEnd()
 	{
 		inAttackAnimation = false;
+
+		if (attackComboLength > maxCombo)
+			comboInputTimer = 0.2f;
 	}
 
 	/// <summary>

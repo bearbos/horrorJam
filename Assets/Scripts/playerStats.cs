@@ -3,7 +3,7 @@ using System.Collections;
 
 public class playerStats : MonoBehaviour {
 
-    public float  damageModifier, maxHealth, currHealth, adrenaline, timer, notoriety, timeMulti, damageMulti;
+    public float  damageModifier, maxHealth, currHealth, adrenaline, timer, notoriety, timeMulti, damageMulti, pressure;
 	float baseDamage, adrenalineFalloffRate, adrenalineFalloffTime, superSaiyanDuration;
 	public int score, candy;
 	public bool superSaiyan;
