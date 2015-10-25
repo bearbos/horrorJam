@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour {
     Rigidbody2D rb;
     [SerializeField]
     Vector2 Distance;
+    public Sprite[] differenttypes;
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
