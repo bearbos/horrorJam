@@ -42,7 +42,7 @@ public class SamStoreLauncherScript : MonoBehaviour {
     void LaunchStore()
     {
         Time.timeScale = 0.0f;
-        transform.GetChild(2).GetComponent<Canvas>().enabled = true;
+        transform.GetChild(2).gameObject.SetActive(true);
     }
 
     void Destroy()
