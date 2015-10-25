@@ -28,9 +28,9 @@ public class attackCollider : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.CompareTag ("Enemy") || other.CompareTag ("Decoration"))
+		if (other.CompareTag ("Enemy") || other.CompareTag ("Decoration")) {
 			other.SendMessage ("TakeDamage", 20.0f);
-
-		GameObject.FindGameObjectWithTag ("Player").GetComponent<playerStats> ().IncreaseAdrenaline ();
+			GameObject.FindGameObjectWithTag ("Player").GetComponent<playerStats> ().IncreaseAdrenaline ();
+		}
 	}
 }
