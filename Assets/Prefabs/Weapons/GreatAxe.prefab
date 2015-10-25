@@ -56,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   price: 200
-  durability: 5
+  durability: 50
   description: Shits Big
   weaponType: 0
   anchor: {fileID: 0}
@@ -115,7 +115,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: durability
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -56,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   price: 6
-  durability: 10
+  durability: 27
   description: Candy Can Sword
   weaponType: 0
   anchor: {fileID: 0}
@@ -110,7 +110,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: durability
-      value: 10
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
