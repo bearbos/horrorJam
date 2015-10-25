@@ -11,7 +11,7 @@ public class e_StateMachine : MonoBehaviour {
          eAggro,
          eGuard;
     bool isRight;
-    bool attacking;
+    public bool attacking;
 
     float attacktimer = 0;
     float timer = 0;
@@ -76,17 +76,7 @@ public class e_StateMachine : MonoBehaviour {
             {
                 if (attacking == true)
                 {
-                    gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-
-                    attacktimer += Time.deltaTime;
-                   
-                        if(attacktimer >= 2.1f)
-                        {
-                            
-                            attacktimer = 0;
-                            attacking = false;
-                            theAnimator.SetBool("attack1", false);
-                        }
+                    gameObject.SendMessage("phases");
                    
 
                 }
@@ -238,16 +228,8 @@ public class e_StateMachine : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
            
-                theAnimator.SetBool("run", false);
-
-                theAnimator.SetBool("attack1", true);
-                attacking = true;
-
-                if (takdam == true)
-                { 
-                    takdam = false;
-                }
-           
+            theAnimator.SetBool("run", false);
+            attacking = true;
         }
 
     }
