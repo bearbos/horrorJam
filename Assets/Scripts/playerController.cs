@@ -125,6 +125,7 @@ public class playerController : MonoBehaviour {
 	/// <param name="aT">If set to <c>true</c> the attack type is a punch, else it is a kick.</param>
 	void ComboManager(bool aT)
 	{
+        bool validInput = false;
 
 		if (GetComponent<playerStats> ().superSaiyan)
 			maxCombo = 5;
@@ -139,26 +140,31 @@ public class playerController : MonoBehaviour {
 				case 0:
 					{
 						GetComponent<Animator>().SetTrigger("ComboPunchOne");
+                        validInput = true;
 						break;
 					}
 				case 1:
 					{
 						GetComponent<Animator>().SetTrigger("ComboPunchTwo");
+                        validInput = true;
 						break;
 					}
 				case 2:
 					{
 					GetComponent<Animator>().SetTrigger("ComboPunchThree");
+                    validInput = true;
 						break;
 					}
 				case 3:
 					{
 					GetComponent<Animator>().SetTrigger("ComboPunchFour");
+                    validInput = true;
 						break;
 					}
 				case 4:
 					{
 					GetComponent<Animator>().SetTrigger("ComboPunchFive");
+                    validInput = true;
 						break;
 					}
 				default:
@@ -170,26 +176,31 @@ public class playerController : MonoBehaviour {
 				case 0:
 				{
 					GetComponent<Animator>().SetTrigger("ComboKickOne");
+                    validInput = true;
 					break;
 				}
 				case 1:
 				{
 					GetComponent<Animator>().SetTrigger("ComboKickTwo");
+                    validInput = true;
 					break;
 				}
 				case 2:
 				{
 					GetComponent<Animator>().SetTrigger("ComboKickThree");
+                    validInput = true;
 					break;
 				}
 				case 3:
 				{
 					GetComponent<Animator>().SetTrigger("ComboKickFour");
+                    validInput = true;
 					break;
 				}
 				case 4:
 				{
 					GetComponent<Animator>().SetTrigger("ComboKickFive");
+                    validInput = true;
 					break;
 				}
 				default:
@@ -213,8 +224,11 @@ public class playerController : MonoBehaviour {
 			}
 		}
 
-		++attackComboLength;
-		comboInputTimer = 0.5f;
+        if (validInput)
+        {
+            ++attackComboLength;
+            comboInputTimer = 0.5f;
+        }
 	}
 
 	public void AnimationStart()
