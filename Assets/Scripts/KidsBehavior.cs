@@ -71,6 +71,10 @@ public class KidsBehavior : MonoBehaviour
                 }
                 if (run)
                 {
+                    if (GetComponent<Animator>() != null)
+                    {
+                        GetComponent<Animator>().SetBool("running", true); 
+                    }
                     if (player.transform.position.x > transform.position.x)
                     {
                         runDirection.x = -1;
@@ -109,6 +113,10 @@ public class KidsBehavior : MonoBehaviour
             {
                 run = false;
                 runDirection = Vector2.zero;
+                if (GetComponent<Animator>() != null)
+                {
+                    GetComponent<Animator>().SetBool("running", false); 
+                }
             }
             Vector2 rb = GetComponent<Rigidbody2D>().velocity;
             rb = new Vector2(runDirection.x * runSpeed, runDirection.y * runSpeed);
