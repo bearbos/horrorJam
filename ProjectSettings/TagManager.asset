@@ -19,6 +19,7 @@ TagManager:
   - SwordAnchor
   - Store
   - storeCanvas
+  - PlayerSpawn
   layers:
   - Default
   - TransparentFX

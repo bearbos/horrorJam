@@ -59,10 +59,15 @@ public class weapon : MonoBehaviour {
 
 	public void OnTriggerEnter2D(Collider2D other)
 	{
-		if ((other.CompareTag ("Enemy") || other.CompareTag("Decoration"))
-		    && anchor != null && player.GetComponent<playerController>().inAttackAnimation) {
-			other.SendMessage("TakeDamage", GameObject.FindObjectOfType<playerStats>().TotalDamageDealt());
+		if (weaponType != weaponType.THROWN){
+		if ((other.CompareTag ("Enemy") || other.CompareTag ("Decoration"))
+			&& anchor != null && player.GetComponent<playerController> ().inAttackAnimation) {
+			other.SendMessage ("TakeDamage", GameObject.FindObjectOfType<playerStats> ().TotalDamageDealt ());
 			--durability;
+		} else if (other.CompareTag ("Enemy") && anchor == null && player == null) {
+			other.SendMessage("TakeDamage", GameObject.FindObjectOfType<playerStats>().TotalDamageDealt());
+				Destroy(this.gameObject);
+				                  }
 		}
 	}
 }
