@@ -69,7 +69,7 @@ public class playerStats : MonoBehaviour {
 	public void IncreaseAdrenaline()
 	{
 		if (!superSaiyan) {
-			adrenaline += 2;
+			adrenaline += 5;
 
 			if (adrenaline > 100.0f)
 				adrenaline = 100.0f;

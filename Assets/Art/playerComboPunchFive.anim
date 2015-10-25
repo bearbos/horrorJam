@@ -2057,7 +2057,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 0
+  - time: .0166666675
     functionName: AnimationStart
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -2065,6 +2065,27 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: .0833333358
+    functionName: CreateAttackCollider
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: .25
+    functionName: CreateAttackCollider
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: .416666657
+    functionName: CreateAttackCollider
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: .583333313
     functionName: CreateAttackCollider
     data: 
     objectReferenceParameter: {fileID: 0}
