@@ -20,14 +20,14 @@ public class playerController : MonoBehaviour {
 	void Update () {
 		if (!facingRight) {
 			this.GetComponent<Animator> ().transform.localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
-			this.GetComponent<BoxCollider2D> ().transform.localScale = new Vector3 (- Mathf.Abs (GetComponent<BoxCollider2D> ().transform.localScale.x),
-			                                                                       GetComponent<BoxCollider2D> ().transform.localScale.y,
-			                                                                       GetComponent<BoxCollider2D> ().transform.localScale.z);
+			//this.GetComponent<BoxCollider2D> ().transform.localScale = new Vector3 (- Mathf.Abs (GetComponent<BoxCollider2D> ().transform.localScale.x),
+			                                                                       //GetComponent<BoxCollider2D> ().transform.localScale.y,
+			                                                                       //GetComponent<BoxCollider2D> ().transform.localScale.z);
 		} else {
 			this.GetComponent<Animator> ().transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
-			this.GetComponent<BoxCollider2D> ().transform.localScale = new Vector3 (Mathf.Abs (GetComponent<BoxCollider2D> ().transform.localScale.x),
-			                                                                        GetComponent<BoxCollider2D> ().transform.localScale.y,
-			                                                                        GetComponent<BoxCollider2D> ().transform.localScale.z);
+			//this.GetComponent<BoxCollider2D> ().transform.localScale = new Vector3 (Mathf.Abs (GetComponent<BoxCollider2D> ().transform.localScale.x),
+			                                                                        //GetComponent<BoxCollider2D> ().transform.localScale.y,
+			                                                                        //GetComponent<BoxCollider2D> ().transform.localScale.z);
 		}
 
 		if (attackComboLength > 0) {
@@ -66,11 +66,13 @@ public class playerController : MonoBehaviour {
 			GetComponentInChildren<Transform>().localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
 		}
 
-		if ((testInputX > .1f && testInputX < .4f) || (testInputX < -.1f && testInputX > -.4f)) {
+		if ((testInputX > 0.0f && testInputX < .4f) || (testInputX < 0.0f && testInputX > -.4f)
+		    || (testInputY > 0.0f && testInputY < 0.4f) || (testInputY < 0.0f && testInputY > -0.4f)) {
 			this.GetComponent<Animator> ().SetBool ("Walking", true);
 			this.GetComponent<Animator> ().SetBool ("Running", false);
 			this.GetComponent<Animator> ().SetBool ("StandingStill", false);
-		} else if ((testInputX > .4f && testInputX < 1.1f) || (testInputX < -.4f && testInputX > -1.1f)) {
+		} else if ((testInputX >= 0.4f && testInputX <= 1.0f) || (testInputX <= -0.4f && testInputX >= -1.0f)
+		           || (testInputY >= 0.4f && testInputY <= 1.0f) || (testInputX <= -0.4f && testInputY >= -1.0f)) {
 			this.GetComponent<Animator> ().SetBool ("Running", true);
 			this.GetComponent<Animator> ().SetBool ("Walking", false);
 			this.GetComponent<Animator> ().SetBool ("StandingStill", false);
@@ -188,6 +190,7 @@ public class playerController : MonoBehaviour {
 				case 2:
 				{
 					GetComponent<Animator>().SetTrigger("ComboKickThree");
+					GetComponent<playerStats>().adrenaline -= 10;
                     validInput = true;
 					break;
 				}
