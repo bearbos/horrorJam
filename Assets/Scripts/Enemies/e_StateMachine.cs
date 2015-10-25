@@ -86,16 +86,16 @@ public class e_StateMachine : MonoBehaviour {
                     float _X = 0;
                     float _Y = 0;
                     if (playerX >= enemyX)         // enemy move left
-                        _X = 4;
+                        _X = 2.5f;
                     if (playerX <= enemyX)         // enemy move right
-                        _X = -4;
+                        _X = -2.5f;
                     if (playerY >= enemyY)         // enemy move down
-                        _Y = 4;
+                        _Y = 2.5f;
                     if (playerY <= enemyY)         // enemy move up
-                        _Y = -4;
+                        _Y = -2.5f;
                     gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(_X, _Y);
                 }
-                Animationflip();
+                
 
             }
             else
@@ -119,6 +119,7 @@ public class e_StateMachine : MonoBehaviour {
                     gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 }
             }
+            Animationflip();
         }
 
         //if enemy is on standby ready to fight 
@@ -216,7 +217,16 @@ public class e_StateMachine : MonoBehaviour {
             attacking = true;
         }
     }
-    
+    void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            theAnimator.SetBool("run", false);
+            theAnimator.SetBool("attack1", true);
+            attacking = true;
+        }
+    }
+
     void OnCollisionExit2D(Collision2D other)
     {
         theAnimator.SetBool("run", true);
@@ -233,6 +243,7 @@ public class e_StateMachine : MonoBehaviour {
         }
 
     }
+   
 
 
 }
