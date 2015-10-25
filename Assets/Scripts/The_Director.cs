@@ -31,7 +31,7 @@ public class The_Director : MonoBehaviour {
     float transitionTimer = 0.0f;
 
     public GameObject nextLevelText;
-    public string nextLevelString = " ";
+    public string nextLevelString = "First Street";
 
     // Things to spawn
     [SerializeField]
@@ -71,7 +71,6 @@ public class The_Director : MonoBehaviour {
         SpawnDecorations();
         SpawnRoofs();
         SpawnEnemies();
-        LoadNewStreet();
 
         Color empty = new Color(0, 0, 0, 0);
         fadeToBlack.gameObject.GetComponent<SpriteRenderer>().color = empty;
@@ -84,7 +83,7 @@ public class The_Director : MonoBehaviour {
         if (fadeToBlackBool == true)
             transitionTimer += Time.deltaTime;
 
-        if(transitionTimer >= 3.0f)
+        if(transitionTimer >= 1.5f)
         {
             nextLevelText.gameObject.GetComponent<TextMesh>().text = " ";
             Color empty = new Color(0, 0, 0, 0);
@@ -102,7 +101,7 @@ public class The_Director : MonoBehaviour {
         }
 
         // Update the time
-        GameTimer = 90;
+        GameTimer = 60;
         GameTimer += (int)GameObject.FindWithTag("Player").gameObject.GetComponent<playerStats>().timer;
         theTimer.gameObject.GetComponent<TextMesh>().text = GameTimer.ToString();
 
@@ -170,6 +169,14 @@ public class The_Director : MonoBehaviour {
             newPos.z = 10;
             int houseIndex = Random.Range(0, theHouses.Length);
             GameObject tempHouse = Instantiate(theHouses[houseIndex], newPos, gameObject.transform.rotation) as GameObject;
+
+            int flip = Random.Range(0, 2);
+            if(flip == 1)
+            {
+                Vector3 flipPos = tempHouse.gameObject.transform.localScale;
+                flipPos.x *= -1;
+                tempHouse.transform.localScale = flipPos;
+            }
            
         }
 
@@ -196,9 +203,19 @@ public class The_Director : MonoBehaviour {
             newPos.z = 10;
             int roofIndex = Random.Range(0, theRoofs.Length);
             GameObject tempRoof = Instantiate(theRoofs[roofIndex], newPos, gameObject.transform.rotation) as GameObject;
+
+            int flip = Random.Range(0, 2);
+            if (flip == 1)
+            {
+                Vector3 flipPos = tempRoof.gameObject.transform.localScale;
+                flipPos.x *= -1;
+                tempRoof.transform.localScale = flipPos;
+            }
         }
 
-        // Destroy all the house tags
+
+
+        // Destroy all the roof tags
         for (int i = 4; i > 0; i--)
         {
             Destroy(roofNodes[numRoofs - 1]);
@@ -226,6 +243,14 @@ public class The_Director : MonoBehaviour {
 
             tempNats = Instantiate(theNatural[natureIndex], decorationNodes[spawnIndex].gameObject.transform.position, gameObject.transform.rotation) as GameObject;
 
+            int flip = Random.Range(0, 2);
+            if (flip == 1)
+            {
+                Vector3 flipPos = tempNats.gameObject.transform.localScale;
+                flipPos.x *= -1;
+                tempNats.transform.localScale = flipPos;
+            }
+
             isAvailable = true;
         }
 
@@ -239,6 +264,14 @@ public class The_Director : MonoBehaviour {
             int spawnIndex = Random.Range(0, decorationSize);
 
             tempDecor = Instantiate(theDecorations[decorIndex], decorationNodes[spawnIndex].gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+
+            int flip = Random.Range(0, 2);
+            if (flip == 1)
+            {
+                Vector3 flipPos = tempDecor.gameObject.transform.localScale;
+                flipPos.x *= -1;
+                tempDecor.transform.localScale = flipPos;
+            }
         }
 
         // Destroy all the house tags
@@ -378,6 +411,23 @@ public class The_Director : MonoBehaviour {
 
     void LoadNewStreet()
     {
+        /*
+        SpawnNewChunk();
+        Vector3 newCamPos;
+        Vector3 newPlayerPos;
+
+        GameObject theCamera = GameObject.FindWithTag("MainCamera");
+        GameObject thePlayer = GameObject.FindWithTag("Player");
+
+        newCamPos = theCamera.transform.position;
+
+        newCamPos.x += 54;
+        theCamera.transform.position = newCamPos;
+
+        newPlayerPos = GameObject.FindWithTag("PlayerSpawn").transform.position;
+        thePlayer.transform.position = newCamPos;
+        */
+
         GenerateStreetName();
 
         streetLvl += 1;

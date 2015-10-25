@@ -227,6 +227,20 @@ public class playerController : MonoBehaviour {
 			}
 		}
 
+		if (aT && (objectInHand && objectBeingUsed.GetComponent<weapon> ().weaponType == weaponType.THROWN)) {
+			int index = Random.Range(0, objectBeingUsed.GetComponent<Bullet>().differenttypes.Length);
+
+			GameObject temp = objectBeingUsed.GetComponent<Bullet>().differenttypes[index];
+
+			if (!facingRight)
+				temp.GetComponent<Bullet>().Distance = new Vector2(-Mathf.Abs(temp.GetComponent<Bullet>().Distance.x),
+				                                                   temp.GetComponent<Bullet>().Distance.y);
+
+			Instantiate(temp, objectBeingUsed.GetComponent<weapon>().anchor.transform.position, Quaternion.identity);
+
+			--objectBeingUsed.GetComponent<weapon>().durability;
+		}
+
         if (validInput)
         {
             ++attackComboLength;
@@ -316,8 +330,12 @@ public class playerController : MonoBehaviour {
 	/// <param name="coll">Coll.</param>
 	void OnTriggerExit2D(Collider2D coll)
 	{
-		if (coll.CompareTag ("Pickup") && usableObject == coll.gameObject && usableObject.GetComponent<weapon>().anchor != null) {
-			usableObject = null;
+		if (coll != null) {
+			if (usableObject != null) {
+			if (coll.CompareTag ("Pickup") && usableObject == coll.gameObject && usableObject.GetComponent<weapon> ().anchor != null) {
+				usableObject = null;
+			}
+			}
 		}
 	}
 }

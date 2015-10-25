@@ -96,7 +96,7 @@ public class Dynamic_Camera : MonoBehaviour {
             if (oldObjects[i].transform.position.x <= (GameObject.FindWithTag("MainCamera").transform.position.x - 70.0f))
             {
                 GameObject deleteThis = oldObjects[i];
-                if (deleteThis.gameObject.tag == "Director")
+                if (deleteThis.gameObject.tag == "Director" || deleteThis.gameObject.tag == "storeCanvas")
                 {
                        
                 }
