@@ -12,14 +12,17 @@ public class playerStats : MonoBehaviour {
 	void Start () {
 		baseDamage = 20.0f;
         timeMulti = 1.0f;
+		damageMulti = 1.0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        damageModifier = 20.0f * damageMulti;
         timer -= (Time.deltaTime * timeMulti);
 
-		
+
+		if (currHealth > maxHealth)
+			currHealth = maxHealth;
+
 		adrenalineFalloffRate = 10.0f * Time.deltaTime;
 		if (adrenaline > 0.0f) {
 			adrenalineFalloffTime -= Time.deltaTime;
@@ -43,7 +46,7 @@ public class playerStats : MonoBehaviour {
 
 	public float TotalDamageDealt()
 	{
-		float damageTotal = baseDamage + damageModifier;
+		float damageTotal = (baseDamage + damageModifier) * damageMulti;
 
 		return damageTotal;
 	}

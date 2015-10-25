@@ -9,16 +9,19 @@ public class weapon : MonoBehaviour {
 	public int price, durability;
     public string description;
 	public weaponType weaponType;
-	public GameObject anchor;
+	public GameObject anchor, player;
     public Sprite sprite;
 
 	// Use this for initialization
 	void Start () {
-	
+		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (durability < 0) {
+			player.SendMessage("DropItem");
+		}
 	}
 
 	void FixedUpdate() {
@@ -26,7 +29,7 @@ public class weapon : MonoBehaviour {
 		if (anchor != null) {
 			this.transform.position = anchor.transform.position;
 			
-			if (GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().transform.localScale.x < 0) {
+			if (player.GetComponent<Animator>().transform.localScale.x < 0) {
 				this.transform.rotation = new Quaternion (anchor.transform.rotation.x, anchor.transform.rotation.y, -anchor.transform.rotation.z, 1.0f);
 				this.transform.localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
 			}
@@ -40,17 +43,26 @@ public class weapon : MonoBehaviour {
 	public void PlayerUsed()
 	{
 		anchor = GameObject.FindGameObjectWithTag ("SwordAnchor");
+
+		player.GetComponent<playerStats> ().damageModifier += damage;
 	}
 
 	public void PlayerDropped()
 	{
 		anchor = null;
+
+		player.GetComponent<playerStats> ().damageModifier -= damage;
+
+
+		Destroy (this.gameObject);
 	}
 
 	public void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.CompareTag ("Enemy") && anchor != null && GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().inAttackAnimation) {
-			other.GetComponent<E_Stat>().TakeDamage( FindObjectOfType<playerStats>().TotalDamageDealt());
+		if ((other.CompareTag ("Enemy") || other.CompareTag("Decoration"))
+		    && anchor != null && player.GetComponent<playerController>().inAttackAnimation) {
+			other.SendMessage("TakeDamage", GameObject.FindObjectOfType<playerStats>().TotalDamageDealt());
+			--durability;
 		}
 	}
 }

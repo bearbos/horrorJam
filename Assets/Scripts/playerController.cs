@@ -273,6 +273,7 @@ public class playerController : MonoBehaviour {
 			objectBeingUsed.SendMessage ("PlayerDropped");
 
 		objectBeingUsed = null;
+		objectInHand = false;
 	}
 
 	/// <summary>

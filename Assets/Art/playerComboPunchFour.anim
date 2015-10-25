@@ -1644,7 +1644,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: .25
+  - time: .166666672
     functionName: CreateAttackCollider
     data: 
     objectReferenceParameter: {fileID: 0}
