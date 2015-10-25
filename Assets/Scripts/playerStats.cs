@@ -3,13 +3,15 @@ using System.Collections;
 
 public class playerStats : MonoBehaviour {
 
-    public float baseDamage, damageModifier, maxHealth, currHealth, adrenaline, timer, notoriety, timeMulti, damageMulti;
-	float adrenalineFalloffRate, adrenalineFalloffTime, superSaiyanDuration;
+    public float  damageModifier, maxHealth, currHealth, adrenaline, timer, notoriety, timeMulti, damageMulti, pressure;
+	float baseDamage, adrenalineFalloffRate, adrenalineFalloffTime, superSaiyanDuration;
 	public int score, candy;
 	public bool superSaiyan;
+	public GameObject childAnimator;
 
 	// Use this for initialization
 	void Start () {
+		maxHealth = currHealth = 100.0f;
 		baseDamage = 20.0f;
         timeMulti = 1.0f;
 		damageMulti = 1.0f;
@@ -17,8 +19,14 @@ public class playerStats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timer -= (Time.deltaTime * timeMulti);
+		if (superSaiyan)
+			childAnimator.GetComponent<Animator>().SetBool ("superSaiyan", true);
+		else
+			childAnimator.GetComponent<Animator>().SetBool ("superSaiyan", false);
 
+		GetComponentInChildren<Animator> ().transform.localScale = GetComponent<Animator> ().transform.localScale;
+
+        timer -= (Time.deltaTime * timeMulti);
 
 		if (currHealth > maxHealth)
 			currHealth = maxHealth;
@@ -35,12 +43,20 @@ public class playerStats : MonoBehaviour {
 		if (adrenaline < 0.0f)
 			adrenaline = 0.0f;
 
-
+        if(pressure >= 1)
+        {
+            if(notoriety < 5)
+            {
+                notoriety += 1;
+            }
+            pressure = 0;
+        }
 		if (superSaiyanDuration > 0.0f) {
 			superSaiyanDuration -= Time.deltaTime;
 		} else if (superSaiyanDuration < 0.0f) {
 			superSaiyanDuration = 0.0f;
 			superSaiyan = false;
+			damageMulti -= 1.5f;
 		}
 	}
 
@@ -54,13 +70,14 @@ public class playerStats : MonoBehaviour {
 	public void IncreaseAdrenaline()
 	{
 		if (!superSaiyan) {
-			adrenaline += 2;
+			adrenaline += 5;
 
 			if (adrenaline > 100.0f)
 				adrenaline = 100.0f;
 
 			if (adrenaline == 100.0f) {
 				superSaiyan = true;
+				damageMulti += 1.5f;
 				superSaiyanDuration = 10.0f;
 			} else
 				adrenalineFalloffTime = 2.5f;
@@ -69,6 +86,12 @@ public class playerStats : MonoBehaviour {
 
 	public void TakeDamage(float damage)
 	{
+		currHealth -= damage;
 
+		if (currHealth <= 0.0f) {
+			Debug.Log("Player Died");
+
+			currHealth = 10.0f;
+		}
 	}
 }

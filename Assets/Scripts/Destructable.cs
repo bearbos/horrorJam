@@ -3,12 +3,16 @@ using System.Collections;
 
 public class Destructable : MonoBehaviour
 {
-    public float HP;
+    public float HP,pressure;
+    public int score;
     //varibles for the visual feedback when the skeleton takes damage
     Color baseColor;
     bool changeColor;
     float delayColorChanger;
-
+    [SerializeField]
+    AudioSource sfx;
+    [SerializeField]
+    GameObject[] candy;
     // Use this for initialization
     void Start()
     {
@@ -16,6 +20,8 @@ public class Destructable : MonoBehaviour
         newPos = gameObject.transform.position;
         newPos.z = newPos.y;
         gameObject.transform.position = newPos;
+        baseColor = GetComponent<SpriteRenderer>().color;
+        sfx.volume = 10;
     }
 
     // Update is called once per frame
@@ -23,6 +29,18 @@ public class Destructable : MonoBehaviour
     {
         if(HP <= 0)
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().pressure += pressure;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().score += score;
+            int spawnedNum = Random.Range(1, 3);
+            Debug.Log(spawnedNum);
+            for (int i = 0; i < spawnedNum; i++)
+            {
+                GameObject summonedCandy = Instantiate(candy[Random.Range(0, candy.Length)]);
+                summonedCandy.transform.position = transform.position;
+                Rigidbody2D candyRB = summonedCandy.GetComponent<Rigidbody2D>();
+                candyRB.velocity = new Vector2(Random.Range(-7, 7), Random.Range(5, 10));
+                candyRB.gravityScale = 1.5f;
+            }
             Destroy(gameObject);
         }
         if (changeColor == true)
@@ -46,5 +64,9 @@ public class Destructable : MonoBehaviour
     {
         HP -= _dam;
         changeColor = true;
+        if(!sfx.isPlaying)
+        {
+            sfx.Play();
+        }
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11442744}
   m_Layer: 0
   m_Name: NunCHucks
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,12 +40,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5a805f19e419441af6342b8d1579b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  price: 0
-  durability: 0
+  damage: 1
+  price: 10
+  durability: 30
   description: Whomp Bamn
   weaponType: 0
   anchor: {fileID: 0}
+  player: {fileID: 0}
   sprite: {fileID: 21300000, guid: 62bd5485a8f374e49a60867e5c75ca0c, type: 3}
 --- !u!212 &21281040
 SpriteRenderer:
@@ -85,6 +86,22 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 62bd5485a8f374e49a60867e5c75ca0c,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: price
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: durability
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Pickup
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 105332}

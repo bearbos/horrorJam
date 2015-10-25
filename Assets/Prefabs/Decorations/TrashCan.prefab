@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21234510}
   - 61: {fileID: 6120082}
   - 114: {fileID: 11427896}
+  - 82: {fileID: 8226860}
   m_Layer: 0
   m_Name: TrashCan
   m_TagString: Decoration
@@ -43,6 +44,75 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -.0549015999}
   serializedVersion: 2
   m_Size: {x: 1, y: 1.28548717}
+--- !u!82 &8226860
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169860}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1df081285d3437e468b1cdec9ee59170, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11427896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,6 +125,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 60
+  pressure: .100000001
+  score: 50
+  sfx: {fileID: 8226860}
+  candy:
+  - {fileID: 120310, guid: d8f2b31e7b956a048880ee46afd0767d, type: 2}
+  - {fileID: 159468, guid: ba52f9071c7edf146a0adcadd2ab72ab, type: 2}
+  - {fileID: 109278, guid: 22214b63e8e3d3f4aba8787b5a5f9e4d, type: 2}
+  - {fileID: 152860, guid: 610acc4992e7aec48b30e0b3df8e0054, type: 2}
+  - {fileID: 177744, guid: 6ad354e406410614ca54437d2e40a5b0, type: 2}
+  - {fileID: 123750, guid: 0ee2b12c24551244ea0e7107d7388aa9, type: 2}
 --- !u!212 &21234510
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -87,7 +167,31 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: candy.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pressure
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: score
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1df081285d3437e468b1cdec9ee59170, type: 3}
+    - target: {fileID: 0}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 8226860}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 169860}

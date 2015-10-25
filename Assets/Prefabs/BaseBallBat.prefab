@@ -41,7 +41,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -71,9 +71,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5a805f19e419441af6342b8d1579b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  price: 0
-  durability: 0
+  damage: 5
+  price: 50
+  durability: 10
   description: BaseBall Bat
   weaponType: 0
   anchor: {fileID: 0}
@@ -117,6 +117,22 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: c888b9dde7825a04b9a08ea0a1882ec9,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: price
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: durability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 184632}

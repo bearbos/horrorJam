@@ -15,6 +15,7 @@ public class The_Director : MonoBehaviour {
     public GameObject theScore;
     public GameObject theStreet;
     public GameObject theWantedLvl;
+    public GameObject theHealth;
 
     int GameTimer = 91;
     int CandyCount = 0;
@@ -23,6 +24,7 @@ public class The_Director : MonoBehaviour {
     public int streetLvl = 1;
     string streetName;
     string wantedName;
+    int percentHealth;
 
     public GameObject fadeToBlack;
     bool fadeToBlackBool = false;
@@ -118,6 +120,41 @@ public class The_Director : MonoBehaviour {
         PlayerScore = (int)GameObject.FindWithTag("Player").gameObject.GetComponent<playerStats>().score;
         theScore.gameObject.GetComponent<TextMesh>().text = PlayerScore.ToString();
 
+        // Wanted Level
+        wantedLevel = (int)GameObject.FindWithTag("Player").gameObject.GetComponent<playerStats>().notoriety;
+
+        switch(wantedLevel)
+        {
+            case 0:
+                wantedName = "Not Spooky";
+                break;
+            case 1:
+                wantedName = "Kinda Spooky";
+                break;
+            case 2:
+                wantedName = "2spooky";
+                break;
+            case 3:
+                wantedName = "Very Spooky";
+                    break;
+            case 4:
+                wantedName = "#Spooky";
+                break;
+            case 5:
+                wantedName = "SPOOKED";
+                break;
+
+        }
+
+        theWantedLvl.gameObject.GetComponent<TextMesh>().text = wantedName;
+
+        // Health %
+        float maxHealth = (int)GameObject.FindWithTag("Player").gameObject.GetComponent<playerStats>().maxHealth;
+        float currHealth = (int)GameObject.FindWithTag("Player").gameObject.GetComponent<playerStats>().currHealth;
+
+        percentHealth = (int)(currHealth / maxHealth);
+        theHealth.gameObject.GetComponent<TextMesh>().text = percentHealth.ToString();
+
     }
 
     void SpawnHouses()
@@ -179,7 +216,7 @@ public class The_Director : MonoBehaviour {
         int numDecorations = Random.Range((int)(6 + streetLvl), (int)(10 + streetLvl));
 
         // Spawn trees and shit
-        for (int i = 0; i < natureSize; i++)
+        for (int i = 0; i < 10; i++)
         {
             GameObject tempNats;
             int natureIndex = Random.Range(0, theNatural.Length);

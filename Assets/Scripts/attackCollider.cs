@@ -4,13 +4,14 @@ using System.Collections;
 public class attackCollider : MonoBehaviour {
 
 	public float dmg, attackRange;
-	public bool moveDirection;
+	public bool moveDirection, playerUser;
 	Vector3 startPosition;
+
 
 	// Use this for initialization
 	void Start () {
 		startPosition = this.transform.position;
-		attackRange = 2.0f;
+		attackRange = 2.2f;
 	}
 	
 	// Update is called once per frame
@@ -28,9 +29,11 @@ public class attackCollider : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.CompareTag ("Enemy") || other.CompareTag ("Decoration")) {
-			other.SendMessage ("TakeDamage", 20.0f);
+		if ((other.CompareTag ("Enemy") || other.CompareTag ("Decoration")) && playerUser) {
+			other.SendMessage ("TakeDamage", dmg);
 			GameObject.FindGameObjectWithTag ("Player").GetComponent<playerStats> ().IncreaseAdrenaline ();
-		}
+		} 
+		else if (other.CompareTag ("Player") && !playerUser)
+			other.SendMessage ("TakeDamage", dmg);
 	}
 }

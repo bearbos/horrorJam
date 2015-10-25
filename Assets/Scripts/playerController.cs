@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class playerController : MonoBehaviour {
 
-	int attackComboLength;
+	int attackComboLength, maxCombo;
 	float comboInputTimer;
 	public bool inAttackAnimation, facingRight;
 	bool objectInHand;
@@ -20,14 +20,14 @@ public class playerController : MonoBehaviour {
 	void Update () {
 		if (!facingRight) {
 			this.GetComponent<Animator> ().transform.localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
-			this.GetComponent<BoxCollider2D> ().transform.localScale = new Vector3 (- Mathf.Abs (GetComponent<BoxCollider2D> ().transform.localScale.x),
-			                                                                       GetComponent<BoxCollider2D> ().transform.localScale.y,
-			                                                                       GetComponent<BoxCollider2D> ().transform.localScale.z);
+			//this.GetComponent<BoxCollider2D> ().transform.localScale = new Vector3 (- Mathf.Abs (GetComponent<BoxCollider2D> ().transform.localScale.x),
+			                                                                       //GetComponent<BoxCollider2D> ().transform.localScale.y,
+			                                                                       //GetComponent<BoxCollider2D> ().transform.localScale.z);
 		} else {
 			this.GetComponent<Animator> ().transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
-			this.GetComponent<BoxCollider2D> ().transform.localScale = new Vector3 (Mathf.Abs (GetComponent<BoxCollider2D> ().transform.localScale.x),
-			                                                                        GetComponent<BoxCollider2D> ().transform.localScale.y,
-			                                                                        GetComponent<BoxCollider2D> ().transform.localScale.z);
+			//this.GetComponent<BoxCollider2D> ().transform.localScale = new Vector3 (Mathf.Abs (GetComponent<BoxCollider2D> ().transform.localScale.x),
+			                                                                        //GetComponent<BoxCollider2D> ().transform.localScale.y,
+			                                                                        //GetComponent<BoxCollider2D> ().transform.localScale.z);
 		}
 
 		if (attackComboLength > 0) {
@@ -66,11 +66,13 @@ public class playerController : MonoBehaviour {
 			GetComponentInChildren<Transform>().localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
 		}
 
-		if ((testInputX > .1f && testInputX < .4f) || (testInputX < -.1f && testInputX > -.4f)) {
+		if ((testInputX > 0.0f && testInputX < .4f) || (testInputX < 0.0f && testInputX > -.4f)
+		    || (testInputY > 0.0f && testInputY < 0.4f) || (testInputY < 0.0f && testInputY > -0.4f)) {
 			this.GetComponent<Animator> ().SetBool ("Walking", true);
 			this.GetComponent<Animator> ().SetBool ("Running", false);
 			this.GetComponent<Animator> ().SetBool ("StandingStill", false);
-		} else if ((testInputX > .4f && testInputX < 1.1f) || (testInputX < -.4f && testInputX > -1.1f)) {
+		} else if ((testInputX >= 0.4f && testInputX <= 1.0f) || (testInputX <= -0.4f && testInputX >= -1.0f)
+		           || (testInputY >= 0.4f && testInputY <= 1.0f) || (testInputX <= -0.4f && testInputY >= -1.0f)) {
 			this.GetComponent<Animator> ().SetBool ("Running", true);
 			this.GetComponent<Animator> ().SetBool ("Walking", false);
 			this.GetComponent<Animator> ().SetBool ("StandingStill", false);
@@ -125,7 +127,7 @@ public class playerController : MonoBehaviour {
 	/// <param name="aT">If set to <c>true</c> the attack type is a punch, else it is a kick.</param>
 	void ComboManager(bool aT)
 	{
-		int maxCombo;
+        bool validInput = false;
 
 		if (GetComponent<playerStats> ().superSaiyan)
 			maxCombo = 5;
@@ -140,26 +142,31 @@ public class playerController : MonoBehaviour {
 				case 0:
 					{
 						GetComponent<Animator>().SetTrigger("ComboPunchOne");
+                        validInput = true;
 						break;
 					}
 				case 1:
 					{
 						GetComponent<Animator>().SetTrigger("ComboPunchTwo");
+                        validInput = true;
 						break;
 					}
 				case 2:
 					{
 					GetComponent<Animator>().SetTrigger("ComboPunchThree");
+                    validInput = true;
 						break;
 					}
 				case 3:
 					{
 					GetComponent<Animator>().SetTrigger("ComboPunchFour");
+                    validInput = true;
 						break;
 					}
 				case 4:
 					{
 					GetComponent<Animator>().SetTrigger("ComboPunchFive");
+                    validInput = true;
 						break;
 					}
 				default:
@@ -171,26 +178,32 @@ public class playerController : MonoBehaviour {
 				case 0:
 				{
 					GetComponent<Animator>().SetTrigger("ComboKickOne");
+                    validInput = true;
 					break;
 				}
 				case 1:
 				{
 					GetComponent<Animator>().SetTrigger("ComboKickTwo");
+                    validInput = true;
 					break;
 				}
 				case 2:
 				{
 					GetComponent<Animator>().SetTrigger("ComboKickThree");
+					GetComponent<playerStats>().adrenaline -= 10;
+                    validInput = true;
 					break;
 				}
 				case 3:
 				{
 					GetComponent<Animator>().SetTrigger("ComboKickFour");
+                    validInput = true;
 					break;
 				}
 				case 4:
 				{
 					GetComponent<Animator>().SetTrigger("ComboKickFive");
+                    validInput = true;
 					break;
 				}
 				default:
@@ -214,8 +227,11 @@ public class playerController : MonoBehaviour {
 			}
 		}
 
-		++attackComboLength;
-		comboInputTimer = 0.5f;
+        if (validInput)
+        {
+            ++attackComboLength;
+            comboInputTimer = 0.5f;
+        }
 	}
 
 	public void AnimationStart()
@@ -229,6 +245,9 @@ public class playerController : MonoBehaviour {
 	public void AnimationEnd()
 	{
 		inAttackAnimation = false;
+
+		if (attackComboLength > maxCombo)
+			comboInputTimer = 0.2f;
 	}
 
 	/// <summary>
@@ -236,7 +255,11 @@ public class playerController : MonoBehaviour {
 	/// </summary>
 	public void CreateAttackCollider(float numshots)
 	{
+		attackColliderPrefab.GetComponent<attackCollider> ().playerUser = true;
+
 		attackColliderPrefab.GetComponent<attackCollider> ().dmg = GetComponent<playerStats> ().TotalDamageDealt();
+
+
 		if (GetComponent<Rigidbody2D> ().transform.localScale.x < 0)
 			attackColliderPrefab.GetComponent<attackCollider> ().moveDirection = false;
 		else if (GetComponent<Rigidbody2D>().transform.localScale.x > 0)

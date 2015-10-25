@@ -44,6 +44,8 @@ public class SamStoreLauncherScript : MonoBehaviour {
         Time.timeScale = 0.0f;
         Input.ResetInputAxes();
         transform.GetChild(2).gameObject.SetActive(true);
+		transform.GetChild (2).GetComponent<StoreScript> ().parent = this.gameObject;
+
     }
 
     void Destroy()

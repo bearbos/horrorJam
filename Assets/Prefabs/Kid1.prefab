@@ -114,6 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHealth: 20
   maxHealth: 20
+  score: 0
+  notriaty: .0500000007
 --- !u!212 &21238386
 SpriteRenderer:
   m_ObjectHideFlags: 1
