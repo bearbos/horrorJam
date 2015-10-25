@@ -5,8 +5,7 @@ public class Dynamic_Camera : MonoBehaviour {
 
     // Reference to the player
     GameObject thePlayer;
-    [SerializeField]
-    AudioSource music;
+   
     public GameObject theSpawner;
 
     // Camera Stuff
@@ -26,17 +25,14 @@ public class Dynamic_Camera : MonoBehaviour {
         // Find the player
         if (GameObject.FindWithTag("Player"))
             thePlayer = GameObject.FindWithTag("Player");
-        music.volume = 5;
+        
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         gameTime += Time.deltaTime;
-        if(!music.isPlaying)
-        {
-            music.Play();
-        }
+       
         Vector3 newPos = gameObject.transform.position;
         newPos.x += 20.0f;
         theSpawner.gameObject.transform.position = newPos;
