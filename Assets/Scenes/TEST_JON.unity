@@ -165,7 +165,7 @@ Transform:
   - {fileID: 965795798}
   - {fileID: 1027968109}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &388884663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,3 +686,45 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 20}
+--- !u!1001 &1929914418
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 476588, guid: 1423f8af3afbb7e48ab7eecc73b80bad, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.02750683
+      objectReference: {fileID: 0}
+    - target: {fileID: 476588, guid: 1423f8af3afbb7e48ab7eecc73b80bad, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.0768750906
+      objectReference: {fileID: 0}
+    - target: {fileID: 476588, guid: 1423f8af3afbb7e48ab7eecc73b80bad, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476588, guid: 1423f8af3afbb7e48ab7eecc73b80bad, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476588, guid: 1423f8af3afbb7e48ab7eecc73b80bad, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476588, guid: 1423f8af3afbb7e48ab7eecc73b80bad, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476588, guid: 1423f8af3afbb7e48ab7eecc73b80bad, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 476588, guid: 1423f8af3afbb7e48ab7eecc73b80bad, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1423f8af3afbb7e48ab7eecc73b80bad, type: 2}
+  m_IsPrefabParent: 0
