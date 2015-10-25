@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &107190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 429594}
+  - 212: {fileID: 21214762}
+  - 114: {fileID: 11482496}
+  - 50: {fileID: 5014986}
+  - 58: {fileID: 5859804}
+  - 114: {fileID: 11439898}
+  m_Layer: 0
+  m_Name: PickupEgg
+  m_TagString: Pickup
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &429594
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107190}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.23000002, y: .910000026, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!50 &5014986
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107190}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &5859804
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107190}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .25
+--- !u!114 &11439898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2c8a0d51a39c444a64d50e1bf08f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Distance: {x: 0, y: 0}
+  differenttypes:
+  - {fileID: 187696, guid: 6ba58f3a78f881d4185ce632df7800ec, type: 2}
+  - {fileID: 123512, guid: 6462e88feb671114287ab5cd4843a4e3, type: 2}
+  - {fileID: 171444, guid: c1e3f80047aaff544ab402b9f014897b, type: 2}
+  - {fileID: 127946, guid: b53a944681071444d8ece6378159d38c, type: 2}
+  - {fileID: 167298, guid: dc118cf2d4bb1eb4394fb59675a380f3, type: 2}
+  - {fileID: 197244, guid: 05630c33dfbe37846b78be3f7f8b9fc7, type: 2}
+  - {fileID: 100218, guid: 01b5addc5940cfe468eab2c6ff094807, type: 2}
+  - {fileID: 136932, guid: 2139307739d93ad4b9837d2ca9ab7622, type: 2}
+  - {fileID: 141170, guid: feb8f5c06c89b47498cfcab364ce4cd5, type: 2}
+  - {fileID: 143732, guid: c048c7bdb6c6c0d4d9cf4fa9ac8e9988, type: 2}
+  - {fileID: 104282, guid: d11f4ae9ab737344d93ed49f56492ce5, type: 2}
+  - {fileID: 190290, guid: ead57c72989ffd849a7dc53445ae1814, type: 2}
+  - {fileID: 196546, guid: 72455f79112052b49a9ebb2cd295e6d8, type: 2}
+  - {fileID: 128914, guid: d73b6a6f1da2f3446a5ca52c48db7c7c, type: 2}
+  - {fileID: 167298, guid: dc118cf2d4bb1eb4394fb59675a380f3, type: 2}
+--- !u!114 &11482496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5a805f19e419441af6342b8d1579b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 4
+  price: 20
+  durability: 10
+  description: Yoshi
+  weaponType: 2
+  anchor: {fileID: 0}
+  player: {fileID: 0}
+  sprite: {fileID: 0}
+--- !u!212 &21214762
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107190}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300014, guid: 877eccfa2a0f3e14582817599dcace38, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 107190}
+  m_IsPrefabParent: 1
