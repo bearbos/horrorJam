@@ -5,16 +5,26 @@ using System.Collections.Generic;
 public class maskController : MonoBehaviour {
 
 	public List<GameObject> maskCollection = new List<GameObject>();
-	GameObject activeMask;
+    [SerializeField]
+    GameObject activeMask;
+    [SerializeField]
 	int currentIndex;
 
 	// Use this for initialization
 	void Start () {
-	
+		for (int i = 0; i < 5; ++i) {
+			maskCollection.Add(null);
+		}
 	}
 	
 	// Update is called once per frame
-	void Update () {
+    void Update ()
+    {
+
+    }
+
+
+	void FixedUpdate () {
 		if (activeMask != null) {
 			activeMask.transform.position = this.transform.position;
 			activeMask.GetComponent<SpriteRenderer> ().enabled = true;
@@ -32,11 +42,13 @@ public class maskController : MonoBehaviour {
 	/// <param name="dir">If set to <c>true</c> dir.</param>
 	public void ChangeMask(bool dir)
 	{
+        //Destroy(activeMask);
 		if (dir)
 			++currentIndex;
 		else
 			--currentIndex;
 
+        // Change current index information
 		if (currentIndex < 0)
 			currentIndex = maskCollection.Count - 1;
 		else if (currentIndex >= maskCollection.Count)
@@ -47,16 +59,25 @@ public class maskController : MonoBehaviour {
 			activeMask.GetComponent<Mask> ().enabled = false;
 		}
 
-		activeMask = maskCollection [currentIndex];
+        // destroy old mask and make the new mask
+        Destroy(activeMask);
+        if (maskCollection[currentIndex] != null)
+        {
+            activeMask = Instantiate(maskCollection[currentIndex]); 
+        }
 	}
 
 	/// <summary>
 	/// Pickups a mask.
 	/// </summary>
-	public void AddAMask(GameObject mask)
+	public void AddAMask(GameObject mask, int index)
 	{
-		maskCollection.Add (mask);
-		currentIndex = maskCollection.Count - 1;
-		activeMask = maskCollection [currentIndex];
-	}
+        if (activeMask != null)
+            Destroy(activeMask);
+
+		maskCollection [index] = mask;
+		currentIndex = index;
+		activeMask = Instantiate(maskCollection [currentIndex]);
+        
+    }
 }
