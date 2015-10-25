@@ -13,6 +13,7 @@ GameObject:
   - 61: {fileID: 6100606}
   - 114: {fileID: 11490434}
   - 114: {fileID: 11453178}
+  - 95: {fileID: 9526544}
   m_Layer: 0
   m_Name: Kid2
   m_TagString: Enemy
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.6094341, y: 1.87640357, z: 0}
+  m_LocalPosition: {x: 4.98020315, y: -2.32595348, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,9 +59,26 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: .343711376}
+  m_Offset: {x: -.0202403069, y: -.607601643}
   serializedVersion: 2
-  m_Size: {x: 1.82795596, y: .687423229}
+  m_Size: {x: 1.26121879, y: .970794201}
+--- !u!95 &9526544
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155658}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 672006fab0cdf0a49b7f1fa826a3740b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11453178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,7 +138,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bfbd8b01c88de5848b2d2334e4624807, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 35cecdf2e36ed244c8818c66cda2b4fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
