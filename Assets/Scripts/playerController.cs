@@ -18,10 +18,17 @@ public class playerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!facingRight)
-			this.GetComponent<Animator>().transform.localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
-		else
-			this.GetComponent<Animator>().transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+		if (!facingRight) {
+			this.GetComponent<Animator> ().transform.localScale = new Vector3 (-1.0f, 1.0f, 1.0f);
+			this.GetComponent<BoxCollider2D> ().transform.localScale = new Vector3 (- Mathf.Abs (GetComponent<BoxCollider2D> ().transform.localScale.x),
+			                                                                       GetComponent<BoxCollider2D> ().transform.localScale.y,
+			                                                                       GetComponent<BoxCollider2D> ().transform.localScale.z);
+		} else {
+			this.GetComponent<Animator> ().transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			this.GetComponent<BoxCollider2D> ().transform.localScale = new Vector3 (Mathf.Abs (GetComponent<BoxCollider2D> ().transform.localScale.x),
+			                                                                        GetComponent<BoxCollider2D> ().transform.localScale.y,
+			                                                                        GetComponent<BoxCollider2D> ().transform.localScale.z);
+		}
 
 		if (attackComboLength > 0) {
 			if (comboInputTimer > 0.0f)
@@ -251,7 +258,7 @@ public class playerController : MonoBehaviour {
 	/// </summary>
 	void PickupItem()
 	{
-		if (usableObject != null)
+		if (usableObject != null && objectBeingUsed == null)
 			objectBeingUsed = usableObject;
 
 		objectBeingUsed.SendMessage ("PlayerUsed");
