@@ -29,7 +29,7 @@ public class Credit_Target : MonoBehaviour {
         }
         else if (hitPoints < 0.0f)
         {
-            gameObject.GetComponent<TextMesh>().color = yellow;
+            gameObject.GetComponent<TextMesh>().color = Color.green;
         }
 
         if(spin && reset)
