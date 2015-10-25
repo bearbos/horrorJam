@@ -253,7 +253,7 @@ public class StoreScript : MonoBehaviour
                             if (player.GetComponent<playerStats>().candy >= possible_sale_items[sale_items[selected - 2]].GetComponent<Mask>().price)
                             {
                                 player.GetComponent<playerStats>().candy -= possible_sale_items[sale_items[selected - 2]].GetComponent<Mask>().price;
-                                player.GetComponentInChildren<maskController>().AddAMask(possible_sale_items[sale_items[selected - 2]]);
+                                //player.GetComponentInChildren<maskController>().AddAMask(possible_sale_items[sale_items[selected - 2]]);
                                 purchased[selected - 2] = true;
                                 transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
                             }

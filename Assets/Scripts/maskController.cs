@@ -55,10 +55,10 @@ public class maskController : MonoBehaviour {
 	/// <summary>
 	/// Pickups a mask.
 	/// </summary>
-	public void AddAMask(GameObject mask)
+	public void AddAMask(GameObject mask, int index)
 	{
-		maskCollection.Add (mask);
-		currentIndex = maskCollection.Count - 1;
+		maskCollection [index] = mask;
+		currentIndex = index;
 		activeMask = maskCollection [currentIndex];
 	}
 }
