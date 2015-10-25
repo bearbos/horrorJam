@@ -12,6 +12,8 @@ GameObject:
   - 61: {fileID: 6120082}
   - 114: {fileID: 11427896}
   - 82: {fileID: 8226860}
+  - 61: {fileID: 6127898}
+  - 50: {fileID: 5051308}
   m_Layer: 0
   m_Name: TrashCan
   m_TagString: Decoration
@@ -31,6 +33,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5051308
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169860}
+  m_Mass: 10000
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &6120082
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -44,6 +62,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -.0549015999}
   serializedVersion: 2
   m_Size: {x: 1, y: 1.28548717}
+--- !u!61 &6127898
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169860}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -.0549015999}
+  serializedVersion: 2
+  m_Size: {x: .800000012, y: 1}
 --- !u!82 &8226860
 AudioSource:
   m_ObjectHideFlags: 1
@@ -59,6 +90,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -190,6 +222,26 @@ Prefab:
       objectReference: {fileID: 8226860}
     - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.x
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
