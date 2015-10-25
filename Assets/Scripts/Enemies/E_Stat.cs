@@ -23,7 +23,7 @@ public class E_Stat : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-		maxHealth = 10.0f;
+		//maxHealth = 10.0f;
         //save the color of the enemy at start and have a bool set to false
         baseColor = gameObject.GetComponent<SpriteRenderer>().color;
         changeColor = false;

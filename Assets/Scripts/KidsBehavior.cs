@@ -122,7 +122,7 @@ public class KidsBehavior : MonoBehaviour
     void Death()
     {
         int spawnedNum = Random.Range(minCandy, maxCandy);
-        Debug.Log(spawnedNum);
+        //Debug.Log(spawnedNum);
         for (int i = 0; i < spawnedNum; i++)
         {
             GameObject summonedCandy = Instantiate(candy[Random.Range(0, candy.Length)]);

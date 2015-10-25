@@ -152,7 +152,7 @@ public class The_Director : MonoBehaviour {
         float maxHealth = (int)GameObject.FindWithTag("Player").gameObject.GetComponent<playerStats>().maxHealth;
         float currHealth = (int)GameObject.FindWithTag("Player").gameObject.GetComponent<playerStats>().currHealth;
 
-        percentHealth = (int)(currHealth / maxHealth);
+        percentHealth = (int)(currHealth);
         theHealth.gameObject.GetComponent<TextMesh>().text = percentHealth.ToString();
 
     }

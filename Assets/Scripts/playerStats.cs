@@ -89,9 +89,9 @@ public class playerStats : MonoBehaviour {
 		currHealth -= damage;
 
 		if (currHealth <= 0.0f) {
-			Debug.Log("Player Died");
+            //Debug.Log("Player Died");
 
-			currHealth = 10.0f;
+            Application.LoadLevel("Credits");
 		}
 	}
 }

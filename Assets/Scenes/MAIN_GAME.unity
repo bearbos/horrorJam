@@ -65,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -84,9 +85,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!127 &5
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!1 &290847971 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 192030, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
@@ -128,7 +126,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378083991}
-  m_Text: xx
+  m_Text: XXX
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -200,6 +198,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -393,6 +392,14 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11499522, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499522, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
+      propertyPath: currHealth
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
   m_IsPrefabParent: 0
@@ -407,6 +414,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11438310, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
+      propertyPath: thePolice.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 11438310, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
       propertyPath: theDecorations.Array.size
       value: 9
@@ -487,6 +498,14 @@ Prefab:
       propertyPath: theHealth
       value: 
       objectReference: {fileID: 378083991}
+    - target: {fileID: 11438310, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
+      propertyPath: thePolice.Array.data[1]
+      value: 
+      objectReference: {fileID: 141876, guid: e097adaba32255746bcb2fcd6a42d8a8, type: 2}
+    - target: {fileID: 11438310, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
+      propertyPath: thePolice.Array.data[2]
+      value: 
+      objectReference: {fileID: 195912, guid: 1423f8af3afbb7e48ab7eecc73b80bad, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f7784355946c5c4389a7bf05a0eaecc, type: 2}
   m_IsPrefabParent: 0
