@@ -23,7 +23,7 @@ public class playerStats : MonoBehaviour {
         {
             //Debug.Log("Player Died");
 
-            Application.LoadLevel(0);
+            Application.LoadLevel("Credits");
         }
         if (superSaiyan)
 			childAnimator.GetComponent<Animator>().SetBool ("superSaiyan", true);
