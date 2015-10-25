@@ -73,7 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   price: 50
-  durability: 10
+  durability: 100
   description: BaseBall Bat
   weaponType: 0
   anchor: {fileID: 0}
@@ -127,7 +127,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: durability
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_GravityScale
