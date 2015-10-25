@@ -153,7 +153,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - m_Icon: {fileID: 0}
-      m_Size: 3869
+      m_Size: 3870
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   webPlayerTemplate: APPLICATION:Default
@@ -244,11 +244,6 @@ PlayerSettings:
   ps4pnFriends: 1
   ps4pnGameCustomData: 1
   playerPrefsSupport: 0
-  ps4ReprojectionSupport: 0
-  ps4attribUserManagement: 0
-  ps4attribMoveSupport: 0
-  ps4attrib3DSupport: 0
-  ps4attribShareSupport: 0
   monoEnv: 
   psp2Splashimage: {fileID: 0}
   psp2NPTrophyPackPath: 

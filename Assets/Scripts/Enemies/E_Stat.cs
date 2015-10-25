@@ -80,7 +80,8 @@ public class E_Stat : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().pressure += notriaty;
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().score += score;
-            gameObject.SendMessage("Death");
+			if (gameObject != null)
+            	gameObject.SendMessage("Death");
             Destroy(gameObject);
             //Vector3 scale = transform.localScale;
             //transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - 90);
