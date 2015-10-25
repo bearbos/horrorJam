@@ -182,7 +182,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a794864a5470fcc4894342b437e13bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candy: []
+  candy:
+  - {fileID: 109278, guid: 22214b63e8e3d3f4aba8787b5a5f9e4d, type: 2}
+  - {fileID: 177744, guid: 6ad354e406410614ca54437d2e40a5b0, type: 2}
+  - {fileID: 120310, guid: d8f2b31e7b956a048880ee46afd0767d, type: 2}
+  - {fileID: 152860, guid: 610acc4992e7aec48b30e0b3df8e0054, type: 2}
+  - {fileID: 186786, guid: 3c25deb830cb26941b771fefa760b48f, type: 2}
+  - {fileID: 123750, guid: 0ee2b12c24551244ea0e7107d7388aa9, type: 2}
   weapons: []
 --- !u!114 &11468690
 MonoBehaviour:
