@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11435214}
   - 95: {fileID: 9503932}
   - 82: {fileID: 8273960}
+  - 114: {fileID: 11448196}
   m_Layer: 0
   m_Name: PoliceMan
   m_TagString: Enemy
@@ -29,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.22300005, y: -2.625, z: .837890625}
+  m_LocalPosition: {x: -4.51080751, y: -1.97589409, z: .837890625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +79,6 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -184,6 +184,28 @@ MonoBehaviour:
   textDamage: {fileID: 148546, guid: 1f6e1cae29a0f48418ce39add8ec55be, type: 2}
   attackColliderPrefab: {fileID: 197996, guid: 4037536ceb7b2cd4d9bdfe870479962d, type: 2}
   sfx: {fileID: 8273960}
+--- !u!114 &11448196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a794864a5470fcc4894342b437e13bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  candy:
+  - {fileID: 186786, guid: 3c25deb830cb26941b771fefa760b48f, type: 2}
+  - {fileID: 159468, guid: ba52f9071c7edf146a0adcadd2ab72ab, type: 2}
+  - {fileID: 177744, guid: 6ad354e406410614ca54437d2e40a5b0, type: 2}
+  - {fileID: 109278, guid: 22214b63e8e3d3f4aba8787b5a5f9e4d, type: 2}
+  - {fileID: 152860, guid: 610acc4992e7aec48b30e0b3df8e0054, type: 2}
+  - {fileID: 120310, guid: d8f2b31e7b956a048880ee46afd0767d, type: 2}
+  weapons:
+  - {fileID: 184316, guid: 9ae7140e42d6b074ea40da8989a29889, type: 2}
+  - {fileID: 178164, guid: e8d488134f86fe844a1828e083404dde, type: 2}
+  - {fileID: 145528, guid: b898c10ea5bef82429c9dc0d85285096, type: 2}
 --- !u!212 &21233018
 SpriteRenderer:
   m_ObjectHideFlags: 1
