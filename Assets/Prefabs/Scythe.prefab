@@ -96,9 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5a805f19e419441af6342b8d1579b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  price: 0
-  durability: 0
+  damage: 8
+  price: 90
+  durability: 9
   description: Grim Raper
   weaponType: 0
   anchor: {fileID: 0}
@@ -142,6 +142,18 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 6c9a56a22cf27f247a07e320163a0fac,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: price
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: durability
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 123374}

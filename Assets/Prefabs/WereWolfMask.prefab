@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Werewolf
-  price: 0
+  price: 250
   description: Stay longer in areas
   wantedLevel: 0
   sprite: {fileID: 21300000, guid: 49c4c655f8cd90f498c57dd65ff04715, type: 3}
@@ -87,6 +87,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 49c4c655f8cd90f498c57dd65ff04715,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: price
+      value: 250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 193216}
