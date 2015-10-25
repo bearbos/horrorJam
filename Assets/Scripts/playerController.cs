@@ -173,7 +173,7 @@ public class playerController : MonoBehaviour {
 					break;
 				}
 			} 
-			else if (!aT && (!objectInHand || usableObject.GetComponent<weapon> ().weaponType == weaponType.FIST)) {
+			else if (!aT && (!objectInHand || objectBeingUsed.GetComponent<weapon> ().weaponType == weaponType.FIST)) {
 				switch (attackComboLength) {
 				case 0:
 				{
@@ -243,6 +243,10 @@ public class playerController : MonoBehaviour {
 
         if (validInput)
         {
+			if (objectBeingUsed != null){
+			if (objectBeingUsed.GetComponent<weapon>().weaponType == weaponType.FIST)
+				--objectBeingUsed.GetComponent<weapon>().durability;
+			}
             ++attackComboLength;
             comboInputTimer = 0.5f;
         }
