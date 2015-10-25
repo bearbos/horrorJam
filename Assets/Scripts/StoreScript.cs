@@ -27,7 +27,7 @@ public class StoreScript : MonoBehaviour
     int[] itemType;         // which type of items are in each or the three sale slots. ( 0 = mask, 1 = health item, 2 = weapon)
     GameObject player;
     [SerializeField]
-    int buffer = 5;
+    int buffer = 30;
     // Use this for initialization
     void Start()
     {
@@ -54,7 +54,7 @@ public class StoreScript : MonoBehaviour
         {
             for (int j = 0; j < 5; j++)
             {
-                if (player.GetComponentInChildren<maskController>().maskCollection[i].GetComponent<Mask>().name != null)
+                if (player.GetComponentInChildren<maskController>().maskCollection[i] != null)
                 {
                     if (player.GetComponentInChildren<maskController>().maskCollection[i].GetComponent<Mask>().name == possible_sale_items[j].GetComponent<Mask>().name)
                     {
@@ -174,7 +174,7 @@ public class StoreScript : MonoBehaviour
             {
                 selected = 4;
             }
-            buffer = 5;
+            buffer = 30;
 
         }
         else if (Input.GetAxis("Horizontal") < 0 && buffer == 0)
@@ -192,7 +192,7 @@ public class StoreScript : MonoBehaviour
             {
                 selected = 4;
             }
-            buffer = 5;
+            buffer = 30;
         }
 
         if (Input.GetAxis("Vertical") > 0  & buffer == 0)
@@ -210,7 +210,7 @@ public class StoreScript : MonoBehaviour
             {
                 selected = 2;
             }
-            buffer = 5;
+            buffer = 30;
         }
         else if (Input.GetAxis("Vertical") < 0 && buffer == 0)
         {
@@ -227,12 +227,12 @@ public class StoreScript : MonoBehaviour
             {
                 selected = 2;
             }
-            buffer = 5;
+            buffer = 30;
         }
 
 
 
-        for (int i = 2; i < 4; i++)
+        for (int i = 2; i <= 4; i++)
         {
             if (i == selected)
             {
@@ -257,7 +257,7 @@ public class StoreScript : MonoBehaviour
                             if (player.GetComponent<playerStats>().candy >= possible_sale_items[sale_items[selected - 2]].GetComponent<Mask>().price)
                             {
                                 player.GetComponent<playerStats>().candy -= possible_sale_items[sale_items[selected - 2]].GetComponent<Mask>().price;
-                                player.GetComponentInChildren<maskController>().AddAMask(possible_sale_items[sale_items[selected - 2]]);
+                                player.GetComponentInChildren<maskController>().AddAMask(possible_sale_items[sale_items[selected - 2]], sale_items[selected-2]);
                                 purchased[selected - 2] = true;
                                 transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
                             }
@@ -279,7 +279,7 @@ public class StoreScript : MonoBehaviour
                             if (player.GetComponent<playerStats>().candy >= possible_sale_items[sale_items[selected - 2]].GetComponent<weapon>().price)
                             {
                                 player.GetComponent<playerStats>().candy -= possible_sale_items[sale_items[selected - 2]].GetComponent<weapon>().price;
-                                Instantiate(possible_sale_items[sale_items[selected - 2]], transform.position, transform.rotation);
+                                Instantiate(possible_sale_items[sale_items[selected - 2]], player.transform.position, player.transform.rotation);
                                 purchased[selected - 2] = true;
                                 transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
                             }
