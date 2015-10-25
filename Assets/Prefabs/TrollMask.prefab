@@ -40,8 +40,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ce2f7566a2bd844bc421ea7a7b54d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: TrollMask
-  price: 250
+  maskName: 
+  price: 175
   description: ???? ???? ???? ???????
   wantedLevel: 0
   sprite: {fileID: 21300000, guid: a9329d626a07c0b44881b4c29e1da730, type: 3}
@@ -93,7 +93,7 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: price
-      value: 250
+      value: 175
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
