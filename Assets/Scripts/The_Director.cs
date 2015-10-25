@@ -16,6 +16,8 @@ public class The_Director : MonoBehaviour {
     public GameObject theStreet;
     public GameObject theWantedLvl;
     public GameObject theHealth;
+    public GameObject theHealthBar;
+    public GameObject healthBarAnchor;
 
     int GameTimer = 91;
     int CandyCount = 0;
@@ -153,6 +155,23 @@ public class The_Director : MonoBehaviour {
 
         percentHealth = (int)(currHealth);
         theHealth.gameObject.GetComponent<TextMesh>().text = percentHealth.ToString();
+
+        float currAdren = (int)GameObject.FindWithTag("Player").gameObject.GetComponent<playerStats>().adrenaline;
+        float maxAdren = 100.0f;
+
+        theHealthBar.transform.position = healthBarAnchor.transform.position;
+
+        Vector3 theHealthBarScale;
+        Vector3 theHealthBarLocation;
+
+        theHealthBarScale = theHealthBar.transform.localScale;
+        theHealthBarLocation = theHealthBar.transform.position;
+
+        theHealthBarScale.x = ((currAdren / maxAdren));
+        theHealthBarLocation.x -= (1.90f - ((currAdren / maxAdren) * 1.90f));
+
+        theHealthBar.transform.localScale = theHealthBarScale;
+        theHealthBar.transform.position = theHealthBarLocation;
 
     }
 
