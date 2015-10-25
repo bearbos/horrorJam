@@ -6,8 +6,8 @@ public class playerController : MonoBehaviour {
 
 	int attackComboLength;
 	float comboInputTimer;
-	public bool inAttackAnimation;
-	bool facingRight, objectInHand;
+	public bool inAttackAnimation, facingRight;
+	bool objectInHand;
 	public GameObject attackColliderPrefab;
 	GameObject usableObject, objectBeingUsed;
 
@@ -158,17 +158,38 @@ public class playerController : MonoBehaviour {
 				default:
 					break;
 				}
-			} else if (!aT && (!objectInHand || usableObject.GetComponent<weapon> ().weaponType == weaponType.FIST)) {
-				if (attackComboLength == 0) {
-					this.GetComponent<Animator> ().SetTrigger ("ComboKickOne");
-					//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
-				} else if (attackComboLength == 1) {
-					this.GetComponent<Animator> ().SetTrigger ("ComboKickTwo");
-					//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt() * 1.5f, facingRight);
-				} else if (attackComboLength == 2) {
-					this.GetComponent<Animator> ().SetTrigger ("ComboKickThree");
-					//CreateAttackCollider(GetComponent<playerStats>().TotalDamageDealt(), facingRight);
-					//(GetComponent<playerStats>().TotalDamageDealt(), !facingRight);
+			} 
+			else if (!aT && (!objectInHand || usableObject.GetComponent<weapon> ().weaponType == weaponType.FIST)) {
+				switch (attackComboLength) {
+				case 0:
+				{
+					GetComponent<Animator>().SetTrigger("ComboKickOne");
+					break;
+				}
+				case 1:
+				{
+					GetComponent<Animator>().SetTrigger("ComboKickTwo");
+					break;
+				}
+				case 2:
+				{
+					GetComponent<Animator>().SetTrigger("ComboKickThree");
+					break;
+				}
+				case 3:
+				{
+					GetComponent<Animator>().SetTrigger("ComboKickFour");
+					break;
+				}
+				case 4:
+				{
+					GetComponent<Animator>().SetTrigger("ComboKickFive");
+					break;
+				}
+				default:
+				{
+					break;
+				}
 				}
 			}
 		}
