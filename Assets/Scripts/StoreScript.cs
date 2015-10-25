@@ -62,6 +62,10 @@ public class StoreScript : MonoBehaviour
                         break;
                     }
                 }
+                else
+                {
+                    break;
+                }
                 
 
             }

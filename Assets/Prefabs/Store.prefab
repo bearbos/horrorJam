@@ -871,6 +871,7 @@ MonoBehaviour:
   - {fileID: 170576, guid: 424131ed427873345be1ff189d851766, type: 2}
   sale_items: 
   itemType: 
+  buffer: 5
 --- !u!114 &11463832
 MonoBehaviour:
   m_ObjectHideFlags: 1
