@@ -187,6 +187,7 @@ MonoBehaviour:
   maxHealth: 20
   score: 0
   notriaty: .0500000007
+  textDamage: {fileID: 148546, guid: 1f6e1cae29a0f48418ce39add8ec55be, type: 2}
   sfx: {fileID: 8208516}
 --- !u!212 &21271450
 SpriteRenderer:
@@ -253,6 +254,10 @@ Prefab:
       propertyPath: notriaty
       value: .0500000007
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: textDamage
+      value: 
+      objectReference: {fileID: 148546, guid: 1f6e1cae29a0f48418ce39add8ec55be, type: 2}
     - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
       value: 0

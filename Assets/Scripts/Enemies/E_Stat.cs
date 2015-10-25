@@ -10,6 +10,7 @@ public class E_Stat : MonoBehaviour
     float maxHealth;
     public int score;
     public float notriaty;
+    public GameObject textDamage;
     [SerializeField]
     AudioSource sfx;
 
@@ -51,10 +52,11 @@ public class E_Stat : MonoBehaviour
         }
     }
 
-
     public void TakeDamage(float _dam)
     {
         currHealth -= _dam;
+        GameObject textDam = Instantiate(textDamage, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+        textDam.gameObject.GetComponent<Damage_Text>().SetDamageText((int)_dam);
         changeColor = true;
         if(!sfx.isPlaying)
         {
@@ -72,6 +74,7 @@ public class E_Stat : MonoBehaviour
                 GetComponent<Rigidbody2D>().AddForce(new Vector2(moveAmount, 0f));
             }
         }
+
         if (currHealth <= 0)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().pressure += notriaty;

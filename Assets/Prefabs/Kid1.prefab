@@ -158,16 +158,10 @@ Prefab:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-<<<<<<< HEAD
-      propertyPath: notriaty
-      value: .0500000007
-      objectReference: {fileID: 0}
-=======
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c5f4f75f86b684543998b59557f0988a,
         type: 3}
->>>>>>> 10ca1e85c67d084ae759b4b7a33dfd9affc3d1fc
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127534}

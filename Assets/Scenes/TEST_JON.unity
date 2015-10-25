@@ -421,8 +421,24 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 480388, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 430222, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21263144, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21288528, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499522, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
+      propertyPath: childAnimator
+      value: 
+      objectReference: {fileID: 1793926505}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
   m_IsPrefabParent: 0
@@ -954,3 +970,24 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 20}
+--- !u!1 &1793926505 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 192030, guid: a7dcc1dd3cc006847aa11e34632190f0, type: 2}
+  m_PrefabInternal: {fileID: 567011001}
+--- !u!95 &1793926507
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1793926505}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71595b72a28889e41b91275ea53af7d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
