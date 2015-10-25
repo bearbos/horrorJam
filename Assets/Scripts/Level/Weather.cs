@@ -39,14 +39,14 @@ public class Weather : MonoBehaviour
         else if (effect == 1)
         {
             timer += Time.deltaTime;
-           wtf =(int) GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().notoriety;
-            if(wtf == 5)
+            wtf = (int)GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().notoriety;
+            if (wtf == 5)
             {
                 wtf *= 5;
             }
             for (int i = 0; i < wtf; i++)
             {
-                
+
                 if (!rainSFX.isPlaying)
                     rainSFX.Play();
                 position = Camera.main.transform.position;
@@ -55,8 +55,9 @@ public class Weather : MonoBehaviour
                 offsetY = Random.Range(-10.0f, 10.0f);
                 position.x += offsetX;
                 position.y += offsetY;
-                Instantiate(rain, position, rain.transform.rotation);
-                if(timer >= idk)
+                if (Time.timeScale > 0)
+                    Instantiate(rain, position, rain.transform.rotation);
+                if (timer >= idk)
                 {
                     idk = Random.Range(4.0f, 10.0f);
                     position = Camera.main.transform.position;
@@ -68,9 +69,9 @@ public class Weather : MonoBehaviour
                 }
             }
         }
-         if (wtf == 5)
+        if (wtf == 5)
         {
-                //rainSFX.Stop();
+            //rainSFX.Stop();
             for (int i = 0; i < 3; i++)
             {
 
