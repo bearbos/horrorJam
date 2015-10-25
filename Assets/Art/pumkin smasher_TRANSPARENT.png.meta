@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: bb95176866ca08042a3611eebcd01aae
-timeCreated: 1445734662
+timeCreated: 1445734895
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -126,6 +126,10 @@ TextureImporter:
     21300238: pumkin smasher_TRANSPARENT_119
     21300240: pumkin smasher_TRANSPARENT_120
     21300242: pumkin smasher_TRANSPARENT_121
+    21300244: pumkin smasher_TRANSPARENT_122
+    21300246: pumkin smasher_TRANSPARENT_123
+    21300248: pumkin smasher_TRANSPARENT_124
+    21300250: pumkin smasher_TRANSPARENT_125
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -1385,11 +1389,51 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 56
-        y: 952
+        y: 951
         width: 54
-        height: 67
+        height: 68
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_122
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 951
+        width: 58
+        height: 73
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_123
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 951
+        width: 55
+        height: 74
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_124
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 953
+        width: 53
+        height: 73
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pumkin smasher_TRANSPARENT_125
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 952
+        width: 56
+        height: 74
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
