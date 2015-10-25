@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maskName: 
-  price: 250
+  price: 125
   description: Decrease the rate of wanted gain
   wantedLevel: 0
   sprite: {fileID: 21300000, guid: 2c342ea51bb822d40a0fd65fd80336d8, type: 3}
@@ -94,7 +94,7 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: price
-      value: 250
+      value: 125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
