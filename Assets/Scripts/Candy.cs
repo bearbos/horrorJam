@@ -7,10 +7,10 @@ public class Candy : MonoBehaviour
     int scoreGiven;
     [SerializeField]
     int candyGiven;
-    [SerializeField]
-    int healAmount;
+    public int healAmount;
     [SerializeField]
     bool heals = false;
+    public int price;
     // Use this for initialization
     void Start()
     {
