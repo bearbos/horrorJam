@@ -330,8 +330,12 @@ public class playerController : MonoBehaviour {
 	/// <param name="coll">Coll.</param>
 	void OnTriggerExit2D(Collider2D coll)
 	{
-		if (coll.CompareTag ("Pickup") && usableObject == coll.gameObject && usableObject.GetComponent<weapon>().anchor != null) {
-			usableObject = null;
+		if (coll != null) {
+			if (usableObject != null) {
+			if (coll.CompareTag ("Pickup") && usableObject == coll.gameObject && usableObject.GetComponent<weapon> ().anchor != null) {
+				usableObject = null;
+			}
+			}
 		}
 	}
 }
