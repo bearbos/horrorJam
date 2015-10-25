@@ -328,36 +328,60 @@ public class StoreScript : MonoBehaviour
             while (playerHas[temp[0]])
             {
                 temp[0] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
+                if (temp[0] >= 5)
+                {
+                    break;
+                }
             }
         }
-        if (temp[1] < 5)
-        {
-            while (temp[1] == temp[0] || playerHas[temp[1]])
-            {
-                temp[1] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
-            }
-        }
-        else
-        {
-            while (temp[1] == temp[0])
-            {
-                temp[1] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
 
-            }
-        }
-        if (temp[2] < 5)
+
+        while (temp[1] == temp[0] || temp[1] < 5)
         {
-            while (temp[2] == temp[1] || temp[2] == temp[0] || playerHas[temp[2]])
+            if (temp[1] < 5)
             {
-                temp[2] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
+                while (temp[1] == temp[0] || playerHas[temp[1]])
+                {
+                    temp[1] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
+                    if (temp[1] >= 5)
+                    {
+                        break;
+                    }
+                }
+                continue;
             }
+            else
+            {
+                while (temp[1] == temp[0])
+                {
+                    temp[1] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
+
+                }
+            } 
         }
-        else
+
+
+        while (temp[2] == temp[1] || temp[2] == temp[0] || temp[2] < 5)
         {
-            while (temp[2] == temp[1] || temp[2] == temp[0])
+            if (temp[2] < 5)
             {
-                temp[2] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
+                while (temp[2] == temp[1] || temp[2] == temp[0] || playerHas[temp[2]])
+                {
+                    temp[2] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
+                    if (temp[2] >= 5)
+                    {
+                        break;
+                    }
+                }
+                continue;
             }
+            else
+            {
+                while (temp[2] == temp[1] || temp[2] == temp[0])
+                {
+                    temp[2] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
+                }
+            } 
         }
 
         //sale_items[0] = GetComponent<StoreDatabaseScript>().storeDatabase[temp[0]];
