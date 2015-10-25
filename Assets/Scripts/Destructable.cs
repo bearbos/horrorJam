@@ -9,7 +9,8 @@ public class Destructable : MonoBehaviour
     Color baseColor;
     bool changeColor;
     float delayColorChanger;
-
+    [SerializeField]
+    AudioSource sfx;
     // Use this for initialization
     void Start()
     {
@@ -18,6 +19,7 @@ public class Destructable : MonoBehaviour
         newPos.z = newPos.y;
         gameObject.transform.position = newPos;
         baseColor = GetComponent<SpriteRenderer>().color;
+        sfx.volume = 10;
     }
 
     // Update is called once per frame
@@ -50,5 +52,9 @@ public class Destructable : MonoBehaviour
     {
         HP -= _dam;
         changeColor = true;
+        if(!sfx.isPlaying)
+        {
+            sfx.Play();
+        }
     }
 }

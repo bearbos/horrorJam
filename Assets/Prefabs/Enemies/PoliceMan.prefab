@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11421086}
   - 114: {fileID: 11435214}
   - 95: {fileID: 9503932}
+  - 82: {fileID: 8273960}
   m_Layer: 0
   m_Name: PoliceMan
   m_TagString: Enemy
@@ -62,6 +63,76 @@ BoxCollider2D:
   m_Offset: {x: -.0390152931, y: .882953763}
   serializedVersion: 2
   m_Size: {x: 1.05605638, y: 1.76590729}
+--- !u!82 &8273960
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141876}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e56f36d1e6520d641b0bc7d483f620ad, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9503932
 Animator:
   serializedVersion: 3
@@ -90,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49671907f165d0543941a9fe731efa13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ironman: 0
   eIdle: 0
   eAggro: 0
   eGuard: 0
@@ -106,6 +178,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHealth: 0
   maxHealth: 0
+  score: 0
+  notriaty: 0
+  sfx: {fileID: 8273960}
 --- !u!212 &21233018
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -138,7 +213,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e56f36d1e6520d641b0bc7d483f620ad, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 8273960}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141876}

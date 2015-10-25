@@ -10,6 +10,8 @@ public class E_Stat : MonoBehaviour
     float maxHealth;
     public int score;
     public float notriaty;
+    [SerializeField]
+    AudioSource sfx;
 
     //varibles for the visual feedback when the enemy takes damage
     Color baseColor;
@@ -25,6 +27,7 @@ public class E_Stat : MonoBehaviour
         changeColor = false;
         delayColorChanger = 0.0f;
         currHealth = maxHealth;
+        sfx.volume = 10;
     }
 
     // Update is called once per frame
@@ -53,6 +56,10 @@ public class E_Stat : MonoBehaviour
     {
         currHealth -= _dam;
         changeColor = true;
+        if(!sfx.isPlaying)
+        {
+            sfx.Play();
+        }
         if (GetComponent<Rigidbody2D>() != null)
         {
             float moveAmount = 500f * (_dam / 20f);

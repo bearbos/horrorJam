@@ -5,7 +5,8 @@ public class Dynamic_Camera : MonoBehaviour {
 
     // Reference to the player
     GameObject thePlayer;
-
+    [SerializeField]
+    AudioSource music;
     // Camera Stuff
     Vector3 prevPos;
     Vector3 currPos;
@@ -23,13 +24,17 @@ public class Dynamic_Camera : MonoBehaviour {
         // Find the player
         if (GameObject.FindWithTag("Player"))
             thePlayer = GameObject.FindWithTag("Player");
+        music.volume = 5;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         gameTime += Time.deltaTime;
-
+        if(!music.isPlaying)
+        {
+            music.Play();
+        }
         // Clean up old shit
         if(gameTime >= 1.0f)
         {
