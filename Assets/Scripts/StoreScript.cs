@@ -29,248 +29,254 @@ public class StoreScript : MonoBehaviour
     [SerializeField]
     int buffer = 30;
     [SerializeField]
-    public bool disabled = false;
+    public bool disabled;
+    public bool go = false;
 
     public GameObject parent;
     // Use this for initialization
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        disabled = true;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (disabled)
+        if (disabled && go)
         {
             Enable();
             disabled = false;
         }
-
-        if (buffer > 0)
+        if (disabled == false && go)
         {
-            //    if (blink)
-            //    {
-            //        if (buffer % 5 == 0)
-            //        {
-            //            BlinkYellow();
-            //        }
-            //        else
-            //        {
-            //            BlinkBlack();
-            //        }
-            //    }
-            --buffer;
-            //if (buffer == 0)
-            //{
-            //    blink = false;
-            //}
-        }
+
+            if (buffer > 0)
+            {
+                //    if (blink)
+                //    {
+                //        if (buffer % 5 == 0)
+                //        {
+                //            BlinkYellow();
+                //        }
+                //        else
+                //        {
+                //            BlinkBlack();
+                //        }
+                //    }
+                --buffer;
+                //if (buffer == 0)
+                //{
+                //    blink = false;
+                //}
+            }
 
 
-        if (transform.GetChild(0).GetComponent<Image>().enabled == true && run < 0)
-        {
-            transform.GetChild(0).GetComponent<Image>().enabled = false;
-            transform.GetChild(1).GetComponent<Image>().enabled = true;
-            transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().enabled = true;
+            if (transform.GetChild(0).GetComponent<Image>().enabled == true && run < 0)
+            {
+                transform.GetChild(0).GetComponent<Image>().enabled = false;
+                transform.GetChild(1).GetComponent<Image>().enabled = true;
+                transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().enabled = true;
+                for (int i = 2; i <= 4; i++)
+                {
+                    transform.GetChild(i).GetComponent<Image>().enabled = true;
+
+                    transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().enabled = true;
+                    transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().enabled = true;
+                    transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().enabled = true;
+
+                }
+                run = 2;
+            }
+            else if (run > -3)
+            {
+
+                --run;
+            }
+
+
+
+
+
+            if (Input.GetAxis("Horizontal") > 0 && buffer == 0)
+            {
+                //Right
+                if (selected == 3)
+                {
+                    selected = 2;
+                }
+                else if (selected == 2)
+                {
+                    selected = 3;
+                }
+                else
+                {
+                    selected = 4;
+                }
+                buffer = 30;
+
+            }
+            else if (Input.GetAxis("Horizontal") < 0 && buffer == 0)
+            {
+                //Left
+                if (selected == 3)
+                {
+                    selected = 2;
+                }
+                else if (selected == 2)
+                {
+                    selected = 3;
+                }
+                else
+                {
+                    selected = 4;
+                }
+                buffer = 30;
+            }
+
+            if (Input.GetAxis("Vertical") > 0 & buffer == 0)
+            {
+                // Up
+                if (selected == 3)
+                {
+                    selected = 4;
+                }
+                else if (selected == 4)
+                {
+                    selected = 3;
+                }
+                else
+                {
+                    selected = 2;
+                }
+                buffer = 30;
+            }
+            else if (Input.GetAxis("Vertical") < 0 && buffer == 0)
+            {
+                // Down
+                if (selected == 4)
+                {
+                    selected = 3;
+                }
+                else if (selected == 3)
+                {
+                    selected = 4;
+                }
+                else
+                {
+                    selected = 2;
+                }
+                buffer = 30;
+            }
+
+
+
             for (int i = 2; i <= 4; i++)
             {
-                transform.GetChild(i).GetComponent<Image>().enabled = true;
-
-                transform.GetChild(i).transform.GetChild(0).GetComponent<Image>().enabled = true;
-                transform.GetChild(i).transform.GetChild(1).GetComponent<Text>().enabled = true;
-                transform.GetChild(i).transform.GetChild(2).GetComponent<Text>().enabled = true;
-
-            }
-            run = 2;
-        }
-        else if (run > -3)
-        {
-
-            --run;
-        }
-
-
-
-
-
-        if (Input.GetAxis("Horizontal") > 0 && buffer == 0)
-        {
-            //Right
-            if (selected == 3)
-            {
-                selected = 2;
-            }
-            else if (selected == 2)
-            {
-                selected = 3;
-            }
-            else
-            {
-                selected = 4;
-            }
-            buffer = 30;
-
-        }
-        else if (Input.GetAxis("Horizontal") < 0 && buffer == 0)
-        {
-            //Left
-            if (selected == 3)
-            {
-                selected = 2;
-            }
-            else if (selected == 2)
-            {
-                selected = 3;
-            }
-            else
-            {
-                selected = 4;
-            }
-            buffer = 30;
-        }
-
-        if (Input.GetAxis("Vertical") > 0 & buffer == 0)
-        {
-            // Up
-            if (selected == 3)
-            {
-                selected = 4;
-            }
-            else if (selected == 4)
-            {
-                selected = 3;
-            }
-            else
-            {
-                selected = 2;
-            }
-            buffer = 30;
-        }
-        else if (Input.GetAxis("Vertical") < 0 && buffer == 0)
-        {
-            // Down
-            if (selected == 4)
-            {
-                selected = 3;
-            }
-            else if (selected == 3)
-            {
-                selected = 4;
-            }
-            else
-            {
-                selected = 2;
-            }
-            buffer = 30;
-        }
-
-
-
-        for (int i = 2; i <= 4; i++)
-        {
-            if (i == selected)
-            {
-                transform.GetChild(i).GetComponent<Image>().color = Color.yellow;
-            }
-            else
-            {
-                transform.GetChild(i).GetComponent<Image>().color = Color.black;
-            }
-        }
-
-        if (Input.GetButtonDown("A"))
-        {
-            if (purchased[selected - 2] == false)
-            {
-
-
-                switch (itemType[selected - 2])
+                if (i == selected)
                 {
-                    case 0:
-                        {
-                            if (player.GetComponent<playerStats>().candy >= possible_sale_items[sale_items[selected - 2]].GetComponent<Mask>().price)
-                            {
-                                player.GetComponent<playerStats>().candy -= possible_sale_items[sale_items[selected - 2]].GetComponent<Mask>().price;
-                                player.GetComponentInChildren<maskController>().AddAMask(possible_sale_items[sale_items[selected - 2]], sale_items[selected - 2]);
-                                purchased[selected - 2] = true;
-                                transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
-                                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
-                            }
-                            else
-                            {
-                                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+                    transform.GetChild(i).GetComponent<Image>().color = Color.yellow;
+                }
+                else
+                {
+                    transform.GetChild(i).GetComponent<Image>().color = Color.black;
+                }
+            }
 
-                            }
-                            break;
-                        }
-                    case 1:
-                        {
-                            if (player.GetComponent<playerStats>().candy >= possible_sale_items[sale_items[selected - 2]].GetComponent<Candy>().price)
-                            {
-                                player.GetComponent<playerStats>().candy -= possible_sale_items[sale_items[selected - 2]].GetComponent<Candy>().price;
-                                player.GetComponent<playerStats>().currHealth += possible_sale_items[sale_items[selected - 2]].GetComponent<Candy>().healAmount;
-                                purchased[selected - 2] = true;
-                                transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
-                                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
-                            }
-                            else
-                            {
-                                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+            if (Input.GetButtonDown("A"))
+            {
+                if (purchased[selected - 2] == false)
+                {
 
-                            }
-                            break;
-                        }
-                    case 2:
-                        {
-                            if (player.GetComponent<playerStats>().candy >= possible_sale_items[sale_items[selected - 2]].GetComponent<weapon>().price)
-                            {
-                                player.GetComponent<playerStats>().candy -= possible_sale_items[sale_items[selected - 2]].GetComponent<weapon>().price;
-                                Instantiate(possible_sale_items[sale_items[selected - 2]], player.transform.position, player.transform.rotation);
-                                purchased[selected - 2] = true;
-                                transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
-                                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
-                            }
-                            else
-                            {
-                                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
 
+                    switch (itemType[selected - 2])
+                    {
+                        case 0:
+                            {
+                                if (player.GetComponent<playerStats>().candy >= possible_sale_items[sale_items[selected - 2]].GetComponent<Mask>().price)
+                                {
+                                    player.GetComponent<playerStats>().candy -= possible_sale_items[sale_items[selected - 2]].GetComponent<Mask>().price;
+                                    player.GetComponentInChildren<maskController>().AddAMask(possible_sale_items[sale_items[selected - 2]], sale_items[selected - 2]);
+                                    purchased[selected - 2] = true;
+                                    transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
+                                    transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+                                }
+                                else
+                                {
+                                    transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+
+                                }
+                                break;
                             }
+                        case 1:
+                            {
+                                if (player.GetComponent<playerStats>().candy >= possible_sale_items[sale_items[selected - 2]].GetComponent<Candy>().price)
+                                {
+                                    player.GetComponent<playerStats>().candy -= possible_sale_items[sale_items[selected - 2]].GetComponent<Candy>().price;
+                                    player.GetComponent<playerStats>().currHealth += possible_sale_items[sale_items[selected - 2]].GetComponent<Candy>().healAmount;
+                                    purchased[selected - 2] = true;
+                                    transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
+                                    transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+                                }
+                                else
+                                {
+                                    transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+
+                                }
+                                break;
+                            }
+                        case 2:
+                            {
+                                if (player.GetComponent<playerStats>().candy >= possible_sale_items[sale_items[selected - 2]].GetComponent<weapon>().price)
+                                {
+                                    player.GetComponent<playerStats>().candy -= possible_sale_items[sale_items[selected - 2]].GetComponent<weapon>().price;
+                                    Instantiate(possible_sale_items[sale_items[selected - 2]], player.transform.position, player.transform.rotation);
+                                    purchased[selected - 2] = true;
+                                    transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
+                                    transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+                                }
+                                else
+                                {
+                                    transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+
+                                }
+                                break;
+                            }
+                        default:
                             break;
-                        }
-                    default:
-                        break;
+                    }
+
+                }
+                else
+                {
+                    transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+
+                    ////    blink = true;
+                    ////    buffer = 30;
                 }
 
             }
-            else
-            {
-                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
 
-                ////    blink = true;
-                ////    buffer = 30;
+            if (Input.GetButtonDown("B"))
+            {
+                Time.timeScale = 1.0f;
+                disabled = true;
+                go = false;
+                if (parent != null)
+                    Destroy(parent);
+                gameObject.GetComponent<Canvas>().enabled = false;
+                for (int i = 0; i < 3; i++)
+                {
+                    purchased[i] = false;
+                    sale_items[i] = 0;
+                    itemType[i] = 0;
+                }
+
+
             }
 
         }
-
-        if (Input.GetButtonDown("B"))
-        {
-            Time.timeScale = 1.0f;
-            disabled = true;
-            if (parent != null)
-                Destroy(parent);
-            gameObject.GetComponent<Canvas>().enabled = false;
-            for (int i = 0; i < 3; i++)
-            {
-                purchased[i] = false;
-                sale_items[i] = 0;
-                itemType[i] = 0;
-            }
-
-
-        }
-
         //transform.GetChild(2).transform.GetChild(1).GetComponent<Text>().text = "Testing";    //// Works
     }
 
@@ -292,7 +298,7 @@ public class StoreScript : MonoBehaviour
             temp[i] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
         }
 
-        if (temp[0] < 5)
+        if (temp[0] < 5)     // ensure the first item is not a mask that the player already has
         {
             while (playerHas[temp[0]])
             {
@@ -304,54 +310,50 @@ public class StoreScript : MonoBehaviour
             }
         }
 
-
-        while (temp[1] == temp[0] || temp[1] < 5)
+        for (;;)   // ensure the second item is unique and not a mask that the player already has
         {
             if (temp[1] < 5)
             {
-                while (temp[1] == temp[0] || playerHas[temp[1]])
+                if (playerHas[temp[1]])
                 {
                     temp[1] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
-                    if (temp[1] >= 5)
-                    {
-                        break;
-                    }
+                    continue;
                 }
-                break;
+            }
+            if (temp[1] == temp[0])
+            {
+                temp[1] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
             }
             else
             {
-                while (temp[1] == temp[0])
-                {
-                    temp[1] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
-
-                }
+                break;
             }
         }
 
 
-        while (temp[2] == temp[1] || temp[2] == temp[0] || temp[2] < 5)
+
+       for (; ;) // ensure the third item is unique and not a mask that the player already has
         {
             if (temp[2] < 5)
             {
-                while (temp[2] == temp[1] || temp[2] == temp[0] || playerHas[temp[2]])
+                if (playerHas[temp[2]])
                 {
                     temp[2] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
-                    if (temp[2] >= 5)
-                    {
-                        break;
-                    }
+                    continue;
                 }
-                break;
+            }
+
+            if (temp[2] == temp[1] || temp[2] == temp[0])
+            {
+                temp[2] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
+
             }
             else
             {
-                while (temp[2] == temp[1] || temp[2] == temp[0])
-                {
-                    temp[2] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
-                }
+                break;
             }
         }
+        
 
         //sale_items[0] = GetComponent<StoreDatabaseScript>().storeDatabase[temp[0]];
         //sale_items[1] = GetComponent<StoreDatabaseScript>().storeDatabase[temp[1]];            // Not sure I need this
