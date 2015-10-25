@@ -227,6 +227,20 @@ public class playerController : MonoBehaviour {
 			}
 		}
 
+		if (aT && (objectInHand && objectBeingUsed.GetComponent<weapon> ().weaponType == weaponType.THROWN)) {
+			int index = Random.Range(0, objectBeingUsed.GetComponent<Bullet>().differenttypes.Length);
+
+			GameObject temp = objectBeingUsed.GetComponent<Bullet>().differenttypes[index];
+
+			if (!facingRight)
+				temp.GetComponent<Bullet>().Distance = new Vector2(-Mathf.Abs(temp.GetComponent<Bullet>().Distance.x),
+				                                                   temp.GetComponent<Bullet>().Distance.y);
+
+			Instantiate(temp, objectBeingUsed.GetComponent<weapon>().anchor.transform.position, Quaternion.identity);
+
+			--objectBeingUsed.GetComponent<weapon>().durability;
+		}
+
         if (validInput)
         {
             ++attackComboLength;

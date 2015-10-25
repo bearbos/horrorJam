@@ -29,7 +29,7 @@ public class StoreScript : MonoBehaviour
     [SerializeField]
     int buffer = 30;
     [SerializeField]
-    bool disabled = false;
+    public bool disabled = false;
 
     public GameObject parent;
     // Use this for initialization
@@ -261,6 +261,13 @@ public class StoreScript : MonoBehaviour
             if (parent != null)
                 Destroy(parent);
             gameObject.GetComponent<Canvas>().enabled = false;
+            for (int i = 0; i < 3; i++)
+            {
+                purchased[i] = false;
+                sale_items[i] = 0;
+                itemType[i] = 0;
+            }
+
 
         }
 
