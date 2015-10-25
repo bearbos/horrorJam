@@ -61,6 +61,7 @@ public class E_Stat : MonoBehaviour
         changeColor = true;
         if(!sfx.isPlaying)
         {
+            AudioSource.PlayClipAtPoint(sfx.clip, transform.position);
             sfx.Play();
         }
         if (GetComponent<Rigidbody2D>() != null)
