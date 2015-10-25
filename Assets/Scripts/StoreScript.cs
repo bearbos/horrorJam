@@ -28,8 +28,10 @@ public class StoreScript : MonoBehaviour
     GameObject player;
     [SerializeField]
     int buffer = 30;
+    [SerializeField]
+    bool blink = false;
 
-	public GameObject parent;
+    public GameObject parent;
     // Use this for initialization
     void Start()
     {
@@ -68,7 +70,7 @@ public class StoreScript : MonoBehaviour
                 {
                     break;
                 }
-                
+
 
             }
         }
@@ -133,8 +135,25 @@ public class StoreScript : MonoBehaviour
     {
         if (buffer > 0)
         {
+            //    if (blink)
+            //    {
+            //        if (buffer % 5 == 0)
+            //        {
+            //            BlinkYellow();
+            //        }
+            //        else
+            //        {
+            //            BlinkBlack();
+            //        }
+            //    }
             --buffer;
+            //if (buffer == 0)
+            //{
+            //    blink = false;
+            //}
         }
+
+
         if (transform.GetChild(0).GetComponent<Image>().enabled == true && run < 0)
         {
             transform.GetChild(0).GetComponent<Image>().enabled = false;
@@ -197,7 +216,7 @@ public class StoreScript : MonoBehaviour
             buffer = 30;
         }
 
-        if (Input.GetAxis("Vertical") > 0  & buffer == 0)
+        if (Input.GetAxis("Vertical") > 0 & buffer == 0)
         {
             // Up
             if (selected == 3)
@@ -259,9 +278,15 @@ public class StoreScript : MonoBehaviour
                             if (player.GetComponent<playerStats>().candy >= possible_sale_items[sale_items[selected - 2]].GetComponent<Mask>().price)
                             {
                                 player.GetComponent<playerStats>().candy -= possible_sale_items[sale_items[selected - 2]].GetComponent<Mask>().price;
-                                player.GetComponentInChildren<maskController>().AddAMask(possible_sale_items[sale_items[selected - 2]], sale_items[selected-2]);
+                                player.GetComponentInChildren<maskController>().AddAMask(possible_sale_items[sale_items[selected - 2]], sale_items[selected - 2]);
                                 purchased[selected - 2] = true;
                                 transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
+                                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+                            }
+                            else
+                            {
+                                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+
                             }
                             break;
                         }
@@ -273,6 +298,12 @@ public class StoreScript : MonoBehaviour
                                 player.GetComponent<playerStats>().currHealth += possible_sale_items[sale_items[selected - 2]].GetComponent<Candy>().healAmount;
                                 purchased[selected - 2] = true;
                                 transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
+                                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+                            }
+                            else
+                            {
+                                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+
                             }
                             break;
                         }
@@ -284,6 +315,12 @@ public class StoreScript : MonoBehaviour
                                 Instantiate(possible_sale_items[sale_items[selected - 2]], player.transform.position, player.transform.rotation);
                                 purchased[selected - 2] = true;
                                 transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
+                                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+                            }
+                            else
+                            {
+                                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+
                             }
                             break;
                         }
@@ -291,13 +328,13 @@ public class StoreScript : MonoBehaviour
                         break;
                 }
 
-                purchased[selected - 2] = true;
-                transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
             }
             else
             {
-                purchased[selected - 2] = true;
-                transform.GetChild(selected).transform.GetChild(3).GetComponent<Text>().enabled = true;
+                transform.GetChild(selected).GetComponent<Image>().color = Color.black;
+
+                ////    blink = true;
+                ////    buffer = 30;
             }
 
         }
@@ -305,17 +342,17 @@ public class StoreScript : MonoBehaviour
         if (Input.GetButtonDown("B"))
         {
             Time.timeScale = 1.0f;
-			if (parent != null)
-            	Destroy(parent);
+            if (parent != null)
+                Destroy(parent);
         }
 
         //transform.GetChild(2).transform.GetChild(1).GetComponent<Text>().text = "Testing";    //// Works
     }
 
 
-	/// <summary>
-	/// Rolls the items continuing the loop if the player has already purchased a mask before.
-	/// </summary>
+    /// <summary>
+    /// Rolls the items continuing the loop if the player has already purchased a mask before.
+    /// </summary>
     void RollItems()
     {
         //int temp = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
@@ -355,7 +392,7 @@ public class StoreScript : MonoBehaviour
                         break;
                     }
                 }
-				break;
+                break;
             }
             else
             {
@@ -364,7 +401,7 @@ public class StoreScript : MonoBehaviour
                     temp[1] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
 
                 }
-            } 
+            }
         }
 
 
@@ -388,7 +425,7 @@ public class StoreScript : MonoBehaviour
                 {
                     temp[2] = Random.Range(0, (int)SALE_ITEMS.NUM_MAX);
                 }
-            } 
+            }
         }
 
         //sale_items[0] = GetComponent<StoreDatabaseScript>().storeDatabase[temp[0]];
@@ -417,5 +454,17 @@ public class StoreScript : MonoBehaviour
         }
 
 
+    }
+
+
+    void BlinkYellow()
+    {
+        transform.GetChild(selected).GetComponent<Image>().color = Color.yellow;
+
+    }
+
+    void BlinkBlack()
+    {
+        transform.GetChild(selected).GetComponent<Image>().color = Color.black;
     }
 }

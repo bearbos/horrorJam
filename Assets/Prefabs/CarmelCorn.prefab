@@ -75,6 +75,7 @@ MonoBehaviour:
   candyGiven: 2
   healAmount: 25
   heals: 1
+  price: 40
 --- !u!212 &21220786
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -127,6 +128,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_GravityScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: price
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
